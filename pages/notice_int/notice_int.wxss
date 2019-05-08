@@ -1,0 +1,43 @@
+/* pages/notice_int/notice_int.wxss */
+.header{
+  width: 750rpx;
+  height: auto;
+  background: #fff;
+}
+.header .nav{
+  width: 750rpx;
+  padding-top: 20rpx;
+  height: 119rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.nav text{
+  display: block;
+  width: 710rpx;
+  color: #424242;
+   margin-left: 20rpx;
+}
+.nav text:first-child{
+  height: 49rpx;
+  line-height: 49rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.nav text:last-child{
+  font-size: 26rpx;
+}
+.content{
+  width: 710rpx;
+  padding: 20rpx 20rpx 52rpx 20rpx;
+  height: auto;
+}
+.content text{
+  font-size: 26rpx;
+  color: #7c7c7c;
+  line-height: 45rpx;
+}
+.content image{
+  width: 580rpx;
+  height: 446rpx;
+  display: block;
+  margin: 0 auto;
+}

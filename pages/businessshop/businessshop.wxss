@@ -1,0 +1,360 @@
+/* pages/businessshop/businessshop.wxss */
+
+/* nav */
+
+.nav {
+  width: 750rpx;
+  height: 360rpx;
+  position: relative;
+}
+
+.nav .banner {
+  width: 750rpx;
+  height: 360rpx;
+}
+
+.content {
+  width: 750rpx;
+  height: 360rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.7;
+}
+
+.header {
+  height: 64rpx;
+  width: 710rpx;
+  padding: 18rpx 20rpx;
+}
+
+.header input {
+  display: block;
+  float: left;
+  width: 488rpx;
+  height: 64rpx;
+  background: #fff;
+  opacity: 0.7;
+  border-radius: 25rpx;
+  padding: 0 55rpx;
+  line-height: 64rpx;
+  font-size: 26rpx;
+  color: #fefefe;
+}
+
+.header image {
+  display: block;
+  float: left;
+  width: 38rpx;
+  height: 38rpx;
+  margin: 14rpx 10rpx 24rpx;
+}
+
+.header text {
+  display: block;
+  float: left;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #fefefe;
+}
+
+.shop_name {
+  margin-top: 20rpx;
+  height: 100rpx;
+  width: 710rpx;
+  padding: 26rpx 20rpx;
+}
+
+.shop_name image {
+  float: left;
+  height: 100rpx;
+  width: 100rpx;
+  display: block;
+  background: red;
+}
+
+.shop_name view {
+  float: left;
+  width: 402rpx;
+  height: 100rpx;
+  padding-left: 18rpx;
+  overflow: hidden;
+}
+
+.shop_name view text {
+  display: block;
+  color: #fff;
+  width: 420rpx;
+}
+
+.shop_name view text:first-child {
+  height: 54rpx;
+  font-size: 42rpx;
+  line-height: 54rpx;
+}
+
+.shop_name view text:last-child {
+  font-size: 24rpx;
+  color: #fffefe;
+  margin-top: 12rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+}
+
+.shop_name text.concern {
+  display: block;
+  float: right;
+  margin: 22rpx 0;
+  width: 129rpx;
+  height: 57rpx;
+  border-radius: 12rpx;
+  background: #ff942c;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 57rpx;
+  text-align: center;
+  opacity: 1;
+}
+.shop_name text.concerned{
+  background: #e5e5e5;
+  color: #747474;
+}
+.content .new {
+  width: 634rpx;
+  height: 56rpx;
+  padding: 17rpx 23rpx 17rpx 38rpx;
+}
+
+.content .new text {
+  display: block;
+  float: left;
+  margin-right: 120rpx;
+  width: 130rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.content .new text:last-child {
+  margin-right: 0;
+}
+
+.content .new text.new_active {
+  border-bottom: 3rpx solid #fff;
+}
+
+.commodity {
+  width: 710rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 0 20rpx 8rpx 20rpx;
+  margin-top: 20rpx;
+}
+
+.commodity view {
+  width: 346rpx;
+  height: 520rpx;
+  float: left;
+  background: #fff;
+  margin-top: 12rpx;
+}
+
+.commodity view image {
+  height: 351rpx;
+  width: 346rpx;
+}
+
+.commodity view text.int {
+  font-size: 24rpx;
+  color: #2f2f2f;
+}
+
+.commodity view text.zhe {
+  color: #f00;
+}
+
+.commodity .commo-int {
+  width: 326rpx;
+  height: auto;
+  padding: 0 10rpx;
+}
+
+.commodity view.price {
+  width: 300rpx;
+  height: 50rpx;
+  padding-left: 9rpx;
+  padding-right: 20rpx;
+}
+
+.price text {
+  font-weight: bold;
+  color: #ff6931;
+  font-size: 34rpx;
+  display: block;
+  float: left;
+}
+
+.commodity .price text:last-child {
+  width: 83rpx;
+  height: 42rpx;
+  border-radius: 4rpx;
+  background: #fc6830;
+  float: right;
+  margin-right: 30rpx;
+  color: #fff;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 42rpx;
+}
+
+.commo-right {
+  margin-left: 18rpx;
+}
+
+/* 店铺分享 */
+
+.share {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.share_shop {
+  background: #fff;
+  width: 542rpx;
+  height: 774rpx;
+  position: absolute;
+  top: 180rpx;
+  left: 107rpx;
+  z-index: 2;
+}
+
+.share_shop .big_image {
+  width: 542rpx;
+  height: 553rpx;
+}
+
+.share_con {
+  background: #fff;
+  margin-top: -20rpx;
+  width: 486rpx;
+  height: 158rpx;
+  padding: 40rpx 28rpx;
+}
+
+.share_con .left {
+  width: 300rpx;
+  height: 158rpx;
+  float: left;
+}
+
+.left_top {
+  height: 89rpx;
+  width: 300rpx;
+}
+
+.left_top image {
+  width: 85rpx;
+  height: 85rpx;
+  margin-top: 4rpx;
+  margin-right: 18rpx;
+  float: left;
+}
+
+.left_top text {
+  display: block;
+  width: 190rpx;
+  text-align: center;
+  float: left;
+}
+
+.left_top text.share_text {
+  margin-top: 4rpx;
+  font-size: 28rpx;
+  color: #666361;
+  height: 39rpx;
+  line-height: 39rpx;
+}
+
+.left_top text.num_text {
+  font-size: 24rpx;
+  color: #ef4949;
+  height: 46rpx;
+  line-height: 46rpx;
+}
+
+.left_b {
+  margin-top: 24rpx;
+  height: 42rpx;
+  width: 300rpx;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  color: #7e7e7e;
+}
+
+.share_con .right {
+  width: 155rpx;
+  height: 155rpx;
+  float: right;
+}
+
+.share .dibu_share {
+  width: 750rpx;
+  height: 353rpx;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.dibu_share .cont {
+  padding: 107rpx 84rpx 12rpx 84rpx;
+  width: 582rpx;
+  height: 131rpx;
+}
+
+.cont view {
+  width: 111rpx;
+  height: 131rpx;
+  float: left;
+  margin-right: 127rpx;
+}
+
+.cont view:last-child {
+  margin-right: 0;
+}
+
+.cont view image {
+  width: 64rpx;
+  height: 64rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.cont view text {
+  display: block;
+  width: 111rpx;
+  height: 67rpx;
+  line-height: 67rpx;
+  text-align: center;
+  font-size: 27rpx;
+  color: #303030;
+}
+
+.dibu_share .cancle {
+  width: 690rpx;
+  margin: 0 30rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  border-top: 1rpx solid #c8c8c8;
+  font-size: 32rpx;
+  color: #838383;
+  text-align: center;
+}

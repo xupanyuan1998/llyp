@@ -1,0 +1,11 @@
+<!--pages/notice_int/notice_int.wxml-->
+<view class='header'>
+  <view class='nav'>
+    <text>官方官官方官方官方官方方活动</text>
+    <text>2018/01/24 16:00:00</text>
+  </view>
+  <view class='content'>
+    <text>官方官官方官方官方官方方活动官方官官方官方官方官方方活动官方官官方官方官方官方方活动官方官官方官方官方官方方活动官方官官方官方官方官方方活动官方官官方官方官方官方方活动</text>
+    <image src='/images/bananer.jpg'></image>
+  </view>
+</view>

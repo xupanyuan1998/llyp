@@ -1,0 +1,63 @@
+<!--pages/businessshop/businessshop.wxml-->
+<!-- nav -->
+<view class='nav'>
+  <image class='banner' src='/images/shop_banner.jpg'></image>
+  <view class='content'>
+    <view class='header'>
+      <input placeholder='请输入商品名称'></input>
+      <image src='/images/share2.png'></image>
+      <text bindtap='share'>分享</text>
+    </view>
+    <view class='shop_name'>
+      <image src='/images/shop_logo.png'></image>
+      <view>
+        <text>口红专卖店</text>
+        <text>关注 1520</text>
+      </view>
+      <text class="concern {{concern=='true'?'concerned':''}}" bindtap='concern'>{{shop_concern}}</text>
+    </view>
+    <view class='new'>
+      <text class="{{active==item.num?'new_active':''}}" wx:for="{{shop}}" wx:key="item" bindtap='active' data-id="{{item.num}}">{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<!-- 商品 -->
+<view class='commodity'>
+  <view wx:for="{{commodity}}" wx:key="item" bindtap='com_int'>
+    <image src='{{item.img_url}}'></image>
+    <view class='commo-int'>
+      <text class='zhe int'>{{item.dis}}</text>
+      <text class='int'>{{item.int}}</text>
+      <view class='price'>
+        <text>{{item.price}}</text>
+        <text>{{item.buy}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!--店铺分享-->
+<view class='share' style='display:{{show}}'>
+  <view class='share_shop'>
+    <image class='big_image' src='/images/dianpu_c.jpg'></image>
+    <view class='share_con'>
+      <view class='left'>
+        <view class='left_top'>
+          <image src='/images/left_shop.jpg'></image>
+          <text class='share_text'>实惠优质商家</text>
+          <text class='num_text'>商品数量：12</text>
+        </view>
+        <view class='left_b'>扫码进入店铺哦~</view>
+      </view>
+     <image class='right' src='/images/right_img.png'></image>
+    </view>
+  </view>
+  <view class='dibu_share'>
+    <view class='cont'>
+      <view wx:for="{{share}}" wx:key='item'>
+        <image src='{{item.src}}'></image>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+    <view class='cancle' bindtap='dis'>取消</view>
+  </view>
+</view>

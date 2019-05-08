@@ -1,0 +1,37 @@
+<!--pages/msg/msg.wxml-->
+<view class='header'>
+    <view wx:for="{{head_url}}" wx:key="item">
+      <image src="{{item.url}}"></image>
+      <text>{{item.text}}</text>
+    </view>
+</view>
+<!-- message notifications -->
+<view class='warp'>
+  <view class='message' bindtap='notice'>
+    <view class='icon'>
+      <image src="/images/mesage.png"></image>
+      <image src='/images/redp.png'></image>
+    </view>
+    <view class='size'>
+      <view >
+         <text>系统通知</text>
+        <text class='date'>18/12/29</text>
+      </view>
+      <text class='small_s'>官方官方又出新活动啦舍不得放发放</text>
+    </view>
+  </view>
+  <view class='message' wx:for="{{message}}" wx:key="item" bindtap='chat'>
+    <view class='icon'>
+      <image src="{{item.src}}"></image>
+      <image src='/images/redp.png'></image>
+    </view>
+    <view class='size'>
+      <view >
+         <text>{{item.big_size}}</text>
+        <text class='date'>{{item.date}}</text>
+      </view>
+      <text class='small_s'>{{item.small_size}}</text>
+    </view>
+  </view>
+</view>
+

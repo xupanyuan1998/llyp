@@ -1,0 +1,254 @@
+/**index.wxss**/
+swiper{
+  height: 346rpx;
+}
+.nav{
+  height: 64rpx;
+  padding: 12rpx 30rpx 20rpx;
+  width: 100vw;
+  background: #ff742f;
+}
+.nav image{
+  width: 42rpx;
+  height: 37rpx;
+  float: left;
+  margin-top: 13rpx;
+}
+.nav view{
+  float: left;
+}
+.nav .search{
+  padding:  17rpx 0 17rpx 35rpx;
+  width: 406rpx;
+  height: 30rpx;
+  background:#fff ;
+  border-radius: 28rpx;
+  margin-left: 20rpx;
+  margin-right:23rpx;
+  position: relative;
+}
+.nav .search image{
+  width: 30rpx;
+  height: 29rpx;
+  float: left;
+  margin-top: 0;
+}
+.nav .search input{
+  color: #b7b7b7;
+  font-size: 23rpx;
+  width: 331rpx;
+  position: absolute;
+  top: 3rpx;
+  left:75rpx;
+  line-height: 30rpx;
+}
+.nav .sign{
+  padding: 14rpx 24rpx 14rpx 60rpx;
+  width: 48rpx;
+  height: 32rpx;
+  margin-top: 4rpx;
+  background: #fdd634;
+  border-radius: 26rpx;
+  color:#fff; 
+  font-size: 24rpx;
+  font-family:" 苹方";
+  position: relative;
+}
+.nav .sign image{
+  width: 26rpx;
+  height: 28rpx;
+  position: absolute;
+  top:5rpx;
+  left: 24rpx;
+}
+.banner image{
+  width: 750rpx;
+  height: 346rpx;
+}
+scroll-view{
+  width: 100%;
+  height:328rpx;
+  white-space:nowrap;
+}
+scroll-view .scroll_c{
+  width: 1470rpx;
+  height: 328rpx;
+  overflow: hidden;
+  padding: 0 30rpx;
+}
+.scroll_c view:first-child{
+  padding-right: 20rpx;
+}
+.scroll_c view:last-child{
+  padding-left: 20rpx;
+}
+.hot{
+ float: left;
+ width: 690rpx;
+ height: 328rpx;
+ margin-bottom: 20rpx;
+}
+.active{
+  display: block;
+}
+
+.hot image{
+  width: 138rpx;
+  height: 138rpx;
+  margin-top:20rpx;
+  float: left;
+}
+.label{
+  height: 342rpx;
+ padding: 0 30rpx;
+  width: 690rpx;
+}
+.list-s{
+  width: 690rpx;
+  height: 4rpx;
+}
+.list-s view{
+  width: 271rpx;
+  height: 4rpx;
+  background: #dbdbdb;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.list-s view #moves{
+  width: 115rpx;
+  height: 4rpx;
+  background: #ff6232;
+  display: block;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+::-webkit-scrollbar{
+
+width: 0;
+
+height: 0;
+
+color: transparent;
+
+}
+.list{
+  margin-top: 38rpx;
+  margin-bottom: 46rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  height: 270rpx;
+}
+.list image{
+  display: block;
+  float: left;
+  width: 213rpx;
+  height: 132rpx;
+  margin-left: 6rpx;
+}
+.list image.share{
+  width: 272rpx;
+  height: 270rpx;
+  margin: 0;
+}
+
+.list image.shop{
+  margin-top: 6rpx;
+}
+.like{
+  width: 710rpx;
+  padding:0 20rpx;
+  height: 60rpx;
+  margin-bottom: 28rpx;
+  margin-top: 46rpx;
+}
+.like view{
+  height: 60rpx;
+  width: 129rpx;
+  float: left;
+  border-right: 2rpx solid #c0c0c0;
+  margin-left: 37rpx;
+}
+.like view image{
+  width: 26rpx;
+  height: 26rpx;
+  display: block;
+  float: left;
+  margin-top: 7rpx;
+}
+.like view text{
+  display: block;
+  float: left;
+  font-family: "苹方";
+}
+.like view text.big-size{
+  font-size: 26rpx;
+  color: #525252;
+  margin-left: 9rpx;
+}
+.like view text.small-size{
+  font-size: 22rpx;
+  color: #969696;
+}
+.like view:last-child{
+  width: 165rpx;
+}
+.like view.cate text{
+  color:#ff6a31;
+}
+.commodity{
+  width: 710rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 0 20rpx 8rpx 20rpx;
+}
+.commodity view{
+  width: 346rpx;
+  height: 496rpx;
+  float: left
+}
+.commodity view image{
+  height: 351rpx;
+  width: 346rpx;
+}
+.commodity view text.int{
+  font-size: 24rpx;
+  color: #2f2f2f;
+}
+.commodity view text.zhe{
+  color:#ff0000;
+}
+.commodity .commo-int{
+  width: 326rpx;
+  height: auto;
+  padding: 0 10rpx;
+}
+.price{
+  width: 317rpx;
+  height: 50rpx;
+  padding-left: 9rpx;
+  padding-right: 20rpx;
+}
+.price text{
+  font-weight: bold;
+  color: #ff6931;
+  font-size: 34rpx;
+  display: block;
+  float: left;
+}
+.commodity .price text:last-child{
+  width: 83rpx;
+  height: 42rpx;
+  border-radius: 4rpx;
+  background: #fc6830;
+  float: right;
+  margin-right: 30rpx;
+  color: #fff;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 42rpx;
+}
+.commo-right{
+  margin-left: 18rpx;
+}

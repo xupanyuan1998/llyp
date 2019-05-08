@@ -1,0 +1,148 @@
+<!--pages/int/int.wxml-->
+<!-- 头部导航 -->
+<view class='nav'>
+  <image src='/images/back.png'></image>
+  <image src="/images/cus.png"></image>
+  <image src='/images/share_c.png' bindtap='share_c'></image>
+</view>
+<!-- 商品展示 -->
+<swiper
+  autoplay='true'
+  interval='3000'
+  indicator-dots='true'
+  indicator-active-color='#f6441c'
+  indicator-color='rgba(170,166,165,.5)'
+   class='banner_int'>
+  <block wx:for="{{image_int}}" wx:key="item">
+    <swiper-item>
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 商品信息 -->
+<view class='com_int'>
+  <view class='com_name'>
+    <view class='com_name.left'>
+      <text>布洛芬缓释胶囊 （芬必得）</text>
+      <text>盐酸莫西沙星 可预订，可咨询医师</text>
+    </view>
+    <view class='com_name.right'>
+      <text>￥14.50</text>
+      <text>原价:￥45.00</text>
+    </view>
+  </view>
+  <view class='sales'>
+    <text class='express'>快递：免邮</text>
+    <view class='sales_number'>
+      <text>销售量：</text>
+      <text>100件</text>
+    </view>
+  </view>
+</view>
+<!-- 商品分类 -->
+<view class='com_cate'>
+  <text>选择商品分类</text>
+  <image src='/images/next.jpg'></image>
+</view>
+<!-- 店铺名称 -->
+<view class='shop_name' bindtap='shop'>
+  <image src='/images/shop_logo.png'></image>
+  <view class='shop_n'>
+    <text>康泽大药房</text>
+    <text>关注人数：1520</text>
+  </view>
+  <view class='call'>联系商家</view>
+</view>
+<!-- 商品评论 -->
+<view class='int_com'>
+  <view class='tops'>
+    <text
+     class="{{active==item.num?'com_active':''}}" 
+     wx:for="{{comments}}" 
+     wx:key='item' 
+     data-id="{{item.num}}"
+      bindtap='active'>{{item.text}}</text>
+  </view>
+   <view wx:if="{{active==0}}"
+    class='com_c'>
+      <image src='/images/banner12.jpg'></image>
+    </view>
+    <view wx:if="{{active==1}}"  class='reply'>
+      <view class='all_reply'>
+        <text class='reply_active'>全部（6932）</text>
+        <text>最新</text>
+        <text>有图（460）</text>
+      </view>
+    </view>
+</view>
+    <view wx:if="{{active==1}}" class='coms_int' wx:for='{{comments_int}}' wx:key="{{item}}">
+      <view class='int_user'>
+        <image class='avater' src='{{item.userimg}}'></image>
+        <text>{{item. username}}</text>
+        <view>
+          <image src='/images/active_eval.png'></image>
+          <image src='/images/active_eval.png'></image>
+          <image src='/images/active_eval.png'></image>
+          <image src='/images/active_eval.png'></image>
+          <image src='/images/eval.png'></image>
+        </view>
+      </view>
+      <view class='date'>
+        <text>{{item.date}}</text>
+        <text>{{item.package}}</text>
+      </view>
+      <text class='int_content'>{{item.int_c}}</text>
+      <view class='int_image' >
+        <image src='/images/carmer.jpg'></image>
+        <image class='center' src='/images/carmer.jpg'></image>
+        <image src='/images/carmer.jpg'></image>
+      </view>
+    </view>
+
+<!-- 购买 -->
+<view class='footer'>
+  <view class='dian dian_active dian1'>
+    <image src='/images/car_ser.png'></image>
+    <text>客服</text>
+  </view>
+  <view class='dian'>
+    <image src='/images/xin.png'></image>
+    <text>收藏</text>
+  </view>
+  <view class='dian dain3'>
+    <image src='/images/shopdian.png'></image>
+    <text>店铺</text>
+  </view>
+  <view class='push'>加入购物车</view>
+  <view class='now'>立即购买</view>
+</view>
+<!-- 商品分享页面 -->
+<view class='share_c' style='display:{{show}}'>
+  <view class='share_top'>
+    <image class='big_image' src='/images/com_image.jpg'></image>
+    <view class='share_shops'>
+      <view class='left'>
+        <view class='top'>
+          <text>爆品区</text>
+          <text>2019行游神州旅行金猪卡 六省联动 30多家5A景区200 多家景区免费畅游</text>
+        </view>
+        <view class='bottom'>
+          <text>原价:￥200</text>
+          <text>现价:￥99</text>
+        </view>
+      </view>
+      <view class='right'>
+        <image class='share_con' src='/images/con_share.png'></image>
+        <image class='share_img' src='/images/share_image.png'></image>
+        <text>长按识别二维码</text>
+      </view>
+    </view>
+    <image class='close' bindtap='close' src='/images/X.png'></image>
+  </view>
+  <view class='cont'>
+      <view wx:for="{{share}}" wx:key='item'>
+        <image src='{{item.src}}'></image>
+        <text>{{item.text}}</text>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<!--pages/notice/notice.wxml-->
+<view class='msg' wx:for="{{msg}}" wx:key="item" bindtap='msg_int'>
+  <view>
+    <text>{{item.title}}</text>
+    <text>{{item.date}}</text>
+  </view>
+  <text class='contents'>{{item.content}}</text>
+</view>

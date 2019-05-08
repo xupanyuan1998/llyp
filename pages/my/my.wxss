@@ -1,0 +1,214 @@
+/* pages/my/my.wxss */
+page{
+  background:#f2f2f2;
+}
+.header{
+  width: 100vw;
+  height: 207rpx;
+ position: relative;
+}
+.header_back{
+  width: 100vw;
+  height: 207rpx;
+}
+.person{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 32rpx 30rpx 57rpx 30rpx;
+  width: 690rpx;
+  height: 118rpx;
+}
+.person .tuxiang{
+  height: 78rpx;
+  width: 690rpx;
+}
+.person .tuxiang image{
+  width: 78rpx;
+  height: 78rpx;
+  display: block;
+  float: left;
+  margin-right: 22rpx;
+}
+.person .username{
+  width: 300rpx;
+  float: left;
+  height: 78rpx;
+}
+.person text.u_name{
+  height: 40rpx;
+  line-height:40rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+  color:#fff; 
+  width: 300rpx;
+  overflow: hidden;
+}
+.person view.grade{
+  height: 38rpx;
+  width: 300rpx;
+  overflow: hidden;
+}
+.person view.grade image{
+  width: 19rpx;
+  height: 22rpx;
+  display: block;
+  float: left;
+  margin-right: 9rpx;
+  margin-top: 7rpx;
+}
+.person view.grade text{
+  display: block;
+  float: left;
+  font-size: 24rpx;
+  color: #fff;
+}
+.person image.arrow{
+  display: block;
+  float: right;
+  margin-top: 24rpx;
+  height: 31rpx;
+  width:17rpx;
+}
+.person text.balance{
+  width: 690rpx;
+  height: 36rpx;
+  display: block;
+  border-bottom: 1rpx solid #ffbf78;
+}
+.my_all{
+  height: 263rpx;
+  width: 690rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.order{
+  height: 32rpx;
+  width: 690rpx;
+  padding:27rpx 0 30rpx 0;
+  border-bottom: 1rpx solid #ebebeb;
+}
+.order .my_order{
+  width: 180rpx;
+  height: 32rpx;
+  float: left
+}
+.order .my_order image{
+  width: 32rpx;
+  height: 32rpx;
+  display: block;
+  float: left;
+  margin-right: 16rpx;
+}
+.order .my_order text{
+  width: 132rpx;
+  height: 32rpx;
+  float: left;
+  display: block;
+  line-height:32rpx;
+  font-family: "微软雅黑";
+  font-size: 28rpx;
+  color: #414141;
+}
+.order .all_order{
+  float: right;
+  width: 180rpx;
+  height: 32rpx;
+}
+.order .all_order image{
+  margin-top: 7rpx;
+  width: 13rpx;
+  height: 21rpx;
+  float: left;
+  display: block;
+}
+.order .all_order text{
+  display: block;
+  float: left;
+  width: 159rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-family: "微软雅黑";
+  font-size:24rpx;
+  color: #868686; 
+}
+.pending_order{
+  height: 82rpx;
+  width: 630rpx;
+  padding: 48rpx 30rpx 44rpx 30rpx;
+}
+.pending_order view{
+  width: 78rpx;
+  height: 82rpx;
+  margin-right: 60rpx;
+  float: left;
+}
+.pending_order view:last-child{
+  margin-right: 0;
+}
+.pending_order view view{
+   width: 54rpx;
+  height: 54rpx;
+   position: relative;
+}
+.pending_order view image{
+  width: 54rpx;
+  height: 54rpx;
+  display: block;
+ margin-left: 12rpx;
+
+}
+.pending_order view text.lable{
+  position: absolute;
+  top: -6rpx;
+  right: -18rpx;
+  display: block;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+  background: #fdc132;
+    font-family: "微软雅黑";
+  font-size: 20rpx;
+  color: #fff;
+}
+.pending_order view text{
+  display: block;
+  width: 78rpx;
+  height: 28rpx;
+  font-family: "微软雅黑";
+  font-size: 26rpx;
+  color: #474747;
+  text-align: center;
+}
+.my_center{
+  width: 630rpx;
+  overflow: hidden;
+  height: auto;
+  padding: 5rpx 60rpx 60rpx 60rpx;
+  margin-top: 16rpx;
+  background: #fff;
+}
+.my_center view{
+  width: 114rpx;
+  height: 95rpx;
+  float: left;
+  margin-top: 50rpx;
+  margin-right: 57rpx;
+}
+.my_center view.clear{
+  margin-right: 0;
+}
+.my_center view image{
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 34rpx;
+}
+.my_center text{
+  display: block;
+  width: 114rpx;
+  height: 49rpx;
+  line-height: 49rpx;
+  font-family: "微软雅黑";
+  font-size: 28rpx;
+  color: #464646;
+}

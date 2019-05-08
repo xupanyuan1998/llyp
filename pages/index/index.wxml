@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<!--导航栏-->
+<view class='nav'>
+  <image src='/images/lian.png'></image>
+  <view class='search'>
+    <image src='/images/search.png'></image>
+    <input placeholder='请输入您搜索商品的名称' value=''></input>
+  </view>
+  <view class='sign'>
+    <image src='/images/qiandao.png'></image>
+    签到
+  </view>
+</view>
+<!-- 轮播图 -->
+<swiper
+  autoplay='true'
+  interval='5000'
+  indicator-dots='true'
+   class='banner'>
+  <block wx:for="{{banner}}" wx:key="item">
+    <swiper-item>
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 商品标签 -->
+<scroll-view  scroll-x bindscroll="scroll"
+
+>
+  <view class='scroll_c'>
+      <view class='hot '>
+        <image wx:for="{{hot}}" wx:key="item" src="{{item}}"></image>
+      </view>
+      <view class='hot '>
+        <image wx:for="{{hot_1}}" wx:key="item" src="{{item}}"></image>
+      </view>
+    </view>
+</scroll-view>
+<view class='list-s'>
+ <view id="content">
+   <text id="moves" style='left:{{left}}'></text>
+ </view>
+</view>
+<!-- 圈子 -->
+<view class='list'>
+  <image class='share' 
+    src='/images/share.png'></image>
+  <image src='/images/quanzi.png'></image>
+  <image src='/images/zixun.png'></image>
+  <image class='shop'
+   src='/images/live.png'></image>
+  <image class='shop'
+   src='/images/shop.png'></image>    
+</view>
+<!-- 商品标签 -->
+<view class="like" >
+  <view class="{{active==item.data?'cate':''}}" wx:for="{{list}}" wx:key="item" data-id='{{item.data}}' bindtap='clecked'>
+    <image src='{{item.src}}'></image>
+    <text class='big-size'>{{item.big}}</text>
+    <text class='small-size'>{{item.small}}</text>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view class='commodity'>
+  <view wx:for="{{commodity}}" wx:key="item" bindtap='com_int'>
+    <image src='{{item.img_url}}'></image>
+    <view class='commo-int'>
+      <text class='zhe int'>{{item.dis}}</text>
+      <text class='int'>{{item.int}}</text>
+      <view class='price'>
+        <text>{{item.price}}</text>
+        <text>{{item.buy}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部导航 -->

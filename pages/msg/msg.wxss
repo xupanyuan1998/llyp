@@ -1,0 +1,119 @@
+/* pages/msg/msg.wxss */
+page{
+  background: #f2f2f2;
+}
+.header{
+  width: 632rpx;
+  height: 172rpx;
+  padding: 28rpx 59rpx 10rpx 59rpx;
+  background: #fff;
+}
+.header view{
+  float: left;
+  width: 115rpx;
+  height: 172rpx;
+  margin-right: 143rpx;
+  text-align: center;
+}
+.header view:last-child{
+  margin-right: 0;
+}
+.header view image{
+  width: 104rpx;
+  height: 104rpx;
+}
+.header view text{
+  display: block;
+  width: 115rpx;
+  height: 66rpx;
+  text-align: center;
+  line-height: 66rpx;
+  font-family: "微软雅黑";
+  font-size: 28rpx;
+  color: #2e2e2e;
+}
+.warp{
+  padding:0 20rpx;
+  width: 710rpx;
+  height: auto;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.warp .message{
+  width: 710rpx;
+  height: 100rpx;
+  padding: 25rpx 0;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+.warp .message .icon{
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  position: relative;
+}
+.icon image:first-child{
+  width: 100rpx;
+  height: 100rpx;
+}
+.icon image:last-child{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: -8rpx;
+  top: -10rpx;
+}
+.size{
+  float: left;
+  margin-left: 23rpx;
+  width: 587rpx;
+  height: 100rpx;
+  overflow: hidden;
+}
+.size view{
+  display: block;
+  float: left;
+  width: 587rpx;
+  overflow: hidden;
+}
+.size view text{
+  display: block;
+  float: left;
+  height: 55rpx;
+  font-weight: bold;
+  font-size: 36rpx;
+  line-height: 55rpx;
+  color: #000;
+}
+
+.size view text:last-child{
+  height: 55rpx;
+  width: auto;
+  line-height: 55rpx;
+  color: #999999;
+  font-size: 24rpx;
+  float: right;
+}
+.size text.small_s{
+  display: block;
+  width: 587rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  overflow: hidden;
+  color: #999;
+  font-size: 30rpx;
+}
+.size view .official{
+  width: 46rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  border: 1px solid #ff5000;
+  margin-left: 13rpx;
+  display: block;
+  float: left;
+  margin-top: 15rpx;
+  color:#ff5000;
+  font-family: "思源黑体";
+  font-size: 18rpx;
+}

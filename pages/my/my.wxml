@@ -1,0 +1,112 @@
+<!--pages/my/my.wxml-->
+<!-- 会员信息 -->
+<view class='header'>
+  <image class='header_back' src='/images/my_background.png'></image>
+  <view class='person'>
+    <view class='tuxiang'>
+      <image src='/images/image_user.png'></image>
+    <view class='username'>
+      <text class='u_name'>131564115</text>
+      <view class='grade'>
+        <image src='/images/user.png'></image>
+        <text>一般用户</text>
+      </view>
+    </view>
+     <image class='arrow' src='/images/arrow.png'></image>
+    </view>
+    <text class='balance'></text>
+  </view>
+</view>
+<!-- 订单部分 -->
+<view class='my_all'>
+  <view class='order'>
+    <view class='my_order'>
+      <image src='/images/order.png'></image>
+      <text>我的订单</text>
+    </view>
+    <view class='all_order'>
+      <text>查看全部订单</text>
+      <image src='/images/my_arrow.png'></image>
+    </view>
+  </view>
+  <view class='pending_order'>
+    <view>
+      <view>
+       <image src='/images/pendingpay.png'></image>
+        <text class='lable'>2</text>
+      </view>
+      <text>代付款</text>
+    </view>
+    <view>
+     <view>
+      <image src='/images/pendingdelivery.png'></image>
+      <text class='lable'>2</text>
+    </view>
+      <text>待发货</text>
+    </view>
+    <view>
+      <view>
+        <image src='/images/pendingreceipt.png'></image>
+        <text class='lable'>2</text>
+      </view>
+      <text>待收货</text>
+    </view>
+    <view>
+      <view>
+        <image src='/images/pendingevaluation.png'></image>
+        <text class='lable'>2</text>
+      </view>
+      <text>待评价</text>
+    </view>
+    <view>
+      <view>
+        <image src='/images/pending_5.png'></image>
+        <text class='lable'>2</text>
+      </view>
+      <text>售后</text>
+    </view>
+  </view>
+</view>
+<!-- 个人中心 -->
+<view class='my_center'>
+  <view>
+    <image src='/images/shoucang.png'></image>
+    <text>我的收藏</text>
+  </view>
+   <view>
+    <image src='/images/address.png'></image>
+    <text>地址管理</text>
+  </view>
+   <view>
+    <image src='/images/person.png'></image>
+    <text>个人资料</text>
+  </view>
+   <view class='clear'>
+    <image src='/images/safe.png'></image>
+    <text>安全中心</text>
+  </view>
+   <view>
+    <image src='/images/financial.png'></image>
+    <text>财务中心</text>
+  </view>
+   <view>
+    <image src='/images/tuandui.png'></image>
+    <text>我的社区</text>
+  </view>
+   <view>
+    <image src='/images/tuiguang.png'></image>
+    <text>推广商城</text>
+  </view>
+   <view class='clear'>
+    <image src='/images/version.png'></image>
+    <text>版本更新</text>
+  </view>
+   <view>
+    <image src='/images/integral.png'></image>
+    <text>积分中心</text>
+  </view>
+   <view>
+    <image src='/images/out.png'></image>
+    <text>退出账户</text>
+  </view>
+</view>

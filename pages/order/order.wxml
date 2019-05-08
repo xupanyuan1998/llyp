@@ -1,0 +1,55 @@
+<!--pages/order/order.wxml-->
+<!-- 收货信息 -->
+<view class='header'>
+  <view class='name'>
+    <text>王大锤</text>
+    <text>152****0688</text>
+  </view>
+  <view class='address'>
+    <view class='moren'>
+      <text>默认</text>
+      <text>河南省郑州市管城回族自治区航海路中州大道福田太阳城</text>
+    </view>
+    <image class='adress_c' src='/images/int.png'></image>
+    <image class='xian' src='/images/xian.png'></image>
+  </view>
+</view>
+<view class='shop_name'>
+  <view class='shop_n'>
+    <text>阿里健康大药房</text>
+    <image src='/images/int.png'></image>
+  </view>
+  <view class='item_int'>
+    <image src='/images/carmer.jpg'></image>
+    <view class='price'>
+      <text>血糖测试仪家用测血糖的仪器试纸精准医用测量仪糖尿病全自动测糖</text>
+      <text>￥120</text>
+    </view>
+    <view class='num'>
+      <text>片试纸+50采血针+送50</text>
+      <text>x 1</text>
+    </view>
+  </view>
+</view>
+<view class='deliver'>
+  <view class='sum_price'>
+    <view wx:for="{{deliver}}" wx:key="item">
+      <text>{{item.sum}}</text>
+      <text>{{item.price}}</text>
+    </view>
+  </view>
+  <view class='order_price'>
+    <text>共一件商品</text>
+    <text>小计：</text>
+    <text>￥9.90</text>
+  </view>
+</view>
+<view class='dedu'>
+  <text>可用350积分 抵用3.5元</text>
+  <image src='/images/fangkuang.png'></image>
+</view>
+<view class='save'>
+  <text>￥9.90</text>
+  <text>提交订单</text>
+</view>
+

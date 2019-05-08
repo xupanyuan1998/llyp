@@ -1,0 +1,229 @@
+/* pages/order/order.wxss */
+.header{
+  width: 750rpx;
+  height: 190rpx;
+  background: #fff;
+  margin: 20rpx 0;
+  position: relative;
+}
+.name{
+  height: 72rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  margin-top: 13rpx;
+}
+.name text{
+  display: block;
+  float: left;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+.name text:first-child{
+  margin-left: 25rpx;
+}
+.name text:last-child{
+  margin-left: 43rpx;
+}
+.address{
+  height: 92rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+}
+.address .moren{
+  width: 647rpx;
+  height: 92rpx;
+  float: left;
+}
+.address .moren text:first-child{
+  display: inline-block;
+  width: 64rpx;
+  height: 31rpx;
+  border-radius: 12rpx;
+  background: #ff9b2c;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 31rpx;
+  margin: 8rpx 23rpx 0 19rpx;
+}
+.address .moren text:last-child{
+  line-height: 46rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.address .adress_c{
+  float: right;
+  margin-top: 8rpx;
+  width: 16rpx;
+  height: 30rpx;
+}
+.address .xian{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  height: 6rpx;
+}
+.shop_name{
+  width: 750rpx;
+  height: 300rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.shop_name .shop_n{
+  width: 710rpx;
+  height: 79rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.shop_n text{
+  display: block;
+  float: left;
+  width: 647rpx;
+  height: 79rpx;
+  line-height: 79rpx;
+  font-size: 26rpx;
+  color: #333333;
+}
+.shop_n image{
+  float: right;
+  margin-top: 22rpx;
+  width: 16rpx;
+  height: 30rpx;
+}
+.item_int{
+  width: 710rpx;
+  height: 169rpx;
+  padding: 17rpx 20rpx 36rpx 20rpx;
+}
+.item_int image{
+  display: block;
+  float: left;
+  width: 170rpx;
+  height: 170rpx;
+  margin-right: 20rpx;
+}
+.item_int .price{
+  width: 520rpx;
+  height: 74rpx;
+  float: left;
+}
+.item_int .price text{
+  height: 74rpx;
+  display: block
+}
+.item_int .price text:first-child{
+  width: 400rpx;
+  line-height: 37rpx;
+  float: left;
+  font-size: 24rpx;
+  color: #393939;
+}
+.item_int .price text:last-child{
+  height: 74rpx;
+  line-height: 74rpx;
+   font-size: 26rpx;
+  color: #f7962e;
+  float: right;
+}
+.item_int .num{
+  height: 75rpx;
+  width: 520rpx;
+  float: left;
+}
+.item_int .num text{
+  display: block;
+  height: 75rpx;
+  line-height: 75rpx;
+}
+.item_int .num text:first-child{
+  float: left;
+  width: 400rpx;
+  height: 75rpx;
+  color: #7a7a7a;
+  font-size: 22rpx;
+}
+.item_int .num text:last-child{
+  float: right;
+  height: 75rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.deliver{
+  width: 710rpx;
+  height: 294rpx;
+  padding: 30rpx 20rpx 15rpx 20rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.sum_price{
+  height: 163rpx;
+  width: 710rpx;
+}
+.sum_price view{
+  height: 54rpx;
+  width: 710rpx;
+  line-height: 54rpx;
+}
+.sum_price view text{
+  display: block;
+  float: left;
+  font-size: 30rpx;
+  color: #333333;
+}
+.sum_price view text:last-child{
+  float: right;
+}
+.order_price{
+  width: 480rpx;
+  height: 95rpx;
+  padding: 36rpx 20rpx 0 250rpx;
+}
+.order_price text{
+  font-size: 36rpx;
+  display: block;
+  float: left;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #333;
+}
+.order_price text:first-child{
+  margin-right: 40rpx;
+}
+.order_price text:last-child{
+  margin-left: 28rpx;
+  color: #ff9b2c;
+}
+.dedu{
+  height: 100rpx;
+  width: 710rpx;
+  padding:0 20rpx;
+  background: #fff;
+}
+.dedu text{
+  width: 468rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #3a3a3a;
+  display: block;
+  float: left;
+}
+.dedu image{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  display: block;
+  margin-top: 26rpx;
+}
+.save{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 710rpx;
+  height: 102rpx;
+}
+.save text{}

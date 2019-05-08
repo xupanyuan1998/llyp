@@ -1,0 +1,195 @@
+<!--pages/shoping/shoping.wxml-->
+<view class='header'>
+  <image src='/images/back_arrow.png'></image>
+  <text class='car'>购物车</text>
+  <text wx:if="{{admin}}" class='gement' bindtap='switch'>管理</text>
+  <text wx:else class='gement' bindtap='switch'>完成</text>
+</view>
+<view class='warp'>
+  <view wx:if="{{admin}}">
+    <view class='login'>
+      <text class='sync'>登陆后可同步购物车信息</text>
+      <view>
+        <text>去登陆</text>
+        <image src='/images/skip_arrow.png'></image>
+      </view>
+    </view>
+    <form class='shop'>
+      <view class='shop_firest'>
+        <view class='name'>
+          <view></view>
+          <text>健客大药房网定点送</text>
+        </view>
+        <view class='items'>
+          <view class='check'></view>
+          <view class='content'>
+            <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
+            <view class='message'>
+              <text class='ji_name'>鸡骨草胶囊（玉林）</text>
+              <text class='guige'>规格：48s</text>
+              <view class='number'>
+                <view class='reduce'>
+                  <text></text>
+                </view>
+                <input type='number' value='1'/>
+                <view class='add'>
+                  <text class='heng'></text>
+                  <text class='shu'></text>
+                </view>
+              </view>
+            </view>
+            <text class='price'>￥120.50</text>
+          </view>
+        </view>
+        <view class='items'>
+          <view class='check'></view>
+          <view class='content'>
+            <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
+            <view class='message'>
+              <text class='ji_name'>鸡骨草胶囊（玉林）</text>
+              <text class='guige'>规格：48s</text>
+              <view class='number'>
+                <view class='reduce'>
+                  <text></text>
+                </view>
+                <input type='number' value='1'/>
+                <view class='add'>
+                  <text class='heng'></text>
+                  <text class='shu'></text>
+                </view>
+              </view>
+            </view>
+            <text class='price'>￥120.50</text>
+          </view>
+        </view>
+      </view>
+      <view class='shop_firest'>
+        <view class='name'>
+          <view></view>
+          <text>健客大药房网定点送</text>
+        </view>
+        <view class='items'>
+          <view class='check'></view>
+          <view class='content'>
+            <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
+            <view class='message'>
+              <text class='ji_name'>鸡骨草胶囊（玉林）</text>
+              <text class='guige'>规格：48s</text>
+              <view class='number'>
+                <view class='reduce'>
+                  <text></text>
+                </view>
+                <input type='number' value='1'/>
+                <view class='add'>
+                  <text class='heng'></text>
+                  <text class='shu'></text>
+                </view>
+              </view>
+            </view>
+            <text class='price'>￥120.50</text>
+          </view>
+        </view>
+      </view>
+      <view class='pay'>
+        <view class='pay_left'>
+          <text></text>
+          <text>全选</text>
+        </view>
+        <view class='sum_price'>
+          <view>
+            <text>合计：</text>
+            <text>￥120.50</text>
+          </view>
+          <text class='shipping'>不含运费</text>
+        </view>
+        <view class='go' bindtap='order'>去结算</view>
+      </view>
+    </form>
+  </view>
+  <view wx:else>
+   <form class='shop'>
+    <view class='shop_firest'>
+      <view class='name'>
+        <view></view>
+        <text>健客大药房网定点送</text>
+      </view>
+      <view class='items'>
+        <view class='check'></view>
+        <view class='content'>
+          <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
+          <view class='message'>
+            <text class='ji_name'>鸡骨草胶囊（玉林）</text>
+            <text class='guige'>规格：48s</text>
+            <view class='number'>
+              <view class='reduce'>
+                <text></text>
+              </view>
+              <input type='number' value='1'/>
+              <view class='add'>
+                <text class='heng'></text>
+                <text class='shu'></text>
+              </view>
+            </view>
+          </view>
+          <text class='price'>￥120.50</text>
+        </view>
+      </view>
+      <view class='items'>
+        <view class='check'></view>
+        <view class='content'>
+          <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
+          <view class='message'>
+            <text class='ji_name'>鸡骨草胶囊（玉林）</text>
+            <text class='guige'>规格：48s</text>
+            <view class='number'>
+              <view class='reduce'>
+                <text></text>
+              </view>
+              <input type='number' value='1'/>
+              <view class='add'>
+                <text class='heng'></text>
+                <text class='shu'></text>
+              </view>
+            </view>
+          </view>
+          <text class='price'>￥120.50</text>
+        </view>
+      </view>
+    </view>
+    <view class='shop_firest'>
+      <view class='name'>
+        <view></view>
+        <text>健客大药房网定点送</text>
+      </view>
+      <view class='items'>
+        <view class='check'></view>
+        <view class='content'>
+          <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
+          <view class='message'>
+            <text class='ji_name'>鸡骨草胶囊（玉林）</text>
+            <text class='guige'>规格：48s</text>
+            <view class='number'>
+              <view class='reduce'>
+                <text></text>
+              </view>
+              <input type='number' value='1'/>
+              <view class='add'>
+                <text class='heng'></text>
+                <text class='shu'></text>
+              </view>
+            </view>
+          </view>
+          <text class='price'>￥120.50</text>
+        </view>
+      </view>
+    </view>
+    <view class='pay'>
+      <view class='pay_left'>
+        <text></text>
+        <text>全选</text>
+      </view>
+      <view class='go del'>删除</view>
+    </view>
+  </form>
+  </view>
+</view>

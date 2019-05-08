@@ -1,0 +1,32 @@
+/* pages/notice/notice.wxss */
+.msg{
+  width: 710rpx;
+  padding:10rpx 20rpx 30rpx 20rpx;
+  height: 154rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.msg view{
+  width: 710rpx;
+  height: 74rpx;
+}
+.msg view text{
+  display: block;
+  float: left;
+  color: #424242;
+  height: 74rpx;
+  line-height: 74rpx;
+}
+.msg view text:first-child{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.msg view text:last-child{
+  float: right;
+  font-size: 26rpx;
+}
+.msg .contents{
+  line-height: 40rpx;
+  color: #7c7c7c;
+  font-size: 26rpx;
+}
