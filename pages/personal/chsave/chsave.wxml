@@ -1,0 +1,33 @@
+<!--pages/personal/chsave/chsave.wxml-->
+<view class='nav'>
+  <view class='order_i'>
+    <text class='ormsg'>订单信息</text>
+    <view>
+      <text >账户充值</text>
+      <text>20152525325525225223</text>
+    </view>
+  </view>
+  <view class='or_jie'>
+    <text>订单金额</text>
+    <text>￥50</text>
+  </view>
+</view>
+<view class='card_msg'>
+  <view>
+    <text>开户行</text>
+    <text>平安银行</text>
+  </view>
+  <view>
+    <text>姓名</text>
+    <text>张三</text>
+  </view>
+  <view>
+    <text>卡号</text>
+    <text>48565465556686565632365</text>
+  </view>
+</view>
+<view class='pingzheng'>
+  <image src='/images/file.png'></image>
+  <text>请上传转账凭证</text>
+</view>
+<text class='save'>确认提交</text>

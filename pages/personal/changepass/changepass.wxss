@@ -1,0 +1,59 @@
+/* pages/personal/changepass/changepass.wxss */
+.pass{
+  width: 750rpx;
+  height: 712rpx;
+}
+.pass view{
+  background: #fff;
+  height: 116rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.pass view text{
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+  height: 116rpx;
+  line-height: 116rpx;
+  width: 150rpx;
+  font-size: 36rpx;
+  color: #373737;
+  margin-right: 20rpx;
+}
+.pass view input{
+  width: 530rpx;
+  display: block;
+  float: left;
+  height: 116rpx;
+  line-height: 116rpx;
+  font-size: 36rpx;
+    margin-right: 20rpx;
+}
+.pass view input.pal{
+  color: #ccc;
+}
+.pass view.yanzheng text.send{
+  width: 220rpx;
+  height: 80rpx;
+  float: right;
+  border-radius: 3rpx;
+  background: #ffae00;
+  margin: 16rpx 0;
+  font-size: 34rpx;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  margin-right: 20rpx;
+}
+.pass view.yanzheng input{
+  width: 260rpx;
+}
+button{
+  width: 710rpx;
+  height: 100rpx;
+  margin: 51rpx 20rpx 0;
+  background: #ff9b2c;
+  line-height: 100repx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+}

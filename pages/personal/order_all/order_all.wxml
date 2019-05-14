@@ -1,0 +1,233 @@
+<!--pages/personal/order_all/order_all.wxml-->
+<scroll-view scroll-x="true">
+  <text class="{{active==idx?'active':''}}" wx:for="{{cate}}" wx:key="item" wx:for-index='idx' data-id="{{idx}}" bindtap='active'>{{item}}</text>
+</scroll-view>
+<!-- 全部订单 -->
+<view class='content' wx:if="{{active==0}}">
+  <view class='warp' bindtap='order_int'>
+    <view class='tap'>
+      <text>衣服一副</text>
+      <text>等待买家付款</text>
+    </view>
+    <view class='bot'>
+      <image src='/images/commod.png'></image>
+      <view class='right'>
+        <view class='name'>
+          <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+          <text>￥120</text>
+        </view>
+        <view class='int'>
+          <text>爆品区</text>
+          <text>尺码：L</text>
+          <text>颜色：黑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='sum'>
+    <view class='num'>
+       <text>合计：￥240</text>
+      <text>共计1件商品</text>
+    </view>
+    <view class='cancle'>
+      <text>付款</text>
+      <text>取消订单</text>
+    </view>
+  </view>
+</view>
+<!-- 代付款 -->
+<view class='content'  wx:if="{{active==1}}">
+  <view class='warp'>
+    <view class='tap'>
+      <text>衣服一副</text>
+      <text>等待买家付款</text>
+    </view>
+    <view class='bot'>
+      <image src='/images/commod.png'></image>
+      <view class='right'>
+        <view class='name'>
+          <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+          <text>￥120</text>
+        </view>
+        <view class='int'>
+          <text>爆品区</text>
+          <text>尺码：L</text>
+          <text>颜色：黑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='sum'>
+    <view class='num'>
+       <text>合计：￥240</text>
+      <text>共计1件商品</text>
+    </view>
+    <view class='cancle'>
+      <text>付款</text>
+      <text>取消订单</text>
+    </view>
+  </view>
+</view>
+<!-- 待发货 -->
+<view class='content'  wx:if="{{active==2}}">
+  <view class='warp'>
+    <view class='tap'>
+      <text>衣服一副</text>
+      <text>等待卖家发货</text>
+    </view>
+    <view class='bot'>
+      <image src='/images/commod.png'></image>
+      <view class='right'>
+        <view class='name'>
+          <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+          <text>￥120</text>
+        </view>
+        <view class='int'>
+          <text>爆品区</text>
+          <text>尺码：L</text>
+          <text>颜色：黑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='sum'>
+    <view class='num'>
+       <text>合计：￥240</text>
+      <text>共计1件商品</text>
+    </view>
+    <view class='cancle'>
+      <text>联系商家</text>
+      <text bindtap='outm'>退款</text>
+    </view>
+  </view>
+</view>
+<!-- 待收货 -->
+<view class='content'  wx:if="{{active==3}}">
+  <view class='warp'>
+    <view class='tap'>
+      <text>衣服一副</text>
+      <text>等待卖家发货</text>
+    </view>
+    <view class='bot'>
+      <image src='/images/commod.png'></image>
+      <view class='right'>
+        <view class='name'>
+          <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+          <text>￥120</text>
+        </view>
+        <view class='int'>
+          <text>爆品区</text>
+          <text>尺码：L</text>
+          <text>颜色：黑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='sum'>
+    <view class='num'>
+       <text>合计：￥240</text>
+      <text>共计1件商品</text>
+    </view>
+    <view class='cancle'>
+      <text>联系商家</text>
+      <text bindtap='returns'>退款退货</text>
+      <text bindtap='wuliu'>查看物流</text>
+    </view>
+  </view>
+</view>
+<!-- 待评价 -->
+<view class='content'  wx:if="{{active==4}}">
+  <view class='warp'>
+    <view class='tap'>
+      <text>衣服一副</text>
+      <text>等待卖家发货</text>
+    </view>
+    <view class='bot'>
+      <image src='/images/commod.png'></image>
+      <view class='right'>
+        <view class='name'>
+          <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+          <text>￥120</text>
+        </view>
+        <view class='int'>
+          <text>爆品区</text>
+          <text>尺码：L</text>
+          <text>颜色：黑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='sum'>
+    <view class='num'>
+       <text>合计：￥240</text>
+      <text>共计1件商品</text>
+    </view>
+    <view class='cancle'>
+      <text bindtap='pingjia'>评价</text>
+    </view>
+  </view>
+</view>
+<!-- 售后 -->
+<view class='content'  wx:if="{{active==5}}">
+  <view>
+    <view class='warp'>
+      <view class='tap'>
+        <text>衣服一副</text>
+        <text>退款</text>
+      </view>
+      <view class='bot'>
+        <image src='/images/commod.png'></image>
+        <view class='right'>
+          <view class='name'>
+            <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+            <text>￥120</text>
+          </view>
+          <view class='int'>
+            <text>爆品区</text>
+            <text>尺码：L</text>
+            <text>颜色：黑</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='sum'>
+      <view class='num'>
+        <text>合计：￥240</text>
+        <text>共计1件商品</text>
+      </view>
+      <view class='cancle'>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='warp'>
+      <view class='tap'>
+        <text>衣服一副</text>
+        <text>退款退货</text>
+      </view>
+      <view class='bot'>
+        <image src='/images/commod.png'></image>
+        <view class='right'>
+          <view class='name'>
+            <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+            <text>￥120</text>
+          </view>
+          <view class='int'>
+            <text>爆品区</text>
+            <text>尺码：L</text>
+            <text>颜色：黑</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='sum'>
+      <view class='num'>
+        <text>合计：￥240</text>
+        <text>共计1件商品</text>
+      </view>
+      <view class='cancle'>
+        <text >物流</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -19,21 +19,21 @@
    class='banner'>
   <block wx:for="{{banner}}" wx:key="item">
     <swiper-item>
-      <image src="{{item}}"></image>
+      <image
+       src="{{item.cdn_image}}"
+       bindtap='com_int' 
+       data-id='{{item.adv_id}}'
+       ></image>
     </swiper-item>
   </block>
 </swiper>
 <!-- 商品标签 -->
-<scroll-view  scroll-x bindscroll="scroll"
-
->
+<scroll-view  scroll-x bindscroll="scroll">
   <view class='scroll_c'>
-      <view class='hot '>
-        <image wx:for="{{hot}}" wx:key="item" src="{{item}}"></image>
-      </view>
-      <view class='hot '>
-        <image wx:for="{{hot_1}}" wx:key="item" src="{{item}}"></image>
-      </view>
+        <view wx:for="{{hot}}" wx:key="item" wx:for-index="idx" bindtap='cata'>
+          <image src='{{imgurls+item.logo}}'></image>
+          <text>{{item.group_name}}</text>
+        </view>
     </view>
 </scroll-view>
 <view class='list-s'>
@@ -62,14 +62,24 @@
 </view>
 <!-- 商品列表 -->
 <view class='commodity'>
-  <view wx:for="{{commodity}}" wx:key="item" bindtap='com_int'>
-    <image src='{{item.img_url}}'></image>
+  <view 
+  class="shangping {{idx%2==1?'shangpin_right':''}}" 
+   wx:for="{{commodity}}"
+    wx:key="item" 
+    bindtap='com_int' 
+    wx:for-index="idx"
+    data-int='{{item.goods_id}}'
+    >
+   <view class='shop_logo'>
+     <image src='{{imgurls+item.pic_cover_mid}}'></image>
+     <text>预估分享收益：{{item.share_profit}}元</text>
+   </view>
     <view class='commo-int'>
-      <text class='zhe int'>{{item.dis}}</text>
-      <text class='int'>{{item.int}}</text>
+      <text class='zhe int' wx:if="{{item.dis}}">{{item.dis}}</text>
+      <text class='int'>{{item.goods_name}}</text>
       <view class='price'>
         <text>{{item.price}}</text>
-        <text>{{item.buy}}</text>
+        <text>购买</text>
       </view>
     </view>
   </view>

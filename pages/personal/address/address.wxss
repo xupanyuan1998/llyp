@@ -1,0 +1,117 @@
+/* pages/personal/address/address.wxss */
+.nav{
+  width: 750rpx;
+  height: 90rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.nav .add{
+  width: 38rpx;
+  height: 38rpx;
+  display: block;
+  float: left;
+  margin: 26rpx 24rpx 0 20rpx;
+}
+.nav text{
+  width: 260rpx;
+  display: block;
+  float: left;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #3f3f3f;
+  font-size: 30rpx;
+}
+.nav .next{
+  width: 13rpx;
+  height: 22rpx;
+  display: block;
+  float: right;
+  margin: 34rpx 20rpx;
+}
+.content{
+  margin-top: 22rpx;
+  height: 260rpx;
+  width: 750rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  background: #fff;
+}
+.content .top{
+  width: 750rpx;
+  height: 70rpx;
+   border-bottom: 1rpx solid #e8e8e8;
+}
+.left{
+  width: 190rpx;
+  height:70rpx;
+  float: left; 
+  margin-left: 20rpx;
+}
+.left radio{
+  width: 31rpx;
+  height: 31rpx;
+  display: block;
+  float: left;
+  margin: 28rpx 15rpx 28rpx 0;
+}
+
+.left text{
+  line-height: 70rpx;
+  height: 70rpx;
+  display: block;
+  float: left;
+  font-size: 24rpx;
+  font-family: "微软雅黑";
+  color: #676767;
+  
+}
+.right{
+  float: right;
+  height: 70rpx;
+  width: 150rpx;
+  margin-right: 20rpx;
+}
+.right text{
+  height: 70rpx;
+  display: block;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  font-family: "微软雅黑";
+  color: #676767;
+}
+.right text:first-child{
+  float: left;
+}
+.right text:last-child{
+  float: right;
+}
+.name{
+  margin-top: 11rpx;
+  height: 65rpx;
+  width: 750rpx;
+}
+.name text{
+   height: 65rpx;
+   line-height: 65rpx;
+   display: block;
+   float: left;
+   font-weight: bold;
+   color: #353535;
+   font-size: 36rpx;
+}
+.name text:first-child{
+  margin-left: 20rpx;
+}
+.name text:last-child{
+  margin-right: 20rpx;
+  float: right;
+}
+.addre{
+  height: 94rpx;
+  width: 710rpx;
+  padding:  0 20rpx;
+  line-height: 47rpx;
+  overflow: hidden;
+  font-family: "苹方";
+  font-size: 26rpx;
+  color: #999;
+}

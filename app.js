@@ -1,6 +1,7 @@
 //app.js
 App({
   globalData: {
-    userInfo: null
+    userInfo: null,
+    imgurl:'http://www.lianlianyp.com/'
   }
 })

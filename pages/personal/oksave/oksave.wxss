@@ -1,0 +1,135 @@
+/* pages/personal/oksave/oksave.wxss */
+.nav{
+  width: 750rpx;
+  height: 231rpx;
+  background: #fff;
+}
+.order_i{
+  width: 710rpx;
+  height: 135rpx;
+  padding: 0 20rpx;
+}
+.order_i .ormsg{
+  display: block;
+  float: left;
+  height: 135rpx;
+  line-height: 135rpx;
+  font-size: 34rpx;
+  color: #999;
+}
+.order_i view{
+  display: block;
+  float: right;
+  height: 95rpx;
+  margin: 20rpx 0;
+}
+.order_i view text{
+  text-align: right;
+  display: block;
+
+}
+.order_i view text:first-child{
+  height: 53rpx;
+  line-height: 53rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+.order_i view text:last-child{
+  height: 42rpx;
+  line-height: 42rpx;
+   font-size: 24rpx;
+  color: #999;
+}
+.or_jie{
+  height: 97rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.or_jie text{
+   text-align: center;
+  line-height: 97rpx;
+  display: block;
+}
+.or_jie text:first-child{
+  float: left;
+   font-size: 34rpx;
+  color: #999;
+}
+.or_jie text:last-child{
+  float: right;
+  color: #ff9b2c;
+  font-size: 34rpx;
+}
+.pay_fs{
+  display: block;
+  width: 710rpx;
+  height: 73rpx;
+  padding: 0 20rpx;
+  margin-top: 26rpx;
+  line-height: 73rpx;
+   font-size: 34rpx;
+  color: #999;
+}
+.fangshi{
+  width: 750rpx;
+  height: 285rpx;
+  background: #fff;
+}
+.fangshi view{
+  width: 750rpx;
+  height: 95rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.fangshi view image{
+  width: 44rpx;
+  height: 44rpx;
+  display: block;
+  float: left;
+  margin: 26rpx 0 26rpx 20rpx;
+}
+.fangshi view text{
+  height: 95rpx;
+  display: block;
+  line-height: 95rpx;
+  margin-left: 18rpx;
+  font-size: 34rpx;
+  color: #333;
+  float: left;
+}
+radio {
+  display: block;
+  float: right;
+    width: 32rpx;
+  height: 31rpx;
+  margin-right: 20rpx;
+}
+radio .wx-radio-input{
+  border-radius: 50%;/* 圆角 */
+  border: 1rpx solid #e8e8e8;
+  margin-top: 30rpx;
+}
+/* .active{
+   border: none;
+   background: #ff9b2c;
+} */
+
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+     width: 32rpx;
+  height: 31rpx;
+    border-radius: 50%;/* 圆角 */
+   background: red;
+}
+.oksave{
+  margin-top: 200rpx;
+  height: 96rpx;
+  display: block;
+  width:710rpx;
+  border-radius: 7rpx;
+  line-height: 96rpx;
+  text-align: center; 
+  font-size: 36rpx;
+  color: #fff;
+  background: #ff9b2c;
+}

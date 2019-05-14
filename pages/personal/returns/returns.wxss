@@ -1,0 +1,230 @@
+/* pages/personal/returns/returns.wxss */
+.content{
+  margin-top: 20rpx;
+  width: 710rpx;
+  height: auto;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+}
+.warp{
+  height: 266rpx;
+  background: #fff;
+}
+.tap{
+  height: 79rpx;
+  border-bottom:1rpx solid #e8e8e8;
+  width: 710rpx;
+}
+.tap text{
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+  height: 79rpx;
+  line-height: 79rpx;
+  font-size: 26rpx;
+  color: #333333;
+}
+.bot{
+  height: 169rpx;
+  margin-top: 18rpx;
+  width: 710rpx;
+}
+.bot image{
+  width: 170rpx;
+  height: 169rpx;
+  display: block;
+  float: left;
+  margin: 0 20rpx 0 7rpx;
+}
+.bot .right{
+  width: 500rpx;
+  height: 169rpx;
+  float: left;
+}
+.right .name{
+  height: 70rpx;
+  width: 500rpx;
+}
+.right .name text{
+  width: 400rpx;
+  float: left;
+  height: 70rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  color: #393939;
+  font-size: 24rpx;
+}
+.right .name text:last-child{
+  height: 35rpx;
+  line-height: 35rpx;
+  width: 75rpx;
+  color: #f7962e;
+  font-size: 26rpx;
+  float: right;
+}
+.right .int{
+  width: 500rpx;
+  height: 77rpx;
+}
+.right .int text{
+  line-height: 77rpx;
+  display: block;
+  height: 77rpx;
+  float: left;
+  margin-right: 20rpx;
+  color: #7a7a7a;
+  font-size: 22rpx;
+}
+.right .int text:first-child{
+  color: #fe592d;
+  font-size: 24rpx;
+}
+.sum{
+  width: 710rpx;
+  height: 143rpx;
+  background: #fff;
+padding-bottom: 20rpx;
+}
+.num{
+  height: 86rpx;
+  width: 710rpx;
+}
+.num text{
+  display: block;
+  float: right;
+  height: 86rpx;
+  line-height: 86rpx;
+  color: #565656;
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+.cancle{
+  width: 710rpx;
+  height: 58rpx;
+}
+.cancle text{
+  display: block;
+  float: right;
+  margin-right: 30rpx;
+  height: 54rpx;
+  width: 155rpx;
+  text-align: center;
+  line-height: 54rpx;
+  border-radius: 24rpx;
+  border: 1rpx solid #585858;
+  font-size: 26rpx;
+  color: #6e6e6e;
+}
+.cancle text:first-child{
+  border: none;
+  color: #fff;
+  background: #fe992d;
+}
+form{
+  padding-top: 20rpx;
+  width: 750rpx;
+  height: auto;
+  display: block;
+}
+.zhuangtai{
+  width: 710rpx;
+  margin: 0 20rpx;
+height: 110rpx;
+background: #fff;
+border-bottom: 1rpx solod #e8e8e8;
+}
+.zhuangtai .zt{
+  display: block;
+  float: left;
+  height: 110rpx;
+  margin-left: 34rpx;
+  margin-right: 50rpx;
+  font-size: 28rpx;
+  color: #4a4a4a;
+  line-height: 110rpx;
+}
+.radio{
+  float: left;
+  overflow: hidden;
+}
+.radio view{
+  display: block;
+  float: left;
+   margin-right: 65rpx;
+   height: 110rpx;
+}
+.radio view text{
+  height: 110rpx;
+  line-height: 110rpx;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+radio-group{
+  display: block;
+  float: left;
+}
+radio .wx-radio-input{
+    border-radius: 50%; 
+    width: 30rpx;
+    height: 30rpx;
+    
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;
+   width: 36rpx; 
+   height: 36rpx;
+   line-height: 36rpx;
+   text-align: center;
+   font-size:36rpx; 
+   color:#fff;
+   background: #fe992d;
+   border: 6rpx solid #fe992d;
+}
+.int{
+  width: 710rpx;
+  margin: 0 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  height: 110rpx;
+  background: #fff;
+}
+.int text{
+    display: block;
+  float: left;
+  height: 111rpx;
+  line-height: 111rpx;
+  margin-left: 20rpx;
+  margin-right: 50rpx;
+  color: #4a4a4a;
+  font-size: 28rpx;
+}
+.int text.jine{
+  color: #ff9520;
+}
+.int input{
+   float: left;
+  height: 111rpx;
+  line-height: 111rpx;
+  font-size: 24rpx;
+}
+.pal{
+   font-size: 24rpx;
+  color: #ababab;
+}
+.top{
+  margin-top: 20rpx;
+}
+button{
+    display: block;
+  margin-top: 67rpx;
+  width: 710rpx;
+  margin: 67rpx 20rpx;
+  height: 91rpx;
+  line-height: 91rpx;
+  background: #fe992d;
+  border-radius: 3rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  font-family: "苹方"；
+}

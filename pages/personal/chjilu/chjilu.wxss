@@ -1,0 +1,53 @@
+/* pages/personal/chjilu/chjilu.wxss */
+.chongzhi{
+  height: 114rpx;
+  width: 750rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.chongzhi image{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  float: left;
+  margin: 27rpx 20rpx;
+}
+.content{
+  width: 474rpx;
+  height: 114rpx;
+  float: left;
+}
+.top{
+  display: block;
+  margin-top: 25rpx;
+  height: 38rpx;
+  width: 474rpx;
+}
+.top text{
+  display: block;
+    height: 38rpx;
+  line-height: 38rpx;
+  color: #333;
+  float: left;
+}
+.top text:first-child{
+  font-size: 30rpx;
+}
+.top text:last-child{
+  font-size: 34rpx;
+  margin-left: 25rpx;
+}
+.date{
+  width: 474rpx;
+  display: block;
+  height: 31rpx;
+  line-height: 31rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.zt{
+  display: block;float: right;height: 114rpx;
+  line-height: 114rpx;
+  font-size: 30rpx;
+  color: #e44242;
+  margin-right: 20rpx;
+}

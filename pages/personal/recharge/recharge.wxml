@@ -1,0 +1,15 @@
+<!--pages/personal/recharge/recharge.wxml-->
+<view class='nav'>
+  <view class='head'>
+    <text class='pla'>请输入充值金额</text>
+    <view class='jine'>
+      <text>￥</text>
+      <input placeholder='填写金额' value='' placeholder-class='place' type="digit"/>
+    </view>
+  </view>
+  <view class='jilu' bindtap='chjilu'>
+      <image src='/images/jilu.png'></image>
+      <text>记录</text>
+  </view>
+</view>
+<text class='save' bindtap='save'>确认充值</text>

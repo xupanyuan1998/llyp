@@ -1,0 +1,114 @@
+/* pages/personal/login/login.wxss */
+page{
+  background: #fff;
+}
+.banner image{
+  width: 750rpx;
+  height: 441rpx;
+  display: block;
+}
+.banner{
+  width: 750rpx;
+  height: 441rpx;
+  position: relative;
+}
+.choose{
+  width: 563rpx;
+  height: 81rpx;
+  position: absolute;
+  left: 95rpx;
+ bottom: -41rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.choose text{
+  display: block;
+  float: left;
+  height: 81rpx;
+  line-height: 81rpx;
+  text-align: center; 
+  color: #808080;
+  font-family: "思源黑体";
+  font-size: 32rpx;
+  border-radius: 20rpx;
+  width: 281rpx;
+}
+.choose text.active{
+  color: #fff;
+ background: linear-gradient(to right, #e86235, #e8921c);
+}
+form{
+  padding: 94rpx 107rpx 0;
+  background: #fff;
+  height: 436rpx;
+  width: 530rpx;
+  display: block;
+}
+form view{
+  margin-top: 53rpx;
+  height: 88rpx;
+  width: 530rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+form view image{
+  display: block;
+  float: left;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 23rpx 40rpx 15rpx;
+}
+form view input{
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 300rpx;
+  font-size: 28rpx;
+  display: block;
+  float: left;
+}
+form view input.suo{
+  width: 400rpx;
+}
+form view.yanzhengma input{
+  width: 240rpx;
+}
+form view.yanzhengma text{
+  float: right;
+  width: 136rpx;
+  height: 55rpx;
+  display: block;
+  text-align: center;
+  line-height: 55rpx;
+  background: #e86832;
+  color: #fff;
+  font-size: 24rpx;
+}
+.pal{
+  color: #808080;
+}
+form button{
+  width: 530rpx;
+  height: 80rpx;
+  border-radius: 35rpx;
+  background: linear-gradient(to right,#e86832,#e8911d);
+  margin-top: 84rpx;
+  font-weight: bold;color: #fefefe;
+  font-size: 32rpx;
+}
+.password{
+   padding: 94rpx 107rpx;
+  background: #fff;
+  height: 103rpx;
+  width: 530rpx;
+}
+.password text{
+  display: block;
+  float: left;
+  height: 103rpx;
+  line-height: 103rpx;
+  color: #636363;
+  font-size: 26rpx;
+}
+.password text:last-child{
+  float: right;
+  color: #ffa32b;
+}

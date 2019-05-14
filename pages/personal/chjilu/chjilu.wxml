@@ -1,0 +1,12 @@
+<!--pages/personal/chjilu/chjilu.wxml-->
+<view class='chongzhi' bindtap='chint' wx:for="{{chjilu}}" wx:key="item">
+  <image src='{{item.src}}'></image>
+  <view class='content'>
+    <view class='top'>
+      <text>{{item.lei}}</text>
+      <text>￥{{item.jine}}</text>
+    </view>
+    <text class='date'>{{item.date}}</text>
+  </view>
+  <text class='zt'>{{item.zt}}</text>
+</view>

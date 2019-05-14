@@ -1,0 +1,124 @@
+/* pages/personal/chsave/chsave.wxss */
+.nav{
+  width: 750rpx;
+  height: 231rpx;
+  background: #fff;
+}
+.order_i{
+  width: 710rpx;
+  height: 135rpx;
+  padding: 0 20rpx;
+}
+.order_i .ormsg{
+  display: block;
+  float: left;
+  height: 135rpx;
+  line-height: 135rpx;
+  font-size: 34rpx;
+  color: #999;
+}
+.order_i view{
+  display: block;
+  float: right;
+  height: 95rpx;
+  margin: 20rpx 0;
+}
+.order_i view text{
+  text-align: right;
+  display: block;
+
+}
+.order_i view text:first-child{
+  height: 53rpx;
+  line-height: 53rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+.order_i view text:last-child{
+  height: 42rpx;
+  line-height: 42rpx;
+   font-size: 24rpx;
+  color: #999;
+}
+.or_jie{
+  height: 97rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.or_jie text{
+   text-align: center;
+  line-height: 97rpx;
+  display: block;
+}
+.or_jie text:first-child{
+  float: left;
+   font-size: 34rpx;
+  color: #999;
+}
+.or_jie text:last-child{
+  float: right;
+  color: #ff9b2c;
+  font-size: 34rpx;
+}
+.card_msg{
+  width: 750rpx;
+  height: 280rpx;
+  background: #fff;
+}
+.card_msg view{
+  width: 750rpx;
+  height: 92rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.card_msg view text{
+  display: block;
+  float: left;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+.card_msg view text:first-child{
+  width: 170rpx;
+  font-size: 34rpx;
+  color: #333;
+  margin-left: 20rpx;
+}
+.card_msg view text:last-child{
+  margin-right: 20rpx;
+  width: 540rpx;
+  font-size: 28rpx;
+  color: #535353;
+}
+.pingzheng{
+  height: 458rpx;
+  width: 388rpx;
+  border: 1rpx solid #e8e8e8;
+  margin: 38rpx 180rpx;
+  background: #fff;
+}
+.pingzheng image{
+  display: block;
+  width: 165rpx;
+  height: 165rpx;
+  margin: 118rpx 111rpx 29rpx 111rpx;
+}
+.pingzheng text{
+  height: 146rpx;
+  line-height: 146rpx;
+  text-align: center;
+  width: 388rpx;
+  font-size: 30rpx;
+  color: #9b9b9b;
+  display: block;
+}
+.save{
+  height: 96rpx;
+  display: block;
+  width:710rpx;
+  border-radius: 7rpx;
+  line-height: 96rpx;
+  text-align: center; 
+  font-size: 36rpx;
+  color: #fff;
+  background: #ff9b2c;
+}

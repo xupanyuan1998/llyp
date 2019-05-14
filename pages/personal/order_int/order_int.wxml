@@ -1,0 +1,81 @@
+<!--pages/personal/order_int/order_int.wxml-->
+<view class='nav'>
+  <view class='order'>
+    <text>订单信息</text>
+  </view>
+  <view class='zt'>
+    <view>
+      <text>订单状态</text>
+      <text>等待商家发货</text>
+    </view>
+    <view>
+      <text>订单编号</text>
+      <text>201582356525</text>
+    </view>
+    <view>
+      <text>下单时间</text>
+      <text>2019-5-12 18:40:40</text>
+    </view>
+  </view>
+</view>
+<view class='shop'>
+  <view class='top'>
+    <text>阿里健康大药房</text>
+    <image src='/images/int.png'></image>
+  </view>
+  <view class='int'>
+    <image src='/images/com_image.jpg' ></image>
+    <view>
+      <text>血糖测试仪家用测血糖的仪器试纸精准医用测量仪糖尿病全自动测糖</text>
+      <text>￥120</text>
+    </view>
+    <text class='la'>片试纸+50采血针+送50</text>
+  </view>
+  <view class='wuliu'>
+    <view>
+      <text>订单总价</text>
+      <text>￥0.01</text>
+    </view>
+    <view>
+      <text>运费(快递）</text>
+      <text>￥0.01</text>
+    </view>
+    <view>
+      <text>订单总价</text>
+      <text>￥0.01</text>
+    </view>
+  </view>
+  <view class='pay'>
+    <text>实付款</text>
+    <text>￥9.90</text>
+  </view>
+</view>
+<view class='Consignee'>
+  <view class='title'>
+    <text>收货人信息</text>
+  </view>
+   <view>
+    <text>收货人姓名</text>
+    <text>王大锤</text>
+  </view>
+   <view>
+    <text>联系电话</text>
+    <text>1352552555</text>
+  </view>
+  <view>
+    <text>收货地址</text>
+    <text class='dress'>河南省郑州市金水区郑州市金水区郑州市金水区</text>
+  </view>
+</view>
+<view class='logistics'>
+  <view class='wu'>
+    <text>物流信息</text>
+  </view>
+  <view class='content'>
+    <view class='log'>
+      <text></text>
+      <text></text>
+    </view>
+    <text class='right'>等待商家发货</text>
+  </view>
+</view>

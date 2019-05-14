@@ -1,30 +1,11 @@
 //index.js
+const app=getApp();
+const imgurl = app.globalData.imgurl;
 Page({
   data: {
     banner: ["/images/banner.jpg", "/images/banner.jpg"],
-    hot: [
-     "/images/1-1.png",
-      "/images/1-2.png",
-      "/images/1-3.png",
-      "/images/1-4.png",
-      "/images/1-5.png",
-      "/images/1-6.png",
-      "/images/1-7.png",
-      "/images/1-8.png",
-      "/images/1-9.png",
-      "/images/1-10.png"
-    ],
-    hot_1: [
-      "/images/1-11.png",
-      "/images/1-12.png",
-      "/images/1-13.png",
-      "/images/1-14.png",
-      "/images/1-15.png",
-      "/images/1-16.png",
-      "/images/1-17.png",
-      "/images/1-18.png",
-      "/images/1-19.png",
-      "/images/1-20.png"],
+    imgurls:' http://www.lianlianyp.com/',
+    hot: [],
     list:[
       {data:"0",src:"/images/like.png",big:"精选",small:"猜你喜欢"},
       { data: "1", src: "/images/dianpu.png", big: "好店", small: "精选好店" },
@@ -37,10 +18,8 @@ Page({
     _move_width:'',
     content:'',
     left:0,
-    commodity: [
-      { dis: '5.2折', int: '汤臣倍健  恩济堂多种维生素矿物质片1.5g/片 *60片', price: '￥89.00', buy: '购买', img_url:'/images/medical.jpg'},
-      { dis: '5.2折', int: '东阿阿胶　复方阿胶浆 (礼盒) 20ml*48支无糖型', price: '￥89.00', buy: '购买', img_url:'/images/commod.png' }
-    ]
+    commodity: [],
+    int:''
   },
   //商品列表选中状态
   clecked(e){
@@ -81,9 +60,40 @@ Page({
    })
  },
   //商品详情跳转
-  com_int(){
-    wx.navigateTo({
-      url: '/pages/int/int',
+  com_int(e){
+    var _this=this;
+    if (e.target.dataset.id==30){
+      wx.navigateTo({
+        url: '/pages/personal/shareshop/shareshop',
+      })
+    }else{
+      wx.request({
+        url: imgurl + '/index.php?s=/api/goods/detailGoods&id=' +e.currentTarget.dataset.int,
+        success(res) {
+          _this.setData({
+            int: res.data.data
+          });
+          console.log(_this.data.int)
+          wx.navigateTo({
+            url: '/pages/int/int?int=' + _this.data.int,
+          })
+        }
+      })
+    }
+  },
+  //分类
+  cate(){},
+  onLoad: function (options) {
+    var _this=this;
+    wx.request({
+      url: imgurl +'/index.php?s=/api/index/index',
+      success(res){
+        _this.setData({
+          banner: res.data.data.plat_adv_list.adv_list,
+          hot: res.data.data.group_list,
+          commodity: res.data.data.goods_recommend_list
+        })
+      }
     })
-  }
+  },
 })

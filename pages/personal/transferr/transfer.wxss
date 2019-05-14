@@ -1,0 +1,116 @@
+/* pages/personal/transferr/transfer.wxss */
+.head{
+  width: 750rpx;
+  height: 240rpx;
+  position: relative;
+}
+.head image{
+  width: 750rpx;
+  height: 240rpx;
+  position: relative;
+  z-index: 2;
+  top: 0
+}
+.yue{
+  margin: 59rpx 0 45rpx 0;
+  width: 750rpx;
+  height: 136rpx;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+}
+.yue text{
+  width: 750rpx;
+  display: block;
+  text-align: center;
+}
+.yue text:first-child{
+  height: 73rpx;
+  line-height: 73rpx;
+  font-family: "DIN";
+  font-size: 48rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.yue text:last-child{
+  color: #fff;
+  height: 63rpx;
+  line-height: 63rpx;
+  font-size: 26rpx;
+}
+.jilu{
+  width: 130rpx;
+  height: 47rpx;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  margin-right: 20rpx;
+}
+.jilu image{
+  width: 43rpx;
+  height: 47rpx;
+  display: block;
+  float: left;
+}
+.jilu text{
+  display: block;
+  float: left;
+  height: 47rpx;
+  line-height: 47rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+form.addcard{
+  width: 750rpx;
+  height: 600rpx;
+}
+.addcard view{
+  width: 750rpx;
+  height: 113rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  background: #fff;
+}
+.addcard view text{
+  text-align: justify;
+  display: block;
+  float: left;
+  width: 117rpx;
+  height: 113rpx;
+  line-height: 113rpx;
+  font-size: 34rpx;
+  color: #333;
+  margin-left: 20rpx;
+  margin-right: 50rpx;
+}
+
+.addcard view text:after{
+  width: 100%;
+  display: inline-block;
+  content: '';
+}
+.addcard view input{
+  float: left;
+  display: block;
+  line-height: 113rpx;
+  height: 113rpx;
+}
+.addcard view input.place{
+  color:#999;
+  font-size: 34rpx;
+  font-family: "苹方";
+}
+.addcard button{
+  display: block;
+  margin-top: 50rpx;
+  width: 710rpx;
+  height: 100rpx;
+  text-align: center;
+  background: #ff9b2c;
+  border-radius: 5rpx;
+  font-size: 36rpx;
+  color: #fff;
+   font-family: "苹方";
+   margin: 50rpx  20rpx;
+}

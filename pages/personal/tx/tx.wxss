@@ -1,0 +1,115 @@
+/* pages/personal/tx/tx.wxss */
+.jilu{
+  width: 130rpx;
+  height: 47rpx;
+ float: right;
+}
+.jilu image{
+  width: 43rpx;
+  height: 47rpx;
+  display: block;
+  float: left;
+}
+.jilu text{
+  display: block;
+  float: left;
+  height: 47rpx;
+  line-height: 47rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.nav{
+  width: 710rpx;
+  height: 47rpx;
+  background: #ff9b2c;
+  padding: 0 20rpx;
+}
+.head{
+   width: 750rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  background: #fff;
+}
+.head .icon{
+  width: 51rpx;
+  height: 50rpx;
+  float: left;
+  display: block;
+  margin: 25rpx 20rpx;
+}
+.head view{
+  float: left;
+  height: 100rpx;
+  width: 285rpx;
+}
+.head view text{
+  display: block;
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.head view text:last-child{
+  margin-left: 20rpx;
+  color: #999;
+}
+.head .next{
+  width: 16rpx;
+  height: 29rpx;
+  display: block;
+  float: right;
+  margin: 35rpx 20rpx 35rpx 0;
+}
+form{
+  margin-top: 20rpx;
+}
+form view{
+  height: 100rpx;
+  width: 750rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+form view text{
+  display: block;float: left;height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+  margin-right: 40rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+form view text.all{
+  display: block;
+  float: right;
+  width: 119rpx;
+  height: 53rpx;
+  text-align: center;
+  line-height: 53rpx;
+  margin: 24rpx 20rpx;
+  border: 1rpx solid #ff9b2c;
+  border-radius: 20rpx;
+  font-size: 26rpx;
+  color: #ff9b2c;
+}
+form view input{
+  height: 100rpx;
+  line-height: 100rpx;display: block;
+  float: left;width: 305rpx;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+}
+.palc{
+  color: #999;
+}
+form button{
+  margin: 64rpx 20rpx 0;
+  width: 710rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: #ff9b2c;
+  font-size: 32rpx;
+  color: #fff;
+  font-family: "苹方"；
+}

@@ -1,0 +1,50 @@
+/* pages/personal/txjilu/txjilu.wxss */
+.content{
+  width: 750rpx;
+  height: 120rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #fff;
+  padding-top: 14rpx;
+}
+.bank{
+  height: 59rpx;
+  width: 750rpx;
+}
+.bank text{
+  display: block;
+  float: left;
+  height: 59rpx;
+  line-height: 59rpx;
+}
+.bank text:first-child{
+  font-size: 30rpx;
+  color: #2e2e2e;
+  margin-left: 20rpx;
+}
+.bank text:last-child{
+    font-size: 34rpx;
+  color: #333;
+  margin-right: 20rpx;
+  float: right;
+}
+.date{
+  height: 46rpx;
+}
+.date text{
+    display: block;
+  float: left;
+  height: 46rpx;
+  line-height: 46rpx;
+}
+.date text:first-child{
+  font-size: 26rpx;
+  height: #999;
+    margin-left: 20rpx;
+}
+.date text:last-child{
+      font-size: 34rpx;
+  color: #e04949;
+  margin-right: 30rpx;
+  float: right;
+
+}

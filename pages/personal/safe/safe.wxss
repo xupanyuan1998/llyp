@@ -1,0 +1,28 @@
+/* pages/personal/safe/safe.wxss */
+.content{
+  width: 750rpx;
+  height: 110rpx;
+  border-bottom:1rpx solid #e8e8e8; 
+  background: #fff;
+}
+.suo{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  float: left;
+  margin: 25rpx 20rpx;
+}
+.content text{
+  display: block;
+  float: left;
+  margin-left: 5rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 36rpx;
+  color: #373737;
+}
+.int{
+  float: right;width: 16rpx;height: 25rpx;
+  display: block;
+  margin: 42rpx 20rpx 42rpx 0;
+}

@@ -1,0 +1,66 @@
+<!--pages/personal/returns/returns.wxml-->
+<view class='content'>
+  <view class='warp'>
+    <view class='tap'>
+      <text>衣服一副</text>
+    </view>
+    <view class='bot'>
+      <image src='/images/commod.png'></image>
+      <view class='right'>
+        <view class='name'>
+          <text>女装潮流衣服女装潮流衣服女装潮流衣服女装潮流衣服女装潮流</text>
+          <text>￥120</text>
+        </view>
+        <view class='int'>
+          <text>爆品区</text>
+          <text>尺码：L</text>
+          <text>颜色：黑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='sum'>
+    <view class='num'>
+       <text>合计：￥240</text>
+      <text>共计1件商品</text>
+    </view>
+  </view>
+</view>
+<form>
+  <view class='zhuangtai'>
+    <text class='zt'>商品状态</text>
+    <view class='radio'>
+      <radio-group  bindchange="radioChange">
+        <view>
+          <radio value="未到货" />
+          <text>未到货</text>
+        </view>
+        <view>
+          <radio value="已收货" checked="已收货"  />
+          <text>已收货</text>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+  <view class='int'>
+    <text>退款金额</text>
+    <text class='jine'>￥260</text>
+  </view>
+  <view class='int'>
+    <text>退款原因：</text>
+    <input placeholder='拍多了/不想要了/拍错了'  value='' placeholder-class='pal'/>
+  </view>
+  <view class='int top'>
+    <text>快递单号：</text>
+    <input  value=''  placeholder-class='pal'/>
+  </view>
+  <view class='int'>
+    <text>始发地：</text>
+    <input  value='' placeholder-class='pal'/>
+  </view>
+  <view class='int'>
+    <text>目的地：</text>
+    <input value='' placeholder-class='pal'/>
+  </view>
+  <button form-type='submit'>确认退款</button>
+</form>

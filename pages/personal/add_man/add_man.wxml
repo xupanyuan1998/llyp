@@ -1,0 +1,6 @@
+<!--pages/personal/add_man/add_man.wxml-->
+<view class='nav'>
+  <input />
+  <text>添加推荐人，获得更多粉丝红包</text>
+</view>
+<text class='save'>保存</text>

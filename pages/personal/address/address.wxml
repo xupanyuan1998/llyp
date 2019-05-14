@@ -1,0 +1,29 @@
+<!--pages/personal/address/address.wxml-->
+<view class='nav' bindtap='newaddress'>
+  <image class='add' src='/images/addres.png'></image>
+  <text>添加新地址</text>
+  <image class='next' src='/images/next_1.png'></image>
+</view>
+<radio-group class="radio-group" bindchange="radioChange">
+    <view class='content'>
+      <view class='top'>
+        <view class='left'>
+          <label class="radio">
+            <radio value="15255"/>
+          </label>
+          <text>默认地址</text>
+        </view>
+        <view class='right'>
+          <text>编辑</text>
+          <text>删除</text>
+        </view>
+      </view>
+      <view class='name'>
+        <text>王大锤</text>
+        <text>13545685525</text>
+      </view>
+      <view class='addre'>
+          河南省郑州市金水区河南省郑州市金水区河南省郑州市金水区河南省郑州市金水区河南省郑州市金水区
+      </view>
+    </view>
+</radio-group>

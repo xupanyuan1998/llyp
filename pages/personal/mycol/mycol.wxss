@@ -1,0 +1,125 @@
+/* pages/personal/mycol/mycol.wxss */
+.head{
+  height: 93rpx;
+  width: 750rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.head text{
+  width: 142rpx;
+  text-align: center;
+  display: block;
+  float: left;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #656565;
+}
+.head text:first-child{
+  margin-left: 117rpx;
+}
+.head text:last-child{
+  float: right;
+  margin-right: 117rpx;
+}
+.head text.active{
+  color: #ff9b2c;
+  border-bottom: 5rpx solid #ff9b2c;
+}
+.contents{
+   margin-top: 20rpx;
+  width: 750rpx;
+}
+.warp{
+ width: 750rpx;
+  height: 211rpx;
+  background: #fff;
+  border-bottom: 1rpx solod #e8e8e8;
+}
+.warp image{
+  width: 170rpx;
+  height: 170rpx;
+  display: block;
+  float: left;
+  margin: 20rpx 26rpx 20rpx;
+}
+.content{
+  width: 510rpx;
+  float: left;
+  height: 211rpx;
+}
+.content .int{
+  display: block;height: 74rpx;width: 510rpx;
+  overflow: hidden;
+  line-height: 37rpx;
+  font-size: 24rpx;
+  font-family: "微软雅黑";
+  color: #393939;
+  margin-top: 13rpx;
+} 
+.content .man{
+  display: block;
+  height: 47rpx;
+  line-height: 47rpx;
+   font-size: 22rpx;
+  font-family: "微软雅黑";
+  color: #7a7a7a;
+}
+.content view{
+  width: 510rpx;
+  height: 59rpx;
+}
+.content view text{
+  display: block;
+  float: left;
+  height: 59rpx;
+  line-height: 59rpx;
+}
+.content view text:first-child{
+  color: #f9972f;
+   font-size: 28rpx;
+  font-family: "微软雅黑";
+}
+.content view text:last-child{
+  float: right;
+  width: 147rpx;
+  text-align: center;
+  background: #ff9b2c;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 4rpx;
+}
+.dian{
+  width: 750rpx;
+  height: 115rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.dian image{
+  width: 69rpx;
+  height: 69rpx;
+  display: block;
+  float: left;
+  margin: 25rpx 28rpx 20rpx 20rpx;
+}
+.dian text{
+  width: 384rpx;
+  height: 115rpx;
+  overflow: hidden;
+  line-height: 115rpx;
+  font-size: 36rpx;
+  color: #212121;
+  float: left;
+}
+.dian view{
+  float: right;
+  width: 149rpx;
+  height: 58rpx;
+  background: #f4892a;
+  border-radius: 3rpx;
+  margin: 27rpx 20rpx;
+    font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 58rpx;
+}

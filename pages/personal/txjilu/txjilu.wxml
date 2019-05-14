@@ -1,0 +1,11 @@
+<!--pages/personal/txjilu/txjilu.wxml-->
+<view class='content'>
+  <view class='bank'>
+    <text>提现-工商银行</text>
+    <text>￥260.00</text>
+  </view>
+  <view class='date'>
+    <text>12-28 16:32</text>
+    <text>处理中</text>
+  </view>
+</view>

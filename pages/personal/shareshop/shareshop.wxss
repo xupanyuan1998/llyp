@@ -1,0 +1,45 @@
+/* pages/personal/shareshop/shareshop.wxss */
+swiper{
+  width: 710rpx;
+  height: 966rpx;
+  padding: 0 20rpx;
+    margin-top: 36rpx;
+}
+image{
+  width: 710rpx;
+  height: 966rpx;
+}
+.share{
+  width: 710rpx;
+  height: 72rpx;
+  padding: 27rpx 20rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}
+.share text{
+  display: block;
+  float: left;
+  line-height: 72rpx;
+  font-size: 26rpx;
+  height: 72rpx;
+  width: 130rpx;
+  text-align: center;
+  margin-right: 10rpx;
+  background: #ff9b2c;
+  color: #fff;
+  border-radius: 5rpx;
+}
+.share text:first-child{
+  line-height: 36rpx;
+  width: 420rpx;
+  background: #fff;
+  text-align: left;
+  font-size: 27rpx;
+  color: #575757;
+}
+.share text:last-child{
+  margin-right: 0rpx;
+  background: #4478e3;
+}

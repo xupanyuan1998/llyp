@@ -1,0 +1,17 @@
+<!--pages/personal/shareshop/shareshop.wxml-->
+<swiper
+  indicator-dots="true"
+  indicator-color='raga(208,208,208,.5)'
+  indicator-active-color='#ed4747'
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}"  />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='share'>
+  <text>http://m.lianlianyp.com/#/login?isShow=2&p_phone=13193628981</text>
+  <text>复制</text>
+  <text>保存图片</text>
+</view>

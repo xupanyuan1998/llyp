@@ -1,0 +1,62 @@
+<!--pages/conpay/conpay.wxml-->
+<!-- 顶部 -->
+<view class='nav'>
+  ￥500:00
+</view>
+<!-- 金额详情 -->
+<view class='order_int'>
+  <view>
+    <text>订单金额</text>
+    <text>￥50:00</text>
+  </view>
+  <view>
+    <text>服务费</text>
+    <text>￥0.38</text>
+  </view>
+</view>
+<text class='choose'>请选择支付方式</text>
+<view class='way'>
+  <view>
+    <image class='icon' src='/images/yuepay.png'></image>
+    <text>余额支付</text>
+    <image class='active' src='/images/xiaoquan.png'></image>
+  </view>
+  <view>
+    <image class='icon yilian' src='/images/yinlianpay.png'></image>
+    <text>银行卡支付</text>
+    <image class='active' src='/images/active_xiaoquan.png'></image>
+  </view>
+  <view>
+    <image class='icon wechat' src='/images/wechatpay.png'></image>
+    <text>微信支付</text>
+    <image class='active' src='/images/xiaoquan.png'></image>
+  </view>
+  <view>
+    <image class='icon zhifubao' src='/images/zhifubaopay.png'></image>
+    <text>支付宝支付</text>
+    <image class='active' src='/images/xiaoquan.png'></image>
+  </view>
+</view>
+<text class='okpay' bindtap='ordersuc'>确认支付</text>
+<!-- 输入密码-->
+<view class='password_b' style='display:{{show}}'>
+  <view class='pass_yue'>
+    <view class='pa_head'>
+      <text>当前账户余额</text>
+      <text>￥3222：00</text>
+    </view>
+    <view class='pas_pay'>
+      <text>￥5:00</text>
+      <text>需支付金额</text>
+    </view>
+    <view class='warp'>
+      <view class="pass_input" wx:for="{{6}}" wx:key="{{index}}">
+				<input data-index="{{index}}" bindinput="allInputBtn" type="number" confirm-hold="true" value="{{inputArr[index]}}" disabled="true" maxlength="1" password="{{true}}"/>
+		  </view>
+    </view>
+    <view class='cancles'>
+      <text bindtap='hidden'>取消</text>
+      <text bindtap='ok'>确认</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+/* pages/personal/add_man/add_man.wxss */
+.nav{
+  width: 710rpx;
+  height: 173rpx;
+  padding: 20rpx;
+}
+.nav input{
+  width: 670rppx;
+  padding: 10rpx 20rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 34rpx;
+  color: #333;
+  border-radius: 8rpx;
+  border: 1rpx solid #e8e8e8;
+  background: #fff;
+}
+.nav text{
+  height: 76rpx;
+  line-height: 76rpx;
+  width: 680rpx;
+  padding:  0 15rpx;
+  display: block;
+  font-size: 30rpx;
+  color: #999;
+}
+.save{
+  display: block;
+  width: 710rpx;
+  margin:  0 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+  background: #ff9b2c;
+  border-radius: 3rpx;
+}

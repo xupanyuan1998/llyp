@@ -1,0 +1,179 @@
+/* pages/personal/caiwu/caiwu.wxss */
+/* 头部 */
+.head{
+  width: 750rpx;
+  height: 201rpx;
+  position: relative;
+}
+.head .warp{
+  width: 750rpx;
+  height: 201rpx;
+  position: absolute;
+  z-index: 3;
+  top:0;
+}
+.warp view{
+  height: 117rpx;
+  width: 245rpx;
+  float: left;
+  margin: 38rpx 0 46rpx 118rpx;
+}
+.warp view:last-child{
+  margin-left: 98rpx;
+  margin-right: 20rpx;
+}
+.warp view text{
+  display: block;
+  color: #fff;
+}
+.warp view text:first-child{
+  height: 61rpx;
+  line-height: 61rpx;
+  font-family: "Verdana";
+  font-size: 40rpx;
+}
+.warp view text:last-child{
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 26rpx;
+  width: 230rpx;
+  padding-left:15rpx; 
+}
+.head image{
+  width: 750rpx;
+  height: 201rpx;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.shouyi{
+  width: 690rpx;
+  height: 80rpx;
+  padding: 30rpx;
+  background: #fff;
+}
+.shouyi view{
+  width: 210rpx;
+  height: 80rpx;
+  background: #f9893e;
+  border-radius: 30rpx;
+  margin-right: 30rpx;
+  float: left;
+}
+.shouyi view.chong{
+  background: #627fec;
+}
+.shouyi view.chong image{
+  width: 34rpx;
+}
+.shouyi view.tx{
+  background: e95e4f;
+}
+.shouyi view.tx{
+  margin-right: 0;
+  background: #e95e4f;
+}
+.shouyi view.tx image{
+  width: 35rpx;
+}
+.shouyi view image{
+  width: 36rpx;
+  height: 36rpx;
+  display: block;
+  float: left;
+  margin: 20rpx 14rpx 20rpx 50rpx;
+}
+.shouyi view text{
+  line-height: 80rpx;
+  display: block;
+  float: left;
+  font-size: 30rpx;
+  color: #fff;
+}
+.card{
+  margin: 28rpx 30rpx 60rpx 30rpx;
+  width: 690rpx;
+  height: 270rpx;
+  background: #f1834d;
+  border-radius: 7rpx;
+}
+.card .bank{
+  width: 642rpx;
+  height: 94rpx;
+ margin: 0 24rpx;
+  border-bottom: 1rpx solid #f5a67f;
+}
+.card .bank text{
+  display: block;
+  float: left;
+  height: 94rpx;
+  line-height: 94rpx;
+  font-family: "微软雅黑";
+  color: #fffefe;
+
+}
+.card .bank text:first-child{
+  font-size: 30rpx;
+}
+.card .bank text:last-child{
+  float: right;
+  font-size: 26rpx;
+}
+.card .card_num{
+  width: 642rpx;
+  height: 66rpx;
+  padding: 0 24rpx;
+  margin-top: 20rpx;
+}
+.card_num text{
+  display: block;
+  float: left;
+  line-height: 66rpx;
+  height: 66rpx;
+  width: 86rpx;
+  margin-right: 30rpx;
+    font-family: "微软雅黑";
+  color: #fffefe;
+  font-size: 30rpx;
+}
+.card_name{
+    width: 642rpx;
+  height: 66rpx;
+  padding: 0 24rpx;
+}
+.card_name text{
+  display: block;
+  float: left;
+  margin-right: 36rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+   font-family: "微软雅黑";
+  color: #fffefe;
+  font-size: 26rpx;
+
+}
+.card_name text:last-child{
+  width: 96rpx;
+  height: 50rpx;
+  margin: 7rpx 3rpx;
+  float: right;
+  border-radius: 3rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background: #f6ab86;
+  color: #fff;
+  font-size: 24rpx;
+}
+.add_card{
+  width: 690rpx;
+  height: 89rpx;
+  display: block;
+  line-height: 89rpx;
+  text-align: center;
+  font-weight: bold;
+  color: #797979;
+  background: #fff;
+  margin: 0 30rpx;
+}

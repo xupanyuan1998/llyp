@@ -1,0 +1,10 @@
+<!--pages/personal/zhuanrecord/zhuanrecord.wxml-->
+<view class='jilu' bindtap='xiangxi' wx:for="{{xiangxi}}" wx:key="item">
+  <view class='user'>
+    <text>转账-{{item.zhanghu}}</text>
+    <text>{{item.date}}</text>
+  </view>
+  <view class='jine'>
+    ￥{{item.jine}}
+  </view>
+</view>

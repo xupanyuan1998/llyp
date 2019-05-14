@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/msg/msg",
+    "pages/my/my",
+    "pages/shoping/shoping",
+    "pages/businessshop/businessshop",
+    "pages/int/int",
+    "pages/notice/notice",
+    "pages/notice_int/notice_int",
+    "pages/chat/chat",
+    "pages/order/order",
+    "pages/conpay/conpay",
+    "pages/ordersuc/ordersuc",
+    "pages/personal/personmsg/personmsg",
+    "pages/personal/add_man/add_man",
+    "pages/personal/caiwu/caiwu",
+    "pages/personal/addcard/addcard",
+    "pages/personal/transferr/transfer",
+    "pages/personal/recharge/recharge",
+    "pages/personal/zhuanrecord/zhuanrecord",
+    "pages/personal/zhuanint/zhuanint",
+    "pages/personal/oksave/oksave",
+    "pages/personal/chsave/chsave",
+    "pages/personal/chjilu/chjilu",
+    "pages/personal/chint/chint",
+    "pages/personal/safe/safe",
+    "pages/personal/changepass/changepass",
+    "pages/personal/tx/tx",
+    "pages/personal/txjilu/txjilu",
+    "pages/personal/mycol/mycol",
+    "pages/personal/address/address",
+    "pages/personal/newaddress/newaddress",
+    "pages/personal/club/club",
+    "pages/personal/jifen/jifen",
+    "pages/personal/shareshop/shareshop",
+    "pages/personal/order_all/order_all",
+    "pages/personal/outm/outm",
+    "pages/personal/returns/returns",
+    "pages/personal/wuliu/wuliu"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff9b2c",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#6c6c6c",
+    "selectedColor": "#f89b16",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "/images/tit_01.png",
+      "selectedIconPath": "/images/tit_01_fill.png",
+      "text":"首页"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "iconPath": "/images/tit_02.png",
+      "selectedIconPath": "/images/tit_02_fill.png",
+      "text": "分类"
+    },
+    {
+      "pagePath": "pages/msg/msg",
+      "iconPath": "/images/tit_03.png",
+      "selectedIconPath": "/images/tit_03_fill.png",
+      "text": "消息"
+    },
+    {
+      "pagePath": "pages/shoping/shoping",
+      "iconPath": "/images/tit_04.png",
+      "selectedIconPath": "/images/tit_04_fill.png",
+      "text": "购物车"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "iconPath": "/images/tit_05.png",
+      "selectedIconPath": "/images/tit_05_fill.png",
+      "text": "我的"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

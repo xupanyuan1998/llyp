@@ -1,0 +1,79 @@
+<!--pages/personal/club/club.wxml-->
+<view class='nav_bg'>
+  <image class='club_bg' src='/images/club_bg.png'></image>
+  <view class='nav'>
+    <view class='top'>
+      <view class='left'>
+        <view class='tu'>
+          <view class='lv'>
+            <image src='/images/6.png'></image>
+            <text>LV3</text>
+          </view>
+          <text class='boss'>社长</text>
+        </view>
+        <text class='man'>当前社区人数：30</text>
+      </view>
+      <view class='right'>
+        <text>社区总收益</text>
+        <text>1200</text>
+      </view>
+    </view>
+    <view class='slider'>
+      <view class='left_s active_s'>
+        <view >
+          <text></text>
+        </view>
+         <text class='renshu'>lv3社长(30人)</text>
+      </view>
+      <view class='left_s'>
+        <view>
+          <text></text>
+        </view>
+        <text class='renshu'>lv4代理(100人)</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='my'>
+  <text class='active_m'>我的人数</text>
+  <text>我的收益</text>
+</view>
+<view class='msg'>
+  <view class='child'>
+    <text>昵称</text>
+    <text>时间</text>
+  </view>
+  <view class='name'>
+   <view>
+     <image src='/images/zuanshi.jpg'></image>
+     <text>1553566663</text>
+   </view>
+    <text class='date'>2018/01/05/ 19:56</text>
+  </view>
+</view>
+<view class='shouyi'>
+  <view class='s_content'>
+    <view class='s_head'>
+      <text>1655363</text>
+      <text>购买了商品</text>
+      <text>2018/12/14</text>
+    </view>
+    <view class='int'>
+      <image src='/images/ladies.jpg'></image>
+      <view class='bot'>
+        <view class='bot_t'>
+          <text>胎心监测仪孕妇家用多普勒</text>
+          <text>收益</text>
+        </view>
+        <view class='bot_b'>
+          <view class='bot_l'>
+            <text>数量：1</text>
+            <text>金额：120.50</text>
+          </view>
+          <text class='bot_r'>预估收益:￥12.90</text>
+          <!-- <text>￥12.90</text> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

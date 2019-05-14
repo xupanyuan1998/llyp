@@ -1,0 +1,220 @@
+/* pages/conpay/conpay.wxss */
+/* nav */
+.nav{
+  width: 750rpx;
+  height: 248rpx;
+  font-size: 60rpx;
+  font-family: 'DIN';
+  color: #333;
+  line-height: 248rpx;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 18rpx;
+}
+/* 金额详情 */
+.order_int{
+  width: 750rpx;
+  height: 193rpx;
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+.order_int view{
+  height: 96rpx;
+  width: 750rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.order_int view:last-child{
+  border-bottom: none;
+}
+.order_int view text{
+  height: 96rpx;
+  line-height: 96rpx;
+  display: block;
+  float: left;
+  font-size: 34rpx;
+}
+.order_int view text:first-child{
+  color: #999;
+  margin-left: 20rpx;
+
+}
+.order_int view text:last-child{
+  float: right;
+  color: #333;
+  margin-right: 20rpx;
+}
+.choose{
+  display: block;
+  width: 710rpx;
+  height: 69rpx;
+  padding: 0 20rpx;
+  font-size: 34rpx;
+  color: #999;
+  line-height: 69rpx;
+}
+.way{
+  height: 382rpx;
+  width: 750rpx;
+  background: #fff;
+  margin-bottom: 107rpx;
+}
+.way view{
+  width: 750rpx;
+  height: 94rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.way view .icon{
+  width: 48rpx;
+  height: 38rpx;
+  display: block;
+  float: left;
+  margin-right: 28rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+.way view .yilian{
+  width: 40rpx;
+  height: 28rpx;
+  margin-top: 35rpx;
+}
+.way view .wechat{
+    width: 40rpx;
+  height: 32rpx;
+  margin-top: 32rpx;
+}
+.way view .zhifubao{
+    width: 40rpx;
+  height: 40rpx;
+  margin-top: 29rpx;
+}
+.way view text{
+  display: block;
+  float: left;
+  line-height: 94rpx;
+  height: 94rpx;
+}
+.way view .active{
+  display: block;
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 35rpx;
+  margin-right: 20rpx;
+}
+.okpay{
+  display: block;
+  width: 710rpx;
+  margin-left: 20rpx;
+  height: 100rpx;
+  line-height:100rpx;
+  background: #ff9b2c;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+  border-radius: 7rpx;
+}
+/* 支付 */
+.password_b{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 1000;
+  top:0;
+}
+.pass_yue{
+  width: 646rpx;
+  height: 566rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.pa_head{
+  width: 646rpx;
+  height: 132rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.pa_head text{
+  display: block;
+  float: left;
+  height: 132rpx;
+  line-height: 132rpx;
+  color: #303030;
+  font-size: 30rpx;
+}
+.pa_head text:first-child{
+  margin-left: 36rpx;
+}
+.pa_head text:last-child{
+  margin-right: 40rpx;
+  float: right;
+}
+.pas_pay{
+  height: 108rpx;
+  width: 646rpx;
+  margin-top: 41rpx;
+}
+.pas_pay text{
+  display: block;
+  width: 646rpx;
+  text-align: center;
+} 
+.pas_pay text:first-child{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #ff9b2c;
+}
+.pas_pay text:last-child{
+  font-size: 28rpx;
+  color: #bababa;
+  height: 48rpx;
+  line-height: 48rpx;
+}
+.pass_input{
+  width: 89rpx;
+  height: 92rpx;
+  border-right:1rpx solid #dadada; 
+  float: left;
+}
+.warp view:last-child{
+  border-right: none;
+}
+.warp{
+  width: 546rpx;
+  height: 92rpx;
+  margin: 28rpx auto;
+  border: 1rpx solid #dadada;
+}
+.pass_input input{
+  width: 90rpx;
+  height: 92rpx;
+  display: block;
+}
+.cancles{
+  margin-left: 50rpx;
+  width: 546rpx;
+  height: 86rpx;
+}
+.cancles text{
+  width: 246rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  border-radius: 7rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: #ff9b2c;
+  display: block;
+  float: left;
+}
+.cancles text:first-child{
+  background: #c6c4c1;
+}
+.cancles text:last-child{
+  float: right;
+}

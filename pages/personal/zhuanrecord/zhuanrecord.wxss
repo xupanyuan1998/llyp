@@ -1,0 +1,40 @@
+/* pages/personal/zhuanrecord/zhuanrecord.wxss */
+.jilu{
+  width: 750rpx;
+  height: 100rpx;
+  margin: 15rpx 0;
+  background: #fff;
+}
+.user{
+  width: 330rpx;
+  display: block;
+  float: left;
+  height: 100rpx;
+  margin-left: 30rpx;
+}
+.user text{
+  width: 330rpx;
+  display: block;
+}
+.user text:first-child{
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 30rpx;
+  color: #2e2e2e;
+}
+.user text:last-child{
+  height: 43rpx;
+  line-height: 43rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.jilu .jine{
+  float: right;
+  margin-right: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-family: "DIN";
+  font-weight: bold;
+  font-size: 34rpx;
+  color: #333;
+}

@@ -1,0 +1,52 @@
+/* pages/personal/zhuanint/zhuanint.wxss */
+.nav {
+  width: 690rpx;
+  height: 152rpx;
+  padding: 80rpx 30rpx;
+}
+.nav text{
+  display: block;
+  text-align: center;
+  width: 690rpx;
+}
+.nav text:first-child{
+  height: 85rpx;
+  line-height: 85rpx;
+  font-size: 60rpx;
+  font-family: "DIN";
+  font-weight: bold;
+  color: #333;
+}
+.nav text:last-child{
+  height: 67rpx;
+  line-height: 67rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+.content{
+  width: 750rpx;
+  height: 84rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  background: #fff;
+  
+}
+.num{
+ border-top: 1rpx solid #e8e8e8;
+ margin-bottom: 20rpx;
+}
+.content text{
+  display: block;
+  float: left;
+   height: 84rpx;
+  line-height: 84rpx;
+    font-size: 30rpx;
+}
+.content text:first-child{
+  color: #999;
+  margin-left: 30rpx;
+}
+.content text:last-child{
+  float: right;
+  color: #333;
+  margin-right: 30rpx;
+}

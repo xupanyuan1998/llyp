@@ -1,0 +1,21 @@
+<!--pages/ordersuc/ordersuc.wxml-->
+<!-- success -->
+<view class='pay_success'>
+  <view class='pay_img'>
+    <image wx:if="{{file=='true'}}" src='/images/pay_fail.png' class='file'></image>
+    <image wx:if="{{file=='false'}}" src='/images/pay_success.png'></image>
+  </view>
+  <text>{{file=='true'?'支付失败，请重新支付':'支付成功'}}</text>
+  <text wx:if="{{file=='false'}}" class='income'>预估本订单赠送30积分，在你确认收货7天后获得。</text>
+</view>
+<view class='songhuo'>
+  <view class='peisong'>
+    <text>{{file=='true'?'订单信息':'送货信息'}}</text>
+    <text>{{file=='true'?'该订单会为您保留24小时(从下单值日算起)，24小时之后如果还未付款，系统将自动取消该订单。':'我们将尽快安排发货，请卖家保持手机通讯畅通，以便快递哥哥能第一时间联系到您。'}}</text>
+  </view>
+  <view class='next'>
+    <text wx:if="{{file=='true'}}">重新支付</text>
+    <text wx:else>继续购物</text>
+    <text>查看订单</text>
+  </view>
+</view>

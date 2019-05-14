@@ -1,0 +1,136 @@
+/* pages/personal/personmsg/personmsg.wxss */
+.head{
+  width: 750rpx;
+  height: 227rpx;
+  background: #fff;
+}
+.content{
+  width: 750rpx;
+  height: 111rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.content text{
+  line-height: 111rpx;
+  height: 111rpx;
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+  color: #333;
+  font-size: 34rpx;
+}
+.content text.name{
+  float: right;
+  display: block;
+  height: 111rpx;
+  line-height: 111rpx;
+  font-size: 34rpx;
+  color: #999;
+  margin-right: 20rpx;
+}
+.content view{
+  width: 140rpx;
+  float: right;
+  height: 111rpx;
+}
+.content view image:first-child{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  float: left;
+  margin: 16rpx 0;
+  border-radius: 50%;
+}
+.content  image.next{
+  display: block;
+  float: right;
+  width: 16rpx;
+  height: 30rpx;
+  margin: 38rpx 20rpx 38rpx 20rpx;
+}
+
+.ziliao{
+  margin: 20rpx 0;
+}
+.man{
+  margin-bottom: 20rpx;
+}
+.out{
+  display: block;
+  width: 750rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #db4d4d;
+  font-size: 34rpx;
+  background: #fff;
+}
+/* 更换图像 */
+.changeimg_b{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+.changeimg{
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  height: 296rpx;
+  width: 750rpx;
+  background: #f2f2f2;
+}
+.changeimg text{
+  display: block;
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 34rpx;
+  color: #333;
+  text-align: center;
+  background: #fff;
+}
+.changeimg text:first-child{
+  border-bottom: 1rpx soli #e8e8e8;
+}
+.changeimg text:last-child{
+  margin-top: 12rpx;
+}
+/* shengri */
+.birth{
+  position: absolute;
+  bottom: 0;
+  width: 710rpx;
+  padding: 0 20rpx;
+  height: 395rpx;
+  background: #fff;
+}
+.choss_bir{
+  width: 710rpx;
+  height: 95rpx;
+}
+.choss_bir text{
+  line-height: 95rpx;
+  display: block;
+  float: left;
+  height: 95rpx;
+  font-size: 34rpx;
+  color: #0078ff;
+}
+.choss_bir text:last-child{
+  float: right;
+}
+picker-view{
+  height: 300rpx;
+}
+picker-view-column view{
+  width: 236rpx;
+}
+camera{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}

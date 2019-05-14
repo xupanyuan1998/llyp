@@ -1,0 +1,209 @@
+/* pages/personal/pingjia/pingjia.wxss */
+
+.nav {
+  margin-top: 19rpx;
+  width: 750rpx;
+  height: 112rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.nav .int {
+  width: 72rpx;
+  height: 68rpx;
+  display: block;
+  float: left;
+  margin: 22rpx 34rpx 22rpx 20rpx;
+}
+
+.nav view, .wuliu view {
+  width: 620rpx;
+  overflow: hidden;
+}
+
+.nav view image, .wuliu view image {
+  display: block;
+  float: left;
+  margin-right: 40rpx;
+  width: 42rpx;
+  height: 40rpx;
+  margin: 36rpx 40rpx 36rpx 0;
+}
+
+.content {
+  width: 710rpx;
+  background: #fff;
+  height: auto;
+  padding: 26rpx 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.content textarea {
+  width: 710rpx;
+  min-height: 50rpx;
+  font-size: 30rpx;
+  line-height: 38rpx;
+}
+
+.add_c {
+  width: 710rpx;
+  overflow: hidden;
+  margin-bottom: 19rpx;
+}
+
+.content .tu {
+  width: 171rpx;
+  height: 171rpx;
+  margin-right: 22rpx;
+  position: relative;
+  border: 1rpx solid #999;
+  margin-bottom: 20rpx;
+  float: left;
+}
+
+.tu image:first-child {
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.tu image.close {
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.add {
+  width: 167rpx;
+  height: 167rpx;
+  border: 2rpx dashed #999;
+  background: #fff;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add image {
+  width: 94rpx;
+  height: 80rpx;
+}
+.pinglun{
+  width: 750rpx;
+  height: 112rpx;
+  background: #fff;
+}
+.pinglun view {
+  float: left;
+  width: 160rpx;
+  height: 112rpx;
+}
+.pinglun view.quan{
+  float: left;
+  width: 47rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  border: 1rpx solid #e8e8e8;
+  margin:30rpx  20rpx;
+}
+.pinglun view.ni text {
+  float: left;
+  display: block;
+  height: 112rpx;
+  line-height: 112rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.pinglun text.show {
+  float: right;
+  height: 112rpx;line-height: 112rpx;
+  display: block;
+  font-size: 30rpx;
+  color: #ccc;
+  margin-right: 20rpx;
+}
+
+.wuliu {
+  width: 710rpx;
+  padding:  0 20rpx;
+  height: 112rpx;
+  background: #fff;
+}
+
+.wuliu text {
+  display: block;
+  float: left;
+  height: 112rpx;
+  line-height: 112rpx;
+  font-size: 30rpx;
+  color: #333;
+  margin-right: 40rpx;
+}
+.wuliu view{
+  width: 500rpx;
+}
+.save{
+  display: block;
+  width: 710rpx;
+  height: 92rpx;
+  border-radius: 5rpx;
+  background: #fe992d;
+  color: #fff;
+  font-size: 30rpx;
+  margin: 52rpx 20rpx;
+  text-align: center;
+  line-height: 92rpx;
+}
+/* 提示 */
+.palce{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+
+}
+.pal{
+  width: 550rpx;
+  height: 280rpx;
+  background: #fff;
+  border-radius: 5rpx;
+  padding: 35rpx 50rpx;
+}
+.pal text{
+  display: block;
+}
+.pal text.title{
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 48rpx;
+  color: #000;
+}
+.pal text.p_c{
+   height: 62rpx;
+  line-height: 62rpx;
+  font-size: 36rpx;
+  color: #000;
+}
+.pal view{
+  width: 550rpx;
+  height: 65rpx;
+  margin-top: 80rpx;
+}
+.pal view text{
+  float: left;
+  height: 65rpx;
+  line-height: 65rpx;
+  display: block;
+  font-size: 36rpx;
+  color: #008f80;
+}
+.pal view text:last-child{
+  float: right;
+}

@@ -1,0 +1,27 @@
+<!--pages/personal/oksave/oksave.wxml-->
+<view class='nav'>
+  <view class='order_i'>
+    <text class='ormsg'>订单信息</text>
+    <view>
+      <text >账户充值</text>
+      <text>20152525325525225223</text>
+    </view>
+  </view>
+  <view class='or_jie'>
+    <text>订单金额</text>
+    <text>￥50</text>
+  </view>
+</view>
+<text class='pay_fs'>充值方式</text>
+<view class='fangshi'>
+  <radio-group class="radio-group" bindchange="radioChange">
+   <view wx:for="{{pay}}" wx:key="item">
+        <image src='{{item.src}}'></image>
+        <text>{{item.name}}</text>
+        <label class="radio" >
+           <radio value="{{item.name}}" checked="{{item.checked}}" />
+        </label>
+    </view>
+  </radio-group>
+</view>
+<text class='oksave' bindtap='oksave'>确认充值</text>

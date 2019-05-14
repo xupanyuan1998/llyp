@@ -71,10 +71,10 @@ scroll-view{
   white-space:nowrap;
 }
 scroll-view .scroll_c{
-  width: 1470rpx;
-  height: 328rpx;
+  height:308rpx;
   overflow: hidden;
-  padding: 0 30rpx;
+  width: 1420rpx;
+  padding: 18rpx 20rpx;
 }
 .scroll_c view:first-child{
   padding-right: 20rpx;
@@ -82,12 +82,7 @@ scroll-view .scroll_c{
 .scroll_c view:last-child{
   padding-left: 20rpx;
 }
-.hot{
- float: left;
- width: 690rpx;
- height: 328rpx;
- margin-bottom: 20rpx;
-}
+
 .active{
   display: block;
 }
@@ -97,6 +92,27 @@ scroll-view .scroll_c{
   height: 138rpx;
   margin-top:20rpx;
   float: left;
+}
+.scroll_c view{
+  width: 106rpx;
+  height: 123rpx;
+  margin-right: 35rpx;
+  margin-top: 18rpx;
+  float: left;
+}
+.scroll_c view image{
+  width: 75rpx;
+  height: 76rpx;
+  margin: 0 15rpx;
+}
+.scroll_c view text{
+  display: block;
+  width: 106rpx;
+  height: 47rpx;
+  line-height: 47rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #414141;
 }
 .label{
   height: 342rpx;
@@ -203,18 +219,26 @@ color: transparent;
   overflow: hidden;
   padding: 0 20rpx 8rpx 20rpx;
 }
-.commodity view{
+.commodity view.shangping{
   width: 346rpx;
   height: 496rpx;
   float: left
+}
+.commodity view.shangpin_right{
+  margin-left: 18rpx;
 }
 .commodity view image{
   height: 351rpx;
   width: 346rpx;
 }
 .commodity view text.int{
-  font-size: 24rpx;
   color: #2f2f2f;
+  display: block;
+  width: 346rpx;
+  height: 50rpx;
+  line-height: 25rpx;
+  overflow: hidden;
+  font-size: 20rpx;
 }
 .commodity view text.zhe{
   color:#ff0000;
@@ -223,6 +247,25 @@ color: transparent;
   width: 326rpx;
   height: auto;
   padding: 0 10rpx;
+
+}
+.commodity view.shop_logo{
+  position: relative;
+  width: 351rpx;
+  height: 346rpx;
+}
+.commodity view.shop_logo text{
+  display: block;
+  height: 25rpx;
+  line-height: 25rpx;
+  color: #fff;
+  font-size: 25rpx;
+  width: 351rpx;
+  background: #fc6830;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .price{
   width: 317rpx;

@@ -1,0 +1,261 @@
+/* pages/personal/order_int/order_int.wxss */
+.nav{
+  width: 750rpx;
+  height: 260rpx;
+  background: #fff;
+}
+.nav .order{
+  display: block;
+  padding: 26rpx 20rpx;
+  height: 27rpx;
+  width: 610rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.nav .order text{
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+    display: block;
+     height: 27rpx;
+  width: 690rpx;
+  line-height: 27rpx;
+  padding-left: 20rpx;
+  border-left: 3rpx solid #ff9b2c;
+}
+.nav .zt{
+  padding: 17rpx 20rpx;
+  width: 710rpx;
+  height: 145rpx;
+}
+.zt view{
+  height: 49rpx;
+  width: 710rpx;
+}
+.zt view text{
+  display: block;
+  height: 49rpx;
+  line-height: 49rpx;
+  float: left;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+.zt view text:last-child{
+  color: #333333;
+}
+.shop{
+  width: 750rpx;
+  height: 520rpx;
+  background: #fff;
+  border-bottom: #e8e8e8;
+}
+.top{
+  height: 74rpx;
+  width: 750rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.top text{
+  display: block;
+  float: left;
+  height: 74rpx;
+  line-height: 74rpx;
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.top image{
+  width: 16rpx;
+  height: 27rpx;
+  display: block;
+  float: right;
+  margin: 20rpx;
+}
+.int{
+  margin-top: 18rpx;
+  height: 170rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+}
+.int image{
+  width: 170rpx;
+  height: 170rpx;
+  display: block;
+  float: left;
+  margin-right: 24rpx;
+}
+.int view{
+  width: 510rpx;
+  height: 73rpx;
+  float: left;
+}
+.int view text{
+  display: block;
+  float: left;
+  height: 73rpx;
+  line-height: 37rpx;
+  font-size: 24rpx;
+  color: #393939;
+}
+.int view text:last-child{
+  float: right;
+  height: 41rpx;
+  line-height: 41rpx;
+  color: #f7962e;
+  font-size: 26rpx;
+}
+.int text.la{
+  display: block;
+  float: left;
+  width: 510rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 22rpx;
+  color: #7a7a7a;
+}
+.wuliu{
+  width: 710rpx;
+  padding: 25rpx 20rpx;
+  height: 124rpx;
+}
+.wuliu view{
+  height: 41rpx;
+  width: 710rpx;
+}
+.wuliu view text{
+  display: block;
+  float: left;
+  height: 41rpx;
+  line-height: 41rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.wuliu view text:last-child{
+  float: right;
+  font-family: "DIN";
+}
+.pay{
+  height: 80rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  border-top: 1rpx solid #e8e8e8;
+}
+.pay text{
+  display: block;
+  float: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.pay text:last-child{
+  float: right;
+  font-family: "DIN";
+  color: #ff9b2c;
+}
+.Consignee{
+  width: 710rpx;
+  height: 300rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  margin: 20rpx 0;
+}
+.Consignee view.title{
+  height: 35rpx;
+  width: 710rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.Consignee view.title text{
+  border-left: 3rpx solid #f7962e;
+  padding-left: 20rpx;
+  display: block;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  color: #333333;
+  font-weight: bold;
+}
+
+.Consignee view{
+  width: 710rpx;
+  height: auto;
+  overflow: hidden;
+}
+.Consignee view text{
+   display: block;
+   float: left;
+   line-height: 50rpx;
+   font-size: 26rpx;
+   color: #999999;
+   margin-right: 20rpx;
+}
+.Consignee view text:first-child{
+  width: 150rpx;
+  margin-left: 20rpx;
+}
+.Consignee view text:last-child{
+  color: #333;
+}
+.Consignee view text.dress{
+  height: 100rpx;
+  line-height: 50rpx;
+  width: 500rpx;
+  float: left;
+}
+.logistics {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 33rpx;
+  background: #fff;
+}
+.logistics .wu{
+  width: 750rpx;
+  height: 28rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  padding: 25rpx 0;
+}
+.logistics .wu text{
+  border-left: 3rpx solid #f7962e;
+  padding-left: 20rpx;
+  display: block;
+  height: 28rpx;
+  color:#333333;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.logistics .content{
+  margin-top: 37rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+}
+.logistics .content .log{
+  width: 26rpx;
+  height: 80rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.content .log text:first-child{
+  display: block;
+  width: 26rpx;height: 26rpx;
+  border-radius: 50%;
+  background: #f7962e;
+}
+.content .log text:last-child{
+  display: block;
+  width: 3rpx;
+  height: 53rpx;
+  border-left: 3rpx solid #ccc;
+  margin-left: 13rpx;
+}
+.content .right{
+  display: block;
+  float: left;
+  height: 80rpx;
+  line-height: 30rpx;
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #6e6e6e;
+  font-family: "微软雅黑";
+}

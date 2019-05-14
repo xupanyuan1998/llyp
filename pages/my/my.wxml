@@ -1,6 +1,6 @@
 <!--pages/my/my.wxml-->
 <!-- 会员信息 -->
-<view class='header'>
+<view class='header' bindtap='person'>
   <image class='header_back' src='/images/my_background.png'></image>
   <view class='person'>
     <view class='tuxiang'>
@@ -24,7 +24,7 @@
       <image src='/images/order.png'></image>
       <text>我的订单</text>
     </view>
-    <view class='all_order'>
+    <view class='all_order' bindtap='order'>
       <text>查看全部订单</text>
       <image src='/images/my_arrow.png'></image>
     </view>
@@ -69,11 +69,11 @@
 </view>
 <!-- 个人中心 -->
 <view class='my_center'>
-  <view>
+  <view bindtap='mycol'>
     <image src='/images/shoucang.png'></image>
     <text>我的收藏</text>
   </view>
-   <view>
+   <view bindtap='address'>
     <image src='/images/address.png'></image>
     <text>地址管理</text>
   </view>
@@ -81,32 +81,28 @@
     <image src='/images/person.png'></image>
     <text>个人资料</text>
   </view>
-   <view class='clear'>
+   <view class='clear' bindtap='safe'>
     <image src='/images/safe.png'></image>
     <text>安全中心</text>
   </view>
-   <view>
+   <view bindtap='caiwu'>
     <image src='/images/financial.png'></image>
     <text>财务中心</text>
   </view>
-   <view>
+   <view bindtap='club'>
     <image src='/images/tuandui.png'></image>
     <text>我的社区</text>
   </view>
-   <view>
+   <view bindtap='share'>
     <image src='/images/tuiguang.png'></image>
     <text>推广商城</text>
   </view>
-   <view class='clear'>
-    <image src='/images/version.png'></image>
-    <text>版本更新</text>
-  </view>
-   <view>
+   <view bindtap='jifen' class='clear'>
     <image src='/images/integral.png'></image>
     <text>积分中心</text>
   </view>
-   <view>
+   <view bindtap='login'>
     <image src='/images/out.png'></image>
-    <text>退出账户</text>
+    <text >退出账户</text>
   </view>
 </view>

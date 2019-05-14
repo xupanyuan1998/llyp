@@ -1,0 +1,75 @@
+<!--pages/personal/personmsg/personmsg.wxml-->
+<view class='head' >
+  <view class='user_img content' bindtap='changeimg'>
+    <text>头像</text>
+    <view>
+      <image src='{{imgurl}}'></image>
+      <image class='next' src='/images/backmsg.png'></image>
+    </view>
+  </view>
+  <view class='username content'>
+    <text>账户名</text>
+    <text class='name'>{{username}}</text>
+  </view>
+</view>
+<view class='ziliao'>
+  <view class='content' bindtap='changesex'>
+    <text>性别</text>
+     <image class='next' src='/images/backmsg.png'></image>
+    <text class='name'>{{sex}}</text>
+  </view>
+  <view class='content' bindtap='change_birth'>
+    <text>生日</text>
+     <image class='next' src='/images/backmsg.png'></image>
+    <text class='name'>{{birth}}</text>
+  </view>
+  <view class='content'>
+    <text>手机号</text>
+    <text class='name'>1254263265</text>
+  </view>
+</view>
+<view class='content man' bindtap='add_man'>
+    <text>推荐人</text>
+    <text class='name'>啦啦啦</text>
+</view>
+<text class='out'>退出账户</text>
+<!-- 更换图像 -->
+<view class='changeimg_b' style='display:{{changeimg}}'>
+  <camera  device-position="back" flash="off" binderror="error" ></camera>
+  <view class='changeimg'>
+    <text bindtap='tuku'>相册</text>
+    <text bindtap='takephoto'>拍照</text>
+    <text bindtap='cancle'>取消</text>
+  </view>
+</view>
+<!-- 修改性别 -->
+<view class='changeimg_b' style='display:{{change_sex}}'>
+  <view class='changeimg'>
+    <text wx:for="{{sex_choose}}" wx:key="item" data-id='{{item}}' bindtap='get_sex'>{{item}}</text>
+    <text bindtap='cancle'>取消</text>
+  </view>
+</view>
+<!-- 修改生日 -->
+<view class='changeimg_b' style='display:{{ changebirth}}'>
+  <view class='birth'>
+    <view class='choss_bir'>
+      <text bindtap='quxiao'>取消</text>
+      <text bindtap='ok'>确定</text>
+    </view>
+    <picker-view
+      indicator-style="height: 50px; width:236rpx;"
+      value="{{value}}"
+      bindchange="bindChange"
+    >
+      <picker-view-column>
+        <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

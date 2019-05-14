@@ -1,0 +1,82 @@
+/* pages/personal/recharge/recharge.wxss */
+.nav {
+  width: 710rpx;
+  height: 283rpx;
+  position: relative
+}
+.jilu{
+  width: 130rpx;
+  height: 47rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 0;
+  background:#ff9b2c; 
+}
+.jilu image{
+  width: 43rpx;
+  height: 47rpx;
+  display: block;
+  float: left;
+}
+.jilu text{
+  display: block;
+  float: left;
+  height: 47rpx;
+  line-height: 47rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.head{
+  width: 710rpx;
+  height: 183rpx;
+  padding: 49rpx 0;
+}
+.pla{
+  width: 710rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.jine{
+  width: 710rpx;
+  height: 119rpx;
+  border-radius: 7rpx;
+  background: #fff;
+}
+.jine text{
+  display: block;
+  float: left;
+  height: 119rpx;
+  line-height: 119rpx;
+  margin: 0 25rpx;
+  color: #333;
+  font-size: 34rpx;
+  width: 50rpx;
+  text-align: center;
+}
+.jine input{
+  display: block;
+  float: left;
+  height: 119rpx;
+  line-height: 119rpx;
+  width: 600rpx;
+  font-size: 34rpx;
+}
+.place{
+  font-size: 34rpx;
+  color: #ccc;
+}
+.save{
+  display: block;
+  margin-top: 100rpx;
+  width: 710rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #ff9b2c;
+  border-radius: 9rpx;
+  font-size: 36rpx;
+  color: #fff;
+}

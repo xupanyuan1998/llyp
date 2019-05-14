@@ -1,0 +1,62 @@
+<!--pages/personal/pingjia/pingjia.wxml-->
+<view class='nav'>
+  <image class='int' src='/images/user_image.jpeg'></image>
+  <view>
+    <image src="{{start_1==1?'/images/active_start.png':'/images/start.png'}}" bindtap='start_1'></image>
+    <image src="{{start_2==1?'/images/active_start.png':'/images/start.png'}}" bindtap='start_2'></image>
+    <image src="{{start_3==1?'/images/active_start.png':'/images/start.png'}}" bindtap='start_3'></image>
+    <image src="{{start_4==1?'/images/active_start.png':'/images/start.png'}}" bindtap='start_4'></image>
+    <image src="{{start_5==1?'/images/active_start.png':'/images/start.png'}}" bindtap='start_5'></image>
+  </view>
+</view>
+<view class='content'>
+  <textarea placeholder='宝贝满足您的期待吗？说说你的使用感受吧，分享给想买的他们吧！' name='textarea'></textarea>
+  <view class='add_c'>
+    <view class='tu'>
+      <image src='/images/carmer.jpg'></image>
+      <image class='close' src='/images/dels.png'></image>
+    </view>
+    <view class='add'>
+      <image src='/images/addd.png'></image>
+    </view>
+  </view>
+</view>
+<view class='pinglun'>
+    <view class='ni'>
+      <view class='quan'></view>
+      <text>匿名</text>
+    </view>
+  <text class='show'>你写的评价会以匿名的形式展现</text>
+</view>
+<view class='wuliu'>
+  <text>物流服务</text>
+  <view>
+    <image src='/images/start.png' bindtap='start_1'></image>
+    <image src='/images/start.png' bindtap='start_2'></image>
+    <image src='/images/start.png' bindtap='start_3'></image>
+    <image src='/images/start.png' bindtap='start_4'></image>
+    <image src='/images/start.png' bindtap='start_5'></image>
+  </view>
+</view>
+<view class='wuliu'>
+  <text>服务态度</text>
+  <view>
+    <image src='/images/start.png'></image>
+    <image src='/images/start.png'></image>
+    <image src='/images/start.png'></image>
+    <image src='/images/start.png'></image>
+    <image src='/images/start.png'></image>
+  </view>
+</view>
+<text class='save' bindtap='save'>确认退款</text>
+<!-- 提示 -->
+<view class='palce' style='display:{{show}}'>
+  <view class='pal'>
+    <text class='title'>提示</text>
+    <text class='p_c'>确定取消发布吗</text>
+    <view >
+      <text bindtap='cancle'>取消</text>
+      <text>继续发布</text>
+    </view>
+  </view>
+</view>

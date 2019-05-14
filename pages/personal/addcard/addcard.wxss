@@ -1,0 +1,53 @@
+/* pages/personal/addcard/addcard.wxss */
+.addcard{
+  width: 750rpx;
+  height: 600rpx;
+}
+.addcard view{
+  width: 750rpx;
+  height: 113rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  background: #fff;
+}
+.addcard view text{
+  text-align: justify;
+  display: block;
+  float: left;
+  width: 117rpx;
+  height: 113rpx;
+  line-height: 113rpx;
+  font-size: 34rpx;
+  color: #333;
+  margin-left: 20rpx;
+  margin-right: 50rpx;
+}
+
+.addcard view text:after{
+  width: 100%;
+  display: inline-block;
+  content: '';
+}
+.addcard view input{
+  float: left;
+  display: block;
+  line-height: 113rpx;
+  height: 113rpx;
+}
+.addcard view input.place{
+  color:#999;
+  font-size: 34rpx;
+  font-family: "苹方";
+}
+.addcard button{
+  display: block;
+  margin-top: 50rpx;
+  width: 710rpx;
+  height: 100rpx;
+  text-align: center;
+  background: #ff9b2c;
+  border-radius: 5rpx;
+  font-size: 36rpx;
+  color: #fff;
+   font-family: "苹方";
+   margin: 50rpx  20rpx;
+}

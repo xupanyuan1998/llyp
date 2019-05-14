@@ -1,0 +1,104 @@
+/* pages/personal/jifen/jifen.wxss */
+.head{
+  width: 690rpx;
+  height: 203rpx;
+  padding: 0 30rpx;
+  background:  linear-gradient(to right, #ff7c32 , #ff6232);
+  display: flex;
+   align-items: center;
+  justify-content: center;  
+}
+.head view{
+  width: 259rpx;
+  height: 61rpx;
+}
+.head view image{
+  float: left;
+  display: block;
+  width: 64rpx;
+  height: 61rpx;
+  margin-right: 15rpx;
+}
+.head view text{
+  float: left;
+  display: block;
+  height: 61rpx;
+  line-height: 61rpx;
+  font-size: 60rpx;
+  color: #fcf9f7;
+  font-weight: bold;
+}
+.jifen_all{
+  width: 690rpx;
+  height: 109rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.jifen_all text{
+  display: block;
+  float: left;
+  height: 106rpx;
+  line-height: 106rpx;
+  width: 68rpx;
+  text-align: center;
+  margin-right: 165rpx;
+  font-size:28rpx;
+  color: #61605f;
+}
+.jifen_all text:first-child{
+  margin-left: 62rpx;
+}
+.jifen_all text:last-child{
+  margin-right: 62rpx;
+  float: right;
+}
+.jifen_all text.active{
+  border-bottom: 3rpx solid #ff7c32;
+}
+.content{
+  width: 690rpx;
+  height: auto;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.warp{
+ width: 690rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  background: #fff;
+  overflow: hidden;
+  height: auto;
+}
+.left{
+  height: 95rpx;
+  width: 400rpx;
+  float: left;
+  padding: 30rpx 0 25rpx 0;
+  margin-left: 30rpx
+}
+.left text{
+  display: block;
+  width: 400rpx;
+}
+.left text:first-child{
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 30rpx;
+  color: #2d2d2d
+}
+.left text:last-child{
+    height: 47rpx;
+  line-height: 47rpx;
+  font-size: 24rpx;
+  color: #666
+}
+.right{
+  float: right;
+  display: block;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #326cff;
+   font-size: 30rpx;
+   margin-top: 30rpx;
+   margin-right: 25rpx;
+}
