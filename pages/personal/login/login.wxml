@@ -47,7 +47,7 @@
       <input  placeholder='请输入推荐人' value='' placeholder-class='pal'/>
     </view>
     <view class='agrees'>
-      <text></text>
+      <text class='active'></text>
       <view>
         <text>注册并同意</text>
         <text>《连连优品注册协议》</text>

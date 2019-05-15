@@ -15,7 +15,7 @@
    class='banner_int'>
   <block wx:for="{{image_int}}" wx:key="item">
     <swiper-item>
-      <image src="{{item}}"></image>
+      <image src="{{imgurl+item.pic_cover}}"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -23,19 +23,19 @@
 <view class='com_int'>
   <view class='com_name'>
     <view class='com_name.left'>
-      <text>布洛芬缓释胶囊 （芬必得）</text>
-      <text>盐酸莫西沙星 可预订，可咨询医师</text>
+      <text>{{data_int.goods_name}}</text>
+      <text>{{data_int.introduction}}</text>
     </view>
     <view class='com_name.right'>
-      <text>￥14.50</text>
-      <text>原价:￥45.00</text>
+      <text>￥{{data_int.member_price}}</text>
+      <text>原价:￥{{data_int.market_price}}</text>
     </view>
   </view>
   <view class='sales'>
-    <text class='express'>快递：免邮</text>
+    <text class='express'>快递：{{data_int.shipping_fee_name}}</text>
     <view class='sales_number'>
       <text>销售量：</text>
-      <text>100件</text>
+      <text>{{data_int.sales}}</text>
     </view>
   </view>
 </view>

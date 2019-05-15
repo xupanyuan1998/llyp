@@ -1,7 +1,10 @@
 // pages/int/int.js
+const app = getApp();
+const imgurl = app.globalData.imgurl;
 Page({
   data: {
-    image_int: [],
+    image_int: '',
+    imgurl:'http://www.lianlianyp.com/',
     share: [{
         src: '/images/wechart.png',
         text: '微信好友'
@@ -58,10 +61,18 @@ Page({
     data_int:''
   },
   onLoad(datas){
-    this.setData({
-      data_int:JSON.stringify(datas.int),
-
-    })
+    var _this=this;
+   wx.request({
+     url: imgurl +'/index.php?s=/api/goods/detailGoods&id='+datas.int,
+     success(res){
+       let dataes=res.data.data;
+       console.log(dataes.goods_detail)
+       _this.setData({
+         image_int : dataes.goods_detail.img_list,
+         data_int: dataes.goods_detail
+       })
+     }
+   })
   },
   
   // 详情

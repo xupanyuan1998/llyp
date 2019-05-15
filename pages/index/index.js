@@ -67,26 +67,25 @@ Page({
         url: '/pages/personal/shareshop/shareshop',
       })
     }else{
-      wx.request({
-        url: imgurl + '/index.php?s=/api/goods/detailGoods&id=' +e.currentTarget.dataset.int,
-        success(res) {
-          _this.setData({
-            int: res.data.data
-          });
-          console.log(_this.data.int)
-          wx.navigateTo({
-            url: '/pages/int/int?int=' + _this.data.int,
-          })
-        }
+      wx.navigateTo({
+            url: '/pages/int/int?int=' + e.currentTarget.dataset.int,
       })
     }
   },
   //分类
-  cate(){},
+  cate(e){
+    console.log(e)
+    let name=e.currentTarget.dataset.name;
+    let id=e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '/pages/s_cate/s_cate?id='+id+'&name='+name,
+      })
+  },
+  // 请求首页数据
   onLoad: function (options) {
     var _this=this;
     wx.request({
-      url: imgurl +'/index.php?s=/api/index/index',
+      url: imgurl +'index.php?s=/api/index/index',
       success(res){
         _this.setData({
           banner: res.data.data.plat_adv_list.adv_list,
@@ -96,4 +95,10 @@ Page({
       }
     })
   },
+  // 跳转到商城推广
+  share(){
+    wx.navigateTo({
+      url: '/pages/personal/shareshop/shareshop',
+    })
+  }
 })

@@ -1,0 +1,137 @@
+/* pages/s_cate/s_cate.wxss */
+
+page {
+  font-family: "苹方";
+}
+
+.title {
+  width: 750rpx;
+  background: #fff;
+  height: 88rpx;
+}
+
+.title .content {
+  width: 650rpx;
+  height: 88rpx;
+  float: left;
+}
+
+.title scroll-view {
+  white-space: nowrap;
+  display: flex;
+}
+
+.title scroll-view view {
+  display: inline-block;
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 128rpx;
+  text-align: center;
+  color: #616161;
+  font-size: 28rpx;
+}
+.title scroll-view view.active{
+  color: #ff9b2c;
+  border-bottom: 2rpx solid #ff9b2c;
+}
+.title .arrow {
+  float: left;
+  width: 100rpx;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow image {
+  width: 25rpx;
+  height: 15rpx;
+}
+.allcate{
+  width: 710rpx;
+ height: auto;
+ overflow: hidden;
+  padding: 0 20rpx 47rpx;
+  background: #fff;
+}
+.allcate text{
+  display: block;
+  float: left;
+  height: 64rpx;
+  line-height: 64rpx;
+  width: 160rpx;
+  text-align: center;
+  margin-top: 27rpx;
+  margin-right: 23rpx;
+  background: #f2f2f2;
+  font-size: 26rpx;
+  color: #757575;
+}
+.allcate text.c_right{
+  margin-right: 0;
+}
+.allcate text.active{
+ color: #ff9b2c;
+}
+.shop{
+  width: 710rpx;
+  height: auto;
+  overflow: hidden;
+  padding:0 20rpx;
+}
+.shp{
+  width: 350rpx;
+  height: 448rpx;
+  background: #fff;
+  float: left;
+  margin-top: 12rpx;
+  margin-right: 10rpx;
+}
+.clear_r{
+  margin-right: 0;
+}
+.shp image{
+  width: 350rpx;
+  height: 304rpx;
+  margin-bottom: 17rpx;
+}
+.shp .int{
+  width: 330rpx;
+  padding: 0 10rpx;
+  height: 70rpx;
+  line-height: 35rpx;
+  font-size: 24rpx;
+  color: #3b3b3b;
+  overflow: hidden;
+}
+.shp .xiaoliang{
+  height: 57rpx;
+    width: 330rpx;
+  padding: 0 10rpx;
+  overflow: hidden;
+}
+.shp .xiaoliang text{
+  display: block;
+  float: left;
+  line-height: 57rpx;
+}
+.xiaoliang text:first-child{
+  font-size: 26rpx;
+  color: #e34040;
+}
+.xiaoliang text:last-child{
+  font-size: 24rpx;
+  color: #767676;
+  float: right;
+}
+.cont{
+  position: relative;
+}
+.allcate_b{
+  position: absolute;
+  z-index: 1;
+  background: rgba(0, 0, 0, .5);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}

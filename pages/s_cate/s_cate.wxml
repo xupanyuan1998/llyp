@@ -1,0 +1,35 @@
+<!--pages/s_cate/s_cate.wxml-->
+    <view class='title'>
+      <view class='content'>
+        <scroll-view scroll-x="true" >
+          <view class="{{active==idx?'active':''}}" wx:for="{{cata}}" wx:key="item" wx:for-index="idx" data-index="{{idx}}" bindtap='active'>{{item.category_name}}</view>
+      </scroll-view>
+      </view>
+      <view class='arrow' bindtap='allcate'>
+        <image src='/images/arrow_bottom.png'></image>
+      </view>
+    </view>
+    <view class='cont'>
+      <!-- 商品 -->
+      <view class='shop'>
+          <view class="shp {{(idx+1)%2==0?'clear_r':''}}"
+           wx:for='{{Goods}}' 
+           wx:key='item'
+           wx:for-index="idx"
+           >
+            <image src='{{imageurl+item.pic_cover_mid}}'></image>
+            <view class='int'>{{item.goods_name}}</view>
+            <view class='xiaoliang'>
+              <text>￥{{item.price}}</text>
+              <text>销量：{{item.sales}}</text>
+            </view>
+          </view>
+      </view>
+      <!-- 全部商品分类 -->
+     <view class='allcate_b' style='display:{{show}}'>
+       <view class='allcate'>
+        <text class="{{active==idx?'active':''}} {{(idx+1)%4==0?'c_right':''}}" wx:for="{{cata}}" wx:key="item" wx:for-index="idx" data-index="{{idx}}" bindtap='active'>{{item.category_name}}</text>
+      </view>
+     </view>
+    </view>
+

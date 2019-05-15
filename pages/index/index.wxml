@@ -12,48 +12,44 @@
   </view>
 </view>
 <!-- 轮播图 -->
-<swiper
-  autoplay='true'
-  interval='5000'
-  indicator-dots='true'
-   class='banner'>
+<swiper autoplay='true' interval='5000' indicator-dots='true' class='banner'>
   <block wx:for="{{banner}}" wx:key="item">
     <swiper-item>
-      <image
-       src="{{item.cdn_image}}"
-       bindtap='com_int' 
-       data-id='{{item.adv_id}}'
-       ></image>
+      <image src="{{item.cdn_image}}" bindtap='com_int' data-id='{{item.adv_id}}'></image>
     </swiper-item>
   </block>
 </swiper>
 <!-- 商品标签 -->
-<scroll-view  scroll-x bindscroll="scroll">
+<scroll-view scroll-x bindscroll="scroll">
   <view class='scroll_c'>
-        <view wx:for="{{hot}}" wx:key="item" wx:for-index="idx" bindtap='cata'>
-          <image src='{{imgurls+item.logo}}'></image>
-          <text>{{item.group_name}}</text>
-        </view>
+    <view
+     wx:for="{{hot}}"
+      wx:key="item" 
+      wx:for-index="idx" 
+      bindtap='cate' 
+      data-id="{{item.block_id}}"
+       data-name="{{item.block_name}}"
+       >
+      <image src='{{imgurls+item.logo}}'></image>
+      <text>{{item.group_name}}</text>
     </view>
+  </view>
 </scroll-view>
 <view class='list-s'>
- <view id="content">
-   <text id="moves" style='left:{{left}}'></text>
- </view>
+  <view id="content">
+    <text id="moves" style='left:{{left}}'></text>
+  </view>
 </view>
 <!-- 圈子 -->
 <view class='list'>
-  <image class='share' 
-    src='/images/share.png'></image>
+  <image class='share' src='/images/share.png' bindtap='share'></image>
   <image src='/images/quanzi.png'></image>
   <image src='/images/zixun.png'></image>
-  <image class='shop'
-   src='/images/live.png'></image>
-  <image class='shop'
-   src='/images/shop.png'></image>    
+  <image class='shop' src='/images/live.png'></image>
+  <image class='shop' src='/images/shop.png'></image>
 </view>
 <!-- 商品标签 -->
-<view class="like" >
+<view class="like">
   <view class="{{active==item.data?'cate':''}}" wx:for="{{list}}" wx:key="item" data-id='{{item.data}}' bindtap='clecked'>
     <image src='{{item.src}}'></image>
     <text class='big-size'>{{item.big}}</text>
@@ -62,18 +58,11 @@
 </view>
 <!-- 商品列表 -->
 <view class='commodity'>
-  <view 
-  class="shangping {{idx%2==1?'shangpin_right':''}}" 
-   wx:for="{{commodity}}"
-    wx:key="item" 
-    bindtap='com_int' 
-    wx:for-index="idx"
-    data-int='{{item.goods_id}}'
-    >
-   <view class='shop_logo'>
-     <image src='{{imgurls+item.pic_cover_mid}}'></image>
-     <text>预估分享收益：{{item.share_profit}}元</text>
-   </view>
+  <view class="shangping {{idx%2==1?'shangpin_right':''}}" wx:for="{{commodity}}" wx:key="item" bindtap='com_int' wx:for-index="idx" data-int='{{item.goods_id}}'>
+    <view class='shop_logo'>
+      <image src='{{imgurls+item.pic_cover_mid}}'></image>
+      <text>预估分享收益：{{item.share_profit}}元</text>
+    </view>
     <view class='commo-int'>
       <text class='zhe int' wx:if="{{item.dis}}">{{item.dis}}</text>
       <text class='int'>{{item.goods_name}}</text>

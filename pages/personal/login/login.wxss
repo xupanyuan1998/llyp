@@ -38,14 +38,12 @@ page{
  background: linear-gradient(to right, #e86235, #e8921c);
 }
 form{
-  padding: 94rpx 107rpx 0;
+  padding: 80rpx 0rpx 0 107rpx;
   background: #fff;
-  height: 436rpx;
   width: 530rpx;
   display: block;
 }
 form view{
-  margin-top: 53rpx;
   height: 88rpx;
   width: 530rpx;
   border-bottom: 1rpx solid #e8e8e8;
@@ -81,6 +79,7 @@ form view.yanzhengma text{
   background: #e86832;
   color: #fff;
   font-size: 24rpx;
+  margin-top: 20rpx;
 }
 .pal{
   color: #808080;
@@ -95,7 +94,7 @@ form button{
   font-size: 32rpx;
 }
 .password{
-   padding: 94rpx 107rpx;
+   padding: 20rpx 107rpx;
   background: #fff;
   height: 103rpx;
   width: 530rpx;
@@ -111,4 +110,31 @@ form button{
 .password text:last-child{
   float: right;
   color: #ffa32b;
+}
+form view.agrees{
+  height: 80rpx;
+  line-height: 80rpx;
+  border:none;
+}
+form view.agrees text.active{
+  display: block;
+  float: left;
+  width: 30rpx;
+  height: 30rpx;
+  background: #f0f0f0;
+  border: 1rpx solid #e8e8e8;
+  margin: 25rpx 15rpx 0;
+}
+form view.agrees view{
+  float: left;
+  height: 80rpx;
+  border: none;
+  width: auto;
+  margin-top: 0;
+}
+form view.agrees view text{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #888888;
 }

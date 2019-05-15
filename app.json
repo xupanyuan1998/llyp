@@ -41,7 +41,8 @@
     "pages/personal/wuliu/wuliu",
     "pages/personal/pingjia/pingjia",
     "pages/personal/order_int/order_int",
-    "pages/personal/login/login"
+    "pages/personal/login/login",
+    "pages/s_cate/s_cate"
   ],
   "window": {
     "backgroundTextStyle": "light",
