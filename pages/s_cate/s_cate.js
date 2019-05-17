@@ -11,7 +11,8 @@ Page({
     active: 0,
     show: 'none',
     Goods:[],
-    imageurl:'http://www.lianlianyp.com/'
+    imageurl:'http://www.lianlianyp.com/',
+    block_id:'',
   },
   // 分类切换
   active(e) {
@@ -19,7 +20,23 @@ Page({
       active: e.target.dataset.index,
       show: 'none'
     })
-    
+    var that = this;
+    wx.request({
+      url: imgurl + 'api/goods/goodsList',
+      method: "POST",
+      data: {
+        category_id: e.currentTarget.dataset.category,
+        block_id: that.data.block_id
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: (res) => {
+        that.setData({
+          Goods: res.data.data.data,
+        })
+      }
+    })
   },
   // 全部分类
   allcate() {
@@ -33,52 +50,51 @@ Page({
       })
     }
   },
+  // 商品详情跳转
+  goodsint(e){
+    wx.navigateTo({
+      url: '/pages/int/int?int='+e.currentTarget.dataset.int,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     var _this=this;
     // 获取当前分类id 和名称
-    console.log(options);
     let id = options.id;
     let name = options.name;
     wx.request({
       url: imgurl +'/index.php?s=/api/goods/goodsClassificationList',
       success(res){
         _this.setData({
-          cata: res.data.data
+          cata: res.data.data,
+          block_id:id
         })
       }
     });
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+    var that=this;
     wx.request({
       url: imgurl + 'api/goods/goodsList',
       method: "POST",
       data: {
         category_id: '',
-        block_id: id
+        block_id: that.data.block_id
       },
       header: {
-        'content-type': 'application/json'
+        "Content-Type": "application/x-www-form-urlencoded"
       },
       success: (res) => {
-        var arr = [];
-        var a = res.data.data.data;
-        for (var index in a) {
-          arr.push(index.category_name)
-        }
-        console.log(arr);
-        _this.setData({
-          Goods: a,
+       that.setData({
+          Goods: res.data.data.data,
         })
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
   },
 
   /**

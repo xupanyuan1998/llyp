@@ -1,0 +1,9 @@
+var opimgurl={
+imgurl : function (a) {
+var  b= a.slice(0, a.lastIndexOf(',')-1);
+    return b;
+  }
+}
+module.exports={
+  imgurl:opimgurl.imgurl
+}

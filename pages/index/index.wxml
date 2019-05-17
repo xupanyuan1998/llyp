@@ -15,7 +15,7 @@
 <swiper autoplay='true' interval='5000' indicator-dots='true' class='banner'>
   <block wx:for="{{banner}}" wx:key="item">
     <swiper-item>
-      <image src="{{item.cdn_image}}" bindtap='com_int' data-id='{{item.adv_id}}'></image>
+      <image src="{{item.cdn_image}}" bindtap='com_int' data-int='{{item.adv_id}}'></image>
     </swiper-item>
   </block>
 </swiper>
@@ -67,7 +67,7 @@
       <text class='zhe int' wx:if="{{item.dis}}">{{item.dis}}</text>
       <text class='int'>{{item.goods_name}}</text>
       <view class='price'>
-        <text>{{item.price}}</text>
+        <text>￥{{item.price}}</text>
         <text>购买</text>
       </view>
     </view>

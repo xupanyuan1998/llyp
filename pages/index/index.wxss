@@ -222,7 +222,9 @@ color: transparent;
 .commodity view.shangping{
   width: 346rpx;
   height: 496rpx;
-  float: left
+  float: left;
+  margin-top: 20rpx;
+  background: #fff;
 }
 .commodity view.shangpin_right{
   margin-left: 18rpx;

@@ -2,7 +2,19 @@
     <view class='title'>
       <view class='content'>
         <scroll-view scroll-x="true" >
-          <view class="{{active==idx?'active':''}}" wx:for="{{cata}}" wx:key="item" wx:for-index="idx" data-index="{{idx}}" bindtap='active'>{{item.category_name}}</view>
+         <view 
+         class="{{active==0?'active':''}}" 
+           data-index="0"
+            bindtap='active'
+            data-category="">全部商品</view>
+          <view 
+          class="{{active==idx+1?'active':''}}" 
+          wx:for="{{cata}}"
+           wx:key="item" 
+          wx:for-index="idx"
+           data-index="{{idx+1}}" 
+           bindtap='active'
+            data-category="{{item.category_id}}">{{item.category_name}}</view>
       </scroll-view>
       </view>
       <view class='arrow' bindtap='allcate'>
@@ -16,6 +28,8 @@
            wx:for='{{Goods}}' 
            wx:key='item'
            wx:for-index="idx"
+           bindtap='goodsint'
+           data-int="{{item.goods_id}}"
            >
             <image src='{{imageurl+item.pic_cover_mid}}'></image>
             <view class='int'>{{item.goods_name}}</view>
@@ -28,7 +42,19 @@
       <!-- 全部商品分类 -->
      <view class='allcate_b' style='display:{{show}}'>
        <view class='allcate'>
-        <text class="{{active==idx?'active':''}} {{(idx+1)%4==0?'c_right':''}}" wx:for="{{cata}}" wx:key="item" wx:for-index="idx" data-index="{{idx}}" bindtap='active'>{{item.category_name}}</text>
+       <text
+        class="{{active==0?'active':''}}"  
+         data-index="0" 
+         bindtap='active'
+          data-category="">全部商品</text>
+        <text
+         class="{{active==idx+1?'active':''}} {{(idx+2)%4==0?'c_right':''}}"
+          wx:for="{{cata}}"
+           wx:key="item" 
+           wx:for-index="idx" 
+           data-index="{{idx+1}}" 
+           bindtap='active'
+            data-category="{{item.category_id}}">{{item.category_name}}</text>
       </view>
      </view>
     </view>

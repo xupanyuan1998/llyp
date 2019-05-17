@@ -1,6 +1,7 @@
 // pages/int/int.js
 const app = getApp();
 const imgurl = app.globalData.imgurl;
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
     image_int: '',
@@ -29,36 +30,19 @@ Page({
         text: '评论'
       },
     ],
-    comments_int: [{
-        userimg: '/images/user_image.jpeg',
-        username: '卡号服务费',
-        date: '2018-12-15',
-        package: '3盒家庭装',
-        int_c: '买了整整意向，比药店便宜而且还保证正品，噶没时间昂双12优惠还送了赠品，五星好评！',
-        int_images: [{
-          src: "/images/carmer.jpg"
-        }, {
-          src: "/images/carmer.jpg"
-        }, {
-          src: "/images/carmer.jpg"
-        }]
-      },
-      {
-        userimg: '/images/user_image.jpeg',
-        username: '卡号服务费',
-        date: '2018-12-15',
-        package: '3盒家庭装',
-        int_c: '买了整整意向，比药店便宜而且还保证正品，噶没时间昂双12优惠还送了赠品，五星好评！',
-        int_images: [{
-          src: "/images/carmer.jpg"
-        }, {
-          src: "/images/carmer.jpg"
-        }, {
-          src: "/images/carmer.jpg"
-        }]
-      }
-    ],
-    data_int:''
+    pinglun_all:['全部',"好评",'有图'],
+    comments_int: [],
+    data_int:'',
+    activePing:0,
+    goodsping:0,
+    goods_id:0,
+    // guige
+    specifications:'none',
+    arrName: [],
+    goods_spec: '',
+    guilist: '',
+    selectGuigeName: '',
+    textStates: ["sdalfd", "g_active"],
   },
   onLoad(datas){
     var _this=this;
@@ -66,28 +50,128 @@ Page({
      url: imgurl +'/index.php?s=/api/goods/detailGoods&id='+datas.int,
      success(res){
        let dataes=res.data.data;
-       console.log(dataes.goods_detail)
+       var article=dataes.goods_detail.description;
+       WxParse.wxParse('article', 'html', article, _this);
        _this.setData({
          image_int : dataes.goods_detail.img_list,
-         data_int: dataes.goods_detail
+         data_int: dataes,
+         guige: dataes.goods_detail.spec_list
        })
      }
    })
   },
-  
   // 详情
   active(e) {
+    var that=this;
     this.setData({
-      active: e.target.dataset.id
+      active: e.currentTarget.dataset.id,
+      goods_id: e.currentTarget.dataset.goods_id
+    })
+    // 判断是否点击评论
+    if (e.currentTarget.dataset.id==1){
+      wx.request({
+        url: imgurl + 'index.php?s=/api/goods/getGoodsComments',
+        method: "POST",
+        data: {
+           goods_id: e.currentTarget.dataset.goods_id,
+        comments_type:5
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: (res) => {
+         that.setData({
+           comments_int:res.data.data.data
+         })
+        }
+      })
+    }
+  },
+//  评论类别
+goodsping(e){
+  var that=this;
+  var comments_type;
+  this.setData({
+    goodsping:e.currentTarget.dataset.idx
+  });
+  if (e.currentTarget.dataset.idx==1){
+    comments_type=1;
+  } else if (e.currentTarget.dataset.idx == 2){
+    comments_type = 4;
+  }else{
+    comments_type = 5;
+  };
+  wx.request({
+    url: imgurl + 'index.php?s=/api/goods/getGoodsComments',
+    method: "POST",
+    data: {
+      goods_id:that.data.goods_id,
+      comments_type: comments_type
+    },
+    header: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    success: (res) => {
+      console.log(res);
+      that.setData({
+        comments_int: res.data.data.data
+      })
+    }
+  })
+},
+  // 挑选规格
+  specifications(){
+    this.setData({
+      specifications:'block'
+    });
+  },
+  // guigexuanzhong
+  selectGuige(e) {
+    console.log(e);
+    let that = this,
+      // 获取第一个循环的index
+      fuindex = e.currentTarget.dataset.fuindex,
+      // 获取第二个循环的index
+      chindex = e.currentTarget.dataset.idx,
+      // 获取当前点击的规格名称
+      selectName = e.currentTarget.dataset.item,
+      //  初始化arrName
+      arrName = that.data.arrName,
+      guilists = {},
+      goods_spec = that.data.data_int.goods_detail.spec_list;
+    // 通过循环来判断点击了哪一个规格，根据数据结构来；
+    // goods_spec[fuindex]根据fuindex来判断点击了哪一种类型的规格
+    for (let i = 0; i < goods_spec[fuindex].length; i++) {
+      // 当i等于当前点击的规格时，设置isClick=1
+      if (i == chindex) {
+        goods_spec[fuindex][i].isClick = 1;
+      }
+      // 否则设置其他的isClick=0
+      else {
+        goods_spec[fuindex][i].isClick = 0;
+      }
+      console.log(goods_spec[fuindex][i].isClick )
+    };
+    // 把点击的规格名称和规格id存起来
+    arrName[fuindex] = selectName;
+    that.setData({
+      goods_spec: goods_spec,
+      guilist: guilists,
+      selectGuigeName: arrName
     })
   },
+  // yincangguige
+  hidden(){
+    this.setData({
+      specifications: 'none'
+    })
+  },
+  // fangzhimaopao
   //商品分享
   share_c() {
-    console.log(1)
     this.setData({
       show: 'block'
     })
-
   },
   //关闭分享页面
   close() {
