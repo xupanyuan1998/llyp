@@ -211,7 +211,7 @@
   left: 23rpx;
   top: 12rpx;
 }
-.number input{
+.number_text{
   border-left:1px solid #ccc;
   border-right:1px solid #ccc;
   width: 80rpx;
@@ -223,7 +223,9 @@
   float: left;
 }
 .pay{
-  margin-top: 40rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 750rpx;
   height: 100rpx;
   background: #fff;
@@ -252,7 +254,7 @@
   color: #303030;
 }
 .sum_price{
-  margin-left: 142rpx;
+  margin-left: 139rpx;
   height: 100rpx;
   width: 212rpx;
   float: left;
@@ -296,3 +298,29 @@
 .pay .del{
    background: linear-gradient(to right, #fe792b , #f44e20);
 }
+
+/*选中框*/
+checkbox-group{
+  width: 50rpx;
+  float: left;
+  margin-top: 45rpx;
+}
+checkbox .wx-checkbox-input{
+    height: 28rpx;
+    width: 28rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 50%!important;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1);
+  background: #ff9b2c;
+  border: 1rpx solid #ff9b2c;
+  border-radius: 50%!important;
+}
+
