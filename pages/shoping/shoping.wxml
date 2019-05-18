@@ -15,84 +15,59 @@
       </view>
     </view>
     <form class='shop'>
-      <view class='shop_firest'>
-        <view class='name'>
-          <view></view>
-          <text>健客大药房网定点送</text>
-        </view>
-        <view class='items'>
-          <view class='check'></view>
-          <view class='content'>
-            <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
-            <view class='message'>
-              <text class='ji_name'>鸡骨草胶囊（玉林）</text>
-              <text class='guige'>规格：48s</text>
-              <view class='number'>
-                <view class='reduce'>
-                  <text></text>
+      <!--商品框-->
+      <view wx:for='{{goods}}' wx:key='{{index}}'>
+      
+        <view class='shop_firest'>
+          <view class='name'>
+            <checkbox-group
+              style='margin:0 0 0 20rpx;line-height:20rpx;'
+              data-check_find='{{index}}'
+              data-check_tt='{{item.tt}}'
+              bindtap="all_selected">
+              <checkbox checked='{{item.tt === 0 ? true : false}}'></checkbox>
+            </checkbox-group>
+            <text>{{item.tltie}}</text>
+          </view>
+          <view wx:for='{{item.con}}' wx:key='{{index}}' wx:for-index='box'>
+
+            <view class='items'>
+              <checkbox-group data-check_tt='{{item.tt}}' data-check_box='{{index}}' data-check_find='{{box}}' bindtap='check_find'>
+                <checkbox checked='{{item.tt === 0 ? true : false}}'></checkbox>
+              </checkbox-group>
+              <view class='content'>
+                <view class='shop_tu'><image src='{{item.image}}'></image></view>
+                <view class='message'>
+                  <text class='ji_name'>{{item.tltie}}</text>
+                  <text class='guige'>规格：48s</text>
+                  <view class='number'>
+                    <view class='reduce'>
+                      <text></text>
+                    </view>
+                    <text class='number_text'>{{item.number}}</text>
+                    <view class='add' bindtap='add' data-add='{{item.price}}'>
+                      <text class='heng'></text>
+                      <text class='shu'></text>
+                    </view>
+                  </view>
                 </view>
-                <input type='number' value='1'/>
-                <view class='add'>
-                  <text class='heng'></text>
-                  <text class='shu'></text>
-                </view>
+                <text class='price'>{{item.price}}</text>
               </view>
             </view>
-            <text class='price'>￥120.50</text>
+
           </view>
         </view>
-        <view class='items'>
-          <view class='check'></view>
-          <view class='content'>
-            <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
-            <view class='message'>
-              <text class='ji_name'>鸡骨草胶囊（玉林）</text>
-              <text class='guige'>规格：48s</text>
-              <view class='number'>
-                <view class='reduce'>
-                  <text></text>
-                </view>
-                <input type='number' value='1'/>
-                <view class='add'>
-                  <text class='heng'></text>
-                  <text class='shu'></text>
-                </view>
-              </view>
-            </view>
-            <text class='price'>￥120.50</text>
-          </view>
-        </view>
-      </view>
-      <view class='shop_firest'>
-        <view class='name'>
-          <view></view>
-          <text>健客大药房网定点送</text>
-        </view>
-        <view class='items'>
-          <view class='check'></view>
-          <view class='content'>
-            <view class='shop_tu'><image src='/images/shop_name.jpg'></image></view>
-            <view class='message'>
-              <text class='ji_name'>鸡骨草胶囊（玉林）</text>
-              <text class='guige'>规格：48s</text>
-              <view class='number'>
-                <view class='reduce'>
-                  <text></text>
-                </view>
-                <input type='number' value='1'/>
-                <view class='add'>
-                  <text class='heng'></text>
-                  <text class='shu'></text>
-                </view>
-              </view>
-            </view>
-            <text class='price'>￥120.50</text>
-          </view>
-        </view>
-      </view>
+
+      </view>  <!--end 商品框-->
+      <!--结算框-->
       <view class='pay'>
         <view class='pay_left'>
-          <text></text>
+          <checkbox-group
+              style='margin: 20rpx 0 0 15rpx;'
+              data-tt='{{tt}}'
+              bindtap="all_box">
+              <checkbox checked='{{tt === 0 ? true : false}}'></checkbox>
+            </checkbox-group>
           <text>全选</text>
         </view>
         <view class='sum_price'>
@@ -103,7 +78,7 @@
           <text class='shipping'>不含运费</text>
         </view>
         <view class='go' bindtap='order'>去结算</view>
-      </view>
+      </view>  <!--end 结算框-->
     </form>
   </view>
   <view wx:else>
