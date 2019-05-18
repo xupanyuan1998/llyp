@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/catas/catas",
+    "pages/logs/logs",
     "pages/msg/msg",
     "pages/my/my",
     "pages/shoping/shoping",

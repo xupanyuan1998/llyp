@@ -65,40 +65,40 @@ Page({
     let id = options.id;
     let name = options.name;
     wx.request({
-      url: imgurl +'/index.php?s=/api/goods/goodsClassificationList',
-      success(res){
-        _this.setData({
-          cata: res.data.data,
-          block_id:id
-        })
-      }
-    });
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-    var that=this;
-    wx.request({
-      url: imgurl + 'api/goods/goodsList',
+      url: imgurl + '/index.php?s=/api/goods/goodsClassificationList',
       method: "POST",
       data: {
-        category_id: '',
-        block_id: that.data.block_id
+        block_id:id
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: (res) => {
-       that.setData({
-          Goods: res.data.data.data,
+       _this.setData({
+          cata: res.data.data,
+          block_id: id
         })
+        wx.request({
+          url: imgurl + 'api/goods/goodsList',
+          method: "POST",
+          data: {
+            category_id: '',
+            block_id: id
+          },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          success: (res) => {
+            _this.setData({
+              Goods: res.data.data.data,
+            })
+          }
+        });
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
+ 
+   /* 生命周期函数--监听页面显示
    */
   onShow: function() {
 

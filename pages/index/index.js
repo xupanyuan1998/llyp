@@ -19,7 +19,8 @@ Page({
     content:'',
     left:0,
     commodity: [],
-    int:''
+    int:'',
+    page:1
   },
   //商品列表选中状态
   clecked(e){
@@ -77,6 +78,7 @@ Page({
     console.log(e)
     let name=e.currentTarget.dataset.name;
     let id=e.currentTarget.dataset.id;
+    console.log(id)
       wx.navigateTo({
         url: '/pages/s_cate/s_cate?id='+id+'&name='+name,
       })
@@ -84,8 +86,9 @@ Page({
   // 请求首页数据
   onLoad: function (options) {
     var _this=this;
+    var pages=this.data.page;
     wx.request({
-      url: imgurl +'index.php?s=/api/index/index?page=1&offset=20',
+      url: imgurl +'index.php?s=/api/index/index?page='+pages+'&offset=20',
       success(res){
         _this.setData({
           banner: res.data.data.plat_adv_list.adv_list,
@@ -100,5 +103,43 @@ Page({
     wx.navigateTo({
       url: '/pages/personal/shareshop/shareshop',
     })
-  }
+  },
+  // xialashaxin
+  onReachBottom: function () {
+    var that = this;
+    var pages = that.data.page;
+    pages++;
+    that.setData({
+      page:pages
+    })
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    // 页数+1
+ 
+    wx.request({
+      url: imgurl + 'index.php?s=/api/index/index',
+      method: "GET",
+      data:{
+        page:pages,
+        offset:20
+      },
+      // 请求头部
+      header: {
+        'content-type': 'application/text'
+      },
+      success: function (res) {
+      var arr= res.data.data.goods_recommend_list;
+      arr=that.data.commodity.concat(arr);
+     that.setData({
+       commodity:arr
+     })
+
+        // 隐藏加载框
+        wx.hideLoading();
+      }
+    })
+
+  },
 })

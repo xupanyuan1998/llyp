@@ -190,7 +190,6 @@ goodsping(e){
       specifications: 'none'
     })
   },
-  // fangzhimaopao
   //商品分享
   share_c() {
     this.setData({
