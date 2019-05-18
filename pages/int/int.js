@@ -43,6 +43,10 @@ Page({
     guilist: '',
     selectGuigeName: '',
     textStates: ["sdalfd", "g_active"],
+    jies:['宝贝',"详情","评价","推荐"],
+    nav:0,
+    b_ac:0,
+    opition:'body_0'
   },
   onLoad(datas){
     var _this=this;
@@ -59,6 +63,26 @@ Page({
        })
      }
    })
+  },
+  // 页面滚动
+  onPageScroll: function (e) {
+    if (e.scrollTop>=200){
+     this.setData({
+       nav:1
+      })
+    } else if (e.scrollTop <200){
+      this.setData({
+        nav: 0
+      })
+     }
+  
+  },
+  // 下拉表头
+  b_ac(e){
+    this.setData({
+      b_ac:e.currentTarget.dataset.id,
+      opition: e.currentTarget.dataset.cata
+    })
   },
   // 详情
   active(e) {

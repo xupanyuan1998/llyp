@@ -23,6 +23,55 @@ page{
 .nav image:first-child{
   float: left;
 }
+.bobys{
+  height: 60rpx;
+  padding: 14rpx 20rpx;
+  width: 710rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #f8f8f8;
+}
+.bobys .back{
+  width: 18rpx;
+  height: 30rpx;
+  display: block;
+  margin: 15rpx 140rpx 15rpx 19rpx;
+  float: left;
+}
+.bobys text{
+  float: left;
+  display: block;
+  width: 81rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #464646;
+}
+.bobys text.t_actives{
+  border-bottom: 4rpx solid #fe843a;
+}
+.bobys view{
+  float: right;
+  width: 115rpx;
+  height: 45rpx;
+  margin-top: 7rpx;
+}
+.bobys view image:first-child{
+  width: 44rpx;
+  height: 45rpx;
+  float: left;
+  display: block;
+}
+.bobys view image:last-child{
+  width: 39rpx;
+  height: 36rpx;
+  margin-top: 3rpx;
+  display: block;
+  float: right;
+}
 /*轮播图*/
 .banner_int{
   width: 750rpx;

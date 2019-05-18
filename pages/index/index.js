@@ -85,7 +85,7 @@ Page({
   onLoad: function (options) {
     var _this=this;
     wx.request({
-      url: imgurl +'index.php?s=/api/index/index',
+      url: imgurl +'index.php?s=/api/index/index?page=1&offset=20',
       success(res){
         _this.setData({
           banner: res.data.data.plat_adv_list.adv_list,

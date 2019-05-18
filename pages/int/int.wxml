@@ -2,120 +2,125 @@
 <import src="../../wxParse/wxParse.wxml" />
 <wxs module="opimgurl" src="../../utils/imgurl.wxs"></wxs>
 <!-- 头部导航 -->
-<view class='nav'>
+<view class='nav' wx:if="{{nav==0}}">
   <image src='/images/back.png'></image>
   <image src="/images/cus.png"></image>
   <image src='/images/share_c.png' bindtap='share_c'></image>
 </view>
-<!-- 商品展示 -->
-<swiper autoplay='true' interval='3000' indicator-dots='true' indicator-active-color='#f6441c' indicator-color='rgba(170,166,165,.5)' class='banner_int'>
-  <block wx:for="{{image_int}}" wx:key="item">
-    <swiper-item>
-      <image src="{{imgurl+item.pic_cover}}"></image>
-    </swiper-item>
-  </block>
-</swiper>
-<!-- 商品信息 -->
-<view class='com_int'>
-  <view class='com_name'>
-    <view class='com_name.left'>
-      <text>{{data_int.goods_detail.goods_name}}</text>
-      <text>{{data_int.goods_detail.introduction}}</text>
-    </view>
-    <view class='com_name.right'>
-      <text>￥{{data_int.goods_detail.member_price}}</text>
-      <text>原价:￥{{data_int.goods_detail.market_price}}</text>
-    </view>
-  </view>
-  <view class='sales'>
-    <text class='express'>快递：{{data_int.goods_detail.shipping_fee_name}}</text>
-    <view class='sales_number'>
-      <text>销售量：</text>
-      <text>{{data_int.goods_detail.sales}}</text>
-    </view>
+<view class='bobys' wx:if="{{nav==1}}">
+  <image class='back' src='/images/back1.png'></image>
+  <text class="{{b_ac==idx?'t_actives':''}}" wx:for="{{jies}}" wx:key="item" wx:for-index="idx" data-id="{{idx}}"
+  data-cata="{{'boby'+idx}}" bindtap='b_ac'>{{item}}</text>
+  <view>
+    <image src='/images/share11.png'></image>
+    <image src='/images/msg1.png'></image>
   </view>
 </view>
-<!-- 商品分类 -->
-<view class='com_cate'>
-  <text>选择商品分类</text>
-  <image src='/images/next.jpg'></image>
-</view>
-<!-- 店铺名称 -->
-<view class='shop_name' bindtap='shop'>
-  <image src="{{data_int.goods_detail.shop_logo?data_int.goods_detail.shop_logo:'/images/dianlogo.png'}}"></image>
-  <view class='shop_n'>
-    <text>{{data_int.shopname?data_int.shopname:'善缘堂'}}</text>
-    <text>关注人数：{{data_int.num}}</text>
-  </view>
-  <view class='call'>联系商家</view>
-</view>
-<!-- 商品评论 -->
-<view class='int_com'>
-  <view class='tops'>
-    <text class="{{active==item.num?'com_active':''}}" wx:for="{{comments}}" wx:key='item' data-id="{{item.num}}" bindtap='active' data-goods_id="{{data_int.goods_detail.goods_id}}">{{item.text}}</text>
-  </view>
-  <view wx:if="{{active==0}}" class='com_c'>
-    <view class="wxParse">
-      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  <!-- 商品展示 -->
+  <swiper id="boby0" autoplay='true' interval='3000' indicator-dots='true' indicator-active-color='#f6441c' indicator-color='rgba(170,166,165,.5)' class='banner_int'>
+    <block wx:for="{{image_int}}" wx:key="item">
+      <swiper-item>
+        <image src="{{imgurl+item.pic_cover}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 商品信息 -->
+  <view class='com_int'>
+    <view class='com_name'>
+      <view class='com_name.left'>
+        <text>{{data_int.goods_detail.goods_name}}</text>
+        <text>{{data_int.goods_detail.introduction}}</text>
+      </view>
+      <view class='com_name.right'>
+        <text>￥{{data_int.goods_detail.member_price}}</text>
+        <text>原价:￥{{data_int.goods_detail.market_price}}</text>
+      </view>
+    </view>
+    <view class='sales'>
+      <text class='express'>快递：{{data_int.goods_detail.shipping_fee_name}}</text>
+      <view class='sales_number'>
+        <text>销售量：</text>
+        <text>{{data_int.goods_detail.sales}}</text>
+      </view>
     </view>
   </view>
-  <view wx:if="{{active==1}}" class='reply'>
-    <view class='all_reply'>
-      <text class="{{goodsping==idx?'reply_active':''}}"
-       wx:for="{{pinglun_all}}"
-        wx:key="item" 
-        bindtap='goodsping'
-        wx:for-index='idx'
-        data-idx='{{idx}}'
-        >{{item}}</text>
+  <!-- 商品分类 -->
+  <view class='com_cate'>
+    <text>选择商品分类</text>
+    <image src='/images/next.jpg'></image>
+  </view>
+  <!-- 店铺名称 -->
+  <view class='shop_name' bindtap='shop'>
+    <image src="{{data_int.goods_detail.shop_logo?data_int.goods_detail.shop_logo:'/images/dianlogo.png'}}"></image>
+    <view class='shop_n'>
+      <text>{{data_int.shopname?data_int.shopname:'善缘堂'}}</text>
+      <text>关注人数：{{data_int.num}}</text>
+    </view>
+    <view class='call'>联系商家</view>
+  </view>
+  <!-- 商品评论 -->
+  <view class='int_com' id="boby1 boby2">
+    <view class='tops'>
+      <text class="{{active==item.num?'com_active':''}}" wx:for="{{comments}}" wx:key='item' data-id="{{item.num}}" bindtap='active' data-goods_id="{{data_int.goods_detail.goods_id}}">{{item.text}}</text>
+    </view>
+    <view wx:if="{{active==0}}" class='com_c'>
+      <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+    <view wx:if="{{active==1}}" class='reply'>
+      <view class='all_reply'>
+        <text class="{{goodsping==idx?'reply_active':''}}" wx:for="{{pinglun_all}}" wx:key="item" bindtap='goodsping' wx:for-index='idx' data-idx='{{idx}}'>{{item}}</text>
+      </view>
     </view>
   </view>
-</view>
-<view wx:if="{{active==1}}" class='coms_int' wx:for='{{comments_int}}' wx:key="{{item}}">
-  <view class='int_user'>
-    <image class='avater' src='/images/dianlogo.png'></image>
-    <text>{{item.member_name}}</text>
-    <view>
-       <block wx:if='{{item.scores > 0}}'><!--第一个先判断后台传过来的数据要大于0再进行循环 -->
-        <block wx:for='{{item.scores-0}}' wx:key='un'> <!--注意这里item.grade是后台传过来的星级，为什么是减零呢，？            //自我感觉就是当它是减法的时候，他会自动从大到小减到以反之就是加(这只是我的假想，大家可以去研究一下。)。 -->
-          <image src='/images/active_start.png'></image>
+  <view wx:if="{{active==1}}" class='coms_int' wx:for='{{comments_int}}' wx:key="{{item}}">
+    <view class='int_user'>
+      <image class='avater' src='/images/dianlogo.png'></image>
+      <text>{{item.member_name}}</text>
+      <view>
+        <block wx:if='{{item.scores > 0}}'>
+          <!--第一个先判断后台传过来的数据要大于0再进行循环 -->
+          <block wx:for='{{item.scores-0}}' wx:key='un'>
+            <!--注意这里item.grade是后台传过来的星级，为什么是减零呢，？            //自我感觉就是当它是减法的时候，他会自动从大到小减到以反之就是加(这只是我的假想，大家可以去研究一下。)。 -->
+            <image src='/images/active_start.png'></image>
+          </block>
         </block>
-      </block>
 
-      <block wx:if='{{item.scores < 5}}'>
-        <block wx:for='{{5-item.scores-0}}' wx:key="un">
-          <image src='/images/start.png'></image>
+        <block wx:if='{{item.scores < 5}}'>
+          <block wx:for='{{5-item.scores-0}}' wx:key="un">
+            <image src='/images/start.png'></image>
+          </block>
         </block>
-      </block>
+      </view>
+    </view>
+    <view class='date'>
+      <text>{{item.addtime}}</text>
+      <text></text>
+    </view>
+    <text class='int_content'>{{item.content}}</text>
+    <view class='int_image'>
+      <image wx:if="{{opimgurl.imgurl(item.image)!=''}}" src='{{opimgurl.imgurl(item.image)}}'></image>
     </view>
   </view>
-  <view class='date'>
-    <text>{{item.addtime}}</text>
-    <text></text>
-  </view>
-  <text class='int_content'>{{item.content}}</text>
-  <view class='int_image'>
-    <image wx:if="{{opimgurl.imgurl(item.image)!=''}}" src='{{opimgurl.imgurl(item.image)}}'></image>
-  </view>
-</view>
 
-<!-- 购买 -->
-<view class='footer'>
-  <view class='dian dian_active dian1'>
-    <image src='/images/car_ser.png'></image>
-    <text>客服</text>
+  <!-- 购买 -->
+  <view class='footer'>
+    <view class='dian dian_active dian1'>
+      <image src='/images/car_ser.png'></image>
+      <text>客服</text>
+    </view>
+    <view class='dian'>
+      <image src='/images/xin.png'></image>
+      <text>收藏</text>
+    </view>
+    <view class='dian dain3'>
+      <image src='/images/shopdian.png'></image>
+      <text>店铺</text>
+    </view>
+    <view class='push' bindtap='specifications'>加入购物车</view>
+    <view class='now' bindtap='specifications'>立即购买</view>
   </view>
-  <view class='dian'>
-    <image src='/images/xin.png'></image>
-    <text>收藏</text>
-  </view>
-  <view class='dian dain3'>
-    <image src='/images/shopdian.png'></image>
-    <text>店铺</text>
-  </view>
-  <view class='push' bindtap='specifications'>加入购物车</view>
-  <view class='now' bindtap='specifications'>立即购买</view>
-</view>
 <!-- 商品分享页面 -->
 <view class='share_c' style='display:{{show}}'>
   <view class='share_top'>
@@ -146,31 +151,22 @@
     </view>
   </view>
 </view>
-<!-- 产品规格 --> 
+<!-- 产品规格 -->
 <view class='guige_b' style='display:{{specifications}}' bindtap='hidden'>
-  <view class='guige'  catchtap='ibtn'>
+  <view class='guige' catchtap='ibtn'>
     <view class='guige_top'>
       <image src='{{imgurl+data_int.goods_detail.picture_detail.pic_cover_small}}'></image>
       <text>{{data_int.goods_detail.goods_name}}</text>
       <text class='price'>￥{{sum}}</text>
     </view>
-    <view class="choose_gui {{textStates[items.isClick]}}"  wx:for="{{guige}}" wx:key='this' wx:for-item="dayItem" wx:for-index="fuindex">
+    <view class="choose_gui {{textStates[items.isClick]}}" wx:for="{{guige}}" wx:key='this' wx:for-item="dayItem" wx:for-index="fuindex">
       <text>选择{{dayItem.spec_name}}</text>
-      <view class=''
-        wx:for="{{dayItem.value}}" 
-        wx:key="this"
-        wx:for-item="item"
-        wx:for-index="idxs"
-        data-fuindex="{{fuindex}}"
-         data-chindex="{{idxs}}"
-         data-item="{{item.spec_value_name}}" 
-         catchtap='selectGuige'
-      >{{item.spec_value_name}}</view>
+      <view class='' wx:for="{{dayItem.value}}" wx:key="this" wx:for-item="item" wx:for-index="idxs" data-fuindex="{{fuindex}}" data-chindex="{{idxs}}" data-item="{{item.spec_value_name}}" catchtap='selectGuige'>{{item.spec_value_name}}</view>
     </view>
     <view class='choose_num'>
       <text class='number'>数量</text>
       <view class='add_num'>
-         <view class='num'>
+        <view class='num'>
           <text>-</text>
           <view>1</view>
           <text>+</text>
@@ -179,8 +175,8 @@
       </view>
     </view>
     <view class='addcar'>
-      <text >加入购物车</text>
-      <text >立即购买</text>
+      <text>加入购物车</text>
+      <text>立即购买</text>
     </view>
   </view>
 </view>

@@ -1,0 +1,35 @@
+<!--pages/catas/catas.wxml-->
+<view class='nav'>
+  <view class='left'>
+    <image src='/images/search1.png'></image>
+    <input placeholder='请输入您搜索商品的名称'></input>
+  </view>
+  <view class='right'>
+    <view>
+      <image src='/images/msgs.png'></image>
+      <text>12</text>
+    </view>
+  </view>
+</view>
+<view class='content'>
+  <scroll-view class='c_l' scroll-y="true">
+    <view class="{{active==idx?'active':''}}" wx:for="{{cata}}" wx:key="item" wx:for-index='idx' data-id="{{idx}}" bindtap='active'>{{item}}</view>
+  </scroll-view>
+  <view class='c_r'>
+    <image class='banner' src='/images/b_line.jpg'></image>
+    <view class='warp'>
+      <view class='con'>
+          <image src='/images/caizhuang.jpg'></image>
+        <text>景胜</text>
+      </view>
+      <view class='con'>
+          <image src='/images/caizhuang.jpg'></image>
+        <text>景胜</text>
+      </view>
+      <view class='con'>
+          <image src='/images/caizhuang.jpg'></image>
+        <text>景胜</text>
+      </view>
+    </view>
+  </view>
+</view>

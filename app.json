@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/catas/catas",
     "pages/msg/msg",
     "pages/my/my",
     "pages/shoping/shoping",
@@ -61,7 +61,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/catas/catas",
         "iconPath": "/images/tit_02.png",
         "selectedIconPath": "/images/tit_02_fill.png",
         "text": "分类"

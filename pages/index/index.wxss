@@ -7,6 +7,9 @@ swiper{
   padding: 12rpx 30rpx 20rpx;
   width: 100vw;
   background: #ff742f;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 .nav image{
   width: 42rpx;
@@ -60,6 +63,9 @@ swiper{
   position: absolute;
   top:5rpx;
   left: 24rpx;
+}
+.banner{
+  margin-top: 96rpx;
 }
 .banner image{
   width: 750rpx;
