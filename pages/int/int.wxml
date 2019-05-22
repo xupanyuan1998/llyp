@@ -129,8 +129,12 @@
       <text>客服</text>
     </view>
     <!-- 收藏宝贝 -->
-    <view class='dian' bindtap='tabloidbaby'>
-      <image src="{{shoucangs=='true'?'/images/active_xin.png':'/images/xin.png'}}"></image>
+    <view class='dian' bindtap='tabloidbaby' wx:if="{{shoucangs==false}}">
+      <image  src="/images/xin.png"></image>
+      <text>收藏</text>
+    </view>
+    <view class='dian' bindtap='cancletabloidbaby' wx:else>
+      <image  src="/images/active_xin.png"></image>
       <text>收藏</text>
     </view>
     <view class='dian dain3' bindtap='shop' data-shop_id="{{data_int.goods_detail.shop_id}}">
@@ -182,11 +186,11 @@
       <text>选择{{dayItem.spec_name}}</text>
       <view class="{{item.isSelect?'g_active':''}}" wx:for="{{dayItem.value}}" wx:key="this" wx:for-item="item" wx:for-index="idxs" data-fuindex="{{fuindex}}" data-chindex="{{idxs}}" data-item="{{item.spec_value_name}}" data-content="{{guige}}" catchtap='selectGuige'>{{item.spec_value_name}}</view>
     </view> -->
-    <view class="choose_gui ">
+    <view class="choose_gui" wx:if="{{guige[0]==true}}">
       <text>选择{{guige[0].spec_name}}</text>
       <view class="{{canshu_active==idxs?'g_active':''}}" wx:for="{{guige[0].value}}" wx:key="item"  wx:for-index="idxs"  data-id="{{idxs}}" data-item="{{item.spec_value_name}}" bindtap='canshu'>{{item.spec_value_name}}</view>
     </view>
-    <view class="choose_gui ">
+    <view class="choose_gui " wx:if="{{guige[1]==true}}">
       <text>选择{{guige[1].spec_name}}</text>
       <view class="{{color_active===idx?'g_active':''}}"  wx:for="{{guige[1].value}}" wx:key="item"  wx:for-index="idx"  data-id="{{idx}}" data-item="{{item.spec_value_name}}" bindtap='color'>{{item.spec_value_name}}</view>
     </view>
@@ -202,7 +206,9 @@
       </view>
     </view>
     <view class='addcar'>
-      <text>加入购物车</text>
+      <text
+       bindtap='addcar'
+       >加入购物车</text>
       <text>立即购买</text>
     </view>
   </view>

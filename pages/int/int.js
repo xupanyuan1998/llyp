@@ -62,7 +62,6 @@ Page({
       success(res) {
         let dataes = res.data.data;
         var article = dataes.goods_detail.description;
-        console.log(res);
         WxParse.wxParse('article', 'html', article, _this);
         // 判断有没有规格的主图
         var tu = dataes.goods_detail.picture_detail.pic_cover_small;
@@ -100,7 +99,6 @@ Page({
                 token: app.globalData.is_login
               },
               success(suc) {
-                console.log(suc.data.data.data)
                 var arr = [];
                 var len = suc.data.data.data.length;
                 for (let i = 0; i < len; ++i) {
@@ -108,11 +106,11 @@ Page({
                 };
                 // 判断当前商品是否被收藏过
                 var a = dataes.goods_detail.goods_id;
-                console.log(arr);
-                for (var idx in arr) {
-                  if (idx == a) {
+                var leng = arr.length;
+                for (let i = 0; i < leng; ++i) {
+                  if (a == arr[i]) {
                     _this.setData({
-                      shoucangs: 'true'
+                      shoucangs: true
                     })
                   }
                 }
@@ -290,55 +288,61 @@ Page({
         icon: 'none'
       })
     } else {
-      if (that.data.shoucangs == 'false') {
-        wx.request({
-          url: imgurl + '/api/member/FavoritesGoodsorshop',
-          method: "POST",
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          data: {
-            fav_id: that.data.goods_id,
-            fav_type: 'goods',
-            token: app.globalData.is_login
-          },
-          success(res) {
-            console.log(res)
-            if (res.data.code == 200) {
-              wx.showToast({
-                title: res.data.message,
-              });
-              that.setData({
-                shoucangs: 'true'
-              })
-            }
+      wx.request({
+        url: imgurl + '/api/member/FavoritesGoodsorshop',
+        method: "POST",
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        data: {
+          fav_id: that.data.goods_id,
+          fav_type: 'goods',
+          token: app.globalData.is_login
+        },
+        success(res) {
+          if (res.data.code == 200) {
+            wx.showToast({
+              title: res.data.message,
+            });
+            that.setData({
+              shoucangs: 'true'
+            })
           }
-        })
-      } else {
-        wx.request({
-          url: imgurl + '/api/member/cancelFavorites',
-          method: "POST",
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          data: {
-            fav_id: that.data.goods_id,
-            fav_type: 'goods',
-            token: app.globalData.is_login
-          },
-          success(req) {
-            console.log(req)
-            if (req.data.code == 200) {
-              wx.showToast({
-                title: req.data.message,
-              });
-              that.setData({
-                shoucangs: 'false'
-              })
-            }
+        }
+      })
+    }
+  },
+  // 取消收藏
+  cancletabloidbaby() {
+    var that = this;
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您没有登录不能收藏',
+        icon: 'none'
+      })
+    } else {
+      wx.request({
+        url: imgurl + '/api/member/cancelFavorites',
+        method: "POST",
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        data: {
+          fav_id: that.data.goods_id,
+          fav_type: 'goods',
+          token: app.globalData.is_login
+        },
+        success(req) {
+          if (req.data.code == 200) {
+            wx.showToast({
+              title: req.data.message,
+            });
+            that.setData({
+              shoucangs: false
+            })
           }
-        })
-      }
+        }
+      })
     }
   },
   // 进入聊天页面
@@ -361,17 +365,75 @@ Page({
               "Content-Type": "application/x-www-form-urlencoded"
             },
             data: {
-              id: res.data.data.shop_info.uid  ,
+              id: res.data.data.shop_info.uid,
               token: app.globalData.is_login
             },
             success(req) {
-              console.log(req)
-              var a=3;
-              // wx.navigateTo({
-              //   url: '/pages/chat/chat?id=' + res.data.data.shop_info.uid + '&name=' + res.data.data.shop_info.shop_name
-              // })
+              wx.navigateTo({
+                url: '/pages/chat/chat?id=' + req.data.data + '&name=' + res.data.data.shop_info.shop_name
+              })
             }
           })
+        }
+      })
+    }
+  },
+  // 加入购物车
+  addcar() {
+    console.log(1111)
+    var that = this;
+    const datas = that.data.data_int;
+    let color_active = that.data.color_active,
+      goods_id = that.data.goods_id,
+      shop_name = datas.shopname || '善缘堂',
+      price = datas.goods_detail.member_price,
+      goods_name = datas.goods_detail.goods_name,
+      cost_price = datas.goods_detail.sku_list[color_active].cost_price,
+      shop_id = datas.goods_detail.shop_id,
+      select_skuid = datas.goods_detail.sku_list[color_active].sku_id,
+      sku_name = datas.goods_detail.sku_list[color_active].sku_name,
+      pictureId = datas.goods_detail.picture;
+    var cart_detail = {
+      trueId: goods_id,
+      shop_name: shop_name,
+      price: price,
+      goods_name: goods_name,
+      cost_price: cost_price,
+      shop_id: shop_id,
+      select_skuid: select_skuid,
+      select_skuName: sku_name,
+      picture: pictureId,
+      count: that.data.numberType
+    }
+
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '加入购物车失败，请登陆后重试',
+        icon: "none",
+        mask: 'true'
+      })
+    } else {
+      console.log(cart_detail);
+      wx.request({
+        url: imgurl + 'api/cart/addcart',
+        method: "POST",
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        dataType: 'JSON',
+        data: {
+          cart_detail_wx: JSON.stringify(cart_detail),
+          cart_tag: "addcart",
+          token: app.globalData.is_login
+        },
+        success(res) {
+        var dataes=JSON.parse(res.data)
+        console.log(dataes);
+          if(dataes.code==200){
+            wx.showToast({
+              title:dataes.message
+            })
+          }
         }
       })
     }

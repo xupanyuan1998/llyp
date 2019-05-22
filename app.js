@@ -3,6 +3,6 @@ App({
   globalData: {
     userInfo: null,
     imgurl:'http://ykshop.com/',
-    is_login:null
+    is_login: 'ho5u3mee9slpq9bdlbebqgba2j'
   }
 })
