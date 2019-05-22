@@ -51,6 +51,7 @@ Page({
      success(res){
        let dataes=res.data.data;
        var article=dataes.goods_detail.description;
+       console.log(dataes.goods_detail.spec_list);
        WxParse.wxParse('article', 'html', article, _this);
        _this.setData({
          image_int : dataes.goods_detail.img_list,
