@@ -366,6 +366,7 @@ Page({
             },
             success(req) {
               console.log(req)
+              var a=3;
               // wx.navigateTo({
               //   url: '/pages/chat/chat?id=' + res.data.data.shop_info.uid + '&name=' + res.data.data.shop_info.shop_name
               // })
