@@ -41,7 +41,8 @@
   float: right;
   margin-left: 25rpx;
 }
-.shop view.del_all{
+
+.shop view.del_all {
   height: 53rpx;
   line-height: 53rpx;
   float: right;
@@ -50,16 +51,23 @@
   font-family: "苹方";
   margin-left: 10rpx;
 }
+
 /*聊天内容*/
-.msg_c{
+
+.msg_c {
   width: 750rpx;
   height: 1000rpx;
   margin-bottom: 200rpx;
 }
 .warp {
   width: 710rpx;
-  height: auto;
+  height: 1018rpx;
   padding: 0 20rpx;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 
 .warp .date {
@@ -141,8 +149,10 @@
   top: 34rpx;
   right: -7rpx;
 }
+
 /* 底部输入部分*/
-.footer{
+
+.footer {
   height: 74rpx;
   border-bottom: 1rpx solid #e9e9e9;
   border-top: 1rpx solid #e9e9e9;
@@ -153,20 +163,23 @@
   bottom: 0;
   left: 0;
 }
-.footer .yuyin{
+
+.footer .yuyin {
   width: 50rpx;
   height: 50rpx;
   display: block;
   float: left;
   margin: 15rpx 20rpx 15rpx 0;
 }
-.footer view{
+
+.footer view {
   width: 522rpx;
   height: 79rpx;
   float: left;
   position: relative;
 }
-.footer view input{
+
+.footer view input {
   width: 428rpx;
   height: 47rpx;
   display: block;
@@ -174,17 +187,19 @@
   border: 1rpx solid #e8e8e8;
   padding: 10rpx 70rpx 10rpx 22rpx;
   line-height: 47rpx;
-    font-size:30rpx ;
-  color: #333333
+  font-size: 30rpx;
+  color: #333;
 }
-.footer view image{
+
+.footer view image {
   width: 50rpx;
   height: 50rpx;
   position: absolute;
   top: 15rpx;
   right: 19rpx;
 }
-.footer text{
+
+.footer text {
   display: block;
   float: right;
   width: 100rpx;
@@ -197,8 +212,10 @@
   color: #fff;
   font-size: 30rpx;
 }
+
 /* 删除页面 */
-.del_b{
+
+.del_b {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -206,76 +223,88 @@
   z-index: 1000;
   background: rgba(0, 0, 0, 0.5);
 }
-.del{
+
+.del {
   position: absolute;
   bottom: 0;
   width: 750rpx;
   height: 231rpx;
   background: #fff;
 }
-.del text{
+
+.del text {
   display: block;
   width: 750rpx;
   text-align: center;
 }
-.del text:first-child{
+
+.del text:first-child {
   height: 125rpx;
   line-height: 125rpx;
   font-size: 34rpx;
   border-bottom: 1rpx solid #e5e5e5;
   color: #ef3838;
 }
-.del text:last-child{
+
+.del text:last-child {
   height: 105rpx;
   line-height: 105rpx;
   color: #7b7b7b;
   font-size: 30rpx;
 }
+
 /* 删除全部 */
-.del_all_b{
-   width: 100%;
+
+.del_all_b {
+  width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
 }
-.del_alls{
+
+.del_alls {
   width: 552rpx;
   height: 430rpx;
   background: #fff;
   border-radius: 3rpx;
 }
-.del_alls .place{
+
+.del_alls .place {
   height: 244rpx;
   width: 552rpx;
   padding: 54rpx 0 46rpx 0;
 }
-.del_alls .place image{
+
+.del_alls .place image {
   display: block;
   margin: 0 auto 30rpx;
   width: 99rpx;
   height: 96rpx;
 }
-.del_alls .place text{
+
+.del_alls .place text {
   display: block;
-  height:58rpx;
+  height: 58rpx;
   width: 552rpx;
   line-height: 58rpx;
-  text-align: center; 
-  color: #666666;
+  text-align: center;
+  color: #666;
   font-weight: bold;
   font-size: 32rpx;
 }
-.del_alls .save{
+
+.del_alls .save {
   width: 552rpx;
   height: 89rpx;
   background: #f4f4f4;
 }
-.del_alls .save text{
+
+.del_alls .save text {
   display: block;
   float: left;
   width: 275rpx;
@@ -285,7 +314,8 @@
   font-size: 30rpx;
   color: #939393;
 }
-.del_alls .save text:last-child{
+
+.del_alls .save text:last-child {
   color: #585858;
   border-left: 1rpx solid #dedede;
 }

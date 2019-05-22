@@ -1,0 +1,23 @@
+<!--pages/list_int/list_int.wxml-->
+<view class='nav'>
+  <view class='left'>
+    <image src='/images/search1.png'></image>
+    <input placeholder='请输入您搜索商品的名称'></input>
+  </view>
+  <view class='right'>
+    <view>
+      <image src='/images/msgs.png'></image>
+      <text>12</text>
+    </view>
+  </view>
+</view>
+<view class='warp'>
+  <view class="content">
+    <image src=''></image>
+    <view>
+      <text></text>
+    </view>
+    <text class='shop_name'>景胜</text>
+    <text class='price'>￥696</text>
+  </view>
+</view>

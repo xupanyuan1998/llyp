@@ -64,6 +64,7 @@ Page({
     // 获取当前分类id 和名称
     let id = options.id;
     let name = options.name;
+    wx.setNavigationBarTitle({ title: name })  
     wx.request({
       url: imgurl + '/index.php?s=/api/goods/goodsClassificationList',
       method: "POST",

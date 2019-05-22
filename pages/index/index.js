@@ -1,6 +1,7 @@
 //index.js
 const app=getApp();
 const imgurl = app.globalData.imgurl;
+const is_login = app.globalData.is_login;
 Page({
   data: {
     banner: ["/images/banner.jpg", "/images/banner.jpg"],
@@ -75,16 +76,15 @@ Page({
   },
   //分类
   cate(e){
-    console.log(e)
     let name=e.currentTarget.dataset.name;
     let id=e.currentTarget.dataset.id;
-    console.log(id)
       wx.navigateTo({
         url: '/pages/s_cate/s_cate?id='+id+'&name='+name,
       })
   },
   // 请求首页数据
   onLoad: function (options) {
+    console.log(is_login);
     var _this=this;
     var pages=this.data.page;
     wx.request({

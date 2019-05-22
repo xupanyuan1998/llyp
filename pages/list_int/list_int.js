@@ -1,4 +1,4 @@
-// pages/catas/catas.js
+// pages/list_int/list_int.js
 const app=getApp();
 const imgurl=app.globalData.imgurl;
 Page({
@@ -7,36 +7,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cata: [],
-    active:0,
-    imgurls:'http://www.lianlianyp.com/',
-    twoCata:''
+
   },
-// 选中分类
-active(e){
-  this.setData({
-    active:e.currentTarget.dataset.id,
-    twoCata: this.data.cata[e.currentTarget.dataset.id-1].child_list
-  })
-},
-// 分类列表
-list(e){
-  // 跳转到二级分类详情页面
-  wx.navigateTo({
-    url: '/pages/list_int/list_int?category_id=' + e.currentTarget.dataset.cata_id,
-  })
-},
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    console.log(options)
     wx.request({
-      url:imgurl+ '/api/goods/goodsClassificationList',
-      success(res){
-        that.setData({
-          cata:res.data.data
-        })
+      url: imgurl + '/api/goods/goodsList',
+      method: "POST",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        category_id: options.category_id,
+        order: 'ng.sales ',
+        sort: 'asc'
+      },
+      success(res) {
+        console.log(res)
       }
     })
   },

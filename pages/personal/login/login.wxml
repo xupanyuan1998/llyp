@@ -7,47 +7,47 @@
 </view>
 
 <view wx:if="{{active==0}}">
-  <form>
+  <form bindsubmit="formSubmits">
     <view>
       <image  src='/images/number.png'></image>
-      <input placeholder='请输入手机号码' value='' placeholder-class='pal'/>
+      <input placeholder='请输入手机号码' value='' placeholder-class='pal' name="tellphone" maxlength='11'/>
     </view>
     <view>
       <image  src='/images/password.png'></image>
-      <input placeholder='请输入密码' value='' placeholder-class='pal' type='password'/>
+      <input placeholder='请输入密码' value='' placeholder-class='pal' type='password' name="password"/>
     </view>
     <button form-type='submit'>登录</button>
   </form>
   <view class='password'>
-    <text>忘记密码</text>
+    <text bindtap='repass'>忘记密码</text>
     <text>app下载</text>
   </view>
 </view>
 <view wx:if="{{active==1}}">
-  <form class='reg'>
+  <form class='reg' bindsubmit="formSubmit">
     <view>
       <image src='/images/phone.png'></image>
-      <input placeholder='请输入手机号码' value='' placeholder-class='pal'/>
+      <input placeholder='请输入手机号码' value='' placeholder-class='pal' name="phone" bindinput='getphone' maxlength='11'/>
     </view>
     <view class='yanzhengma'>
       <image src='/images/yanzheng.png'></image>
-      <input placeholder='请输入验证码' value='' placeholder-class='pal'/>
-      <text>获取验证码</text>
+      <input placeholder='请输入验证码' value='' placeholder-class='pal' name="yanahengma"/>
+      <text bindtap='getnum'>{{getyan}}</text>
     </view>
     <view>
       <image src='/images/password.png'></image>
-      <input class='suo' placeholder='请输入一级密码，用于登录' value='' placeholder-class='pal'/>
+      <input class='suo' placeholder='请输入一级密码，用于登录' value='' placeholder-class='pal' name="pass" type='password'/>
     </view>
     <view>
       <image src='/images/password.png'></image>
-      <input class='suo' placeholder='请输入二级密码，用于资金管理' value='' placeholder-class='pal'/>
+      <input class='suo' placeholder='请输入二级密码，用于资金管理' value='' maxlength='6' placeholder-class='pal' name="repass" type='password'/>
     </view>
     <view>
       <image src='/images/number.png'></image>
-      <input  placeholder='请输入推荐人' value='' placeholder-class='pal'/>
+      <input  placeholder='请输入推荐人' value='' placeholder-class='pal' name="tui"/>
     </view>
     <view class='agrees'>
-      <text class='active'></text>
+      <text class="active {{actives==1?'actives':''}}" bindtap='actives'></text>
       <view>
         <text>注册并同意</text>
         <text>《连连优品注册协议》</text>

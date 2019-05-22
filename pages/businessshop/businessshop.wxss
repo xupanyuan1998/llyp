@@ -19,8 +19,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: #000;
-  opacity: 0.7;
+  background:rgba(0, 0, 0, 0.5);
 }
 
 .header {
@@ -171,6 +170,11 @@
 .commodity view text.int {
   font-size: 24rpx;
   color: #2f2f2f;
+  width: 326rpx;
+  height:84rpx;
+  line-height: 42rpx;
+  display: block;
+  overflow: hidden; 
 }
 
 .commodity view text.zhe {

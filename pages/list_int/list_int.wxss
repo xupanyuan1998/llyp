@@ -1,0 +1,66 @@
+/* pages/list_int/list_int.wxss */
+
+.nav {
+  height: 60rpx;
+  width: 710rpx;
+  padding: 15rpx 20rpx;
+  background: #fff;
+}
+.left {
+  width: 632rpx;
+  height: 59rpx;
+  background: #edeff1;
+  float: left;
+}
+
+.left image {
+  width: 30rpx;
+  height: 29rpx;
+  margin: 15rpx 10rpx 15rpx 160rpx;
+  display: block;
+  float: left;
+}
+
+.left input {
+  width: 400rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #7c7f80;
+  display: block;
+  float: left;
+}
+
+.right {
+  float: right;
+  width: 70rpx;
+  height: 60rpx;
+}
+
+.right view {
+  margin-top: 9rpx;
+  float: right;
+  width: 42rpx;
+  height: 42rpx;
+  position: relative;
+}
+
+.right image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.right text {
+  width: 25rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: #ff9b2c;
+  color: #fff;
+  font-family: "DIN";
+  font-size: 20rpx;
+  position: absolute;
+  top: -7rpx;
+  right: -7rpx;
+}

@@ -2,6 +2,7 @@
 App({
   globalData: {
     userInfo: null,
-    imgurl:'http://www.lianlianyp.com/'
+    imgurl:'http://ykshop.com/',
+    is_login:null
   }
 })

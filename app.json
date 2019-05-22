@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/int/int",
     "pages/catas/catas",
-    "pages/logs/logs",
     "pages/msg/msg",
+    "pages/list_int/list_int",
     "pages/my/my",
     "pages/shoping/shoping",
     "pages/businessshop/businessshop",
-    "pages/int/int",
     "pages/notice/notice",
     "pages/notice_int/notice_int",
     "pages/chat/chat",
@@ -43,6 +43,7 @@
     "pages/personal/pingjia/pingjia",
     "pages/personal/order_int/order_int",
     "pages/personal/login/login",
+    "pages/personal/repass/repass",
     "pages/s_cate/s_cate"
   ],
   "window": {

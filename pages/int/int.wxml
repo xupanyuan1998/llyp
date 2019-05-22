@@ -4,7 +4,7 @@
 <!-- 头部导航 -->
 <view class='nav' wx:if="{{nav==0}}">
   <image src='/images/back.png'></image>
-  <image src="/images/cus.png"></image>
+  <image src="/images/cus.png" bindtap='chat'></image>
   <image src='/images/share_c.png' bindtap='share_c'></image>
 </view>
 <view class='bobys' wx:if="{{nav==1}}">
@@ -50,7 +50,7 @@
     <image src='/images/next.jpg'></image>
   </view>
   <!-- 店铺名称 -->
-  <view class='shop_name' bindtap='shop'>
+  <view class='shop_name' bindtap='shop' data-shop_id="{{data_int.goods_detail.shop_id}}">
     <image src="{{data_int.goods_detail.shop_logo?data_int.goods_detail.shop_logo:'/images/dianlogo.png'}}"></image>
     <view class='shop_n'>
       <text>{{data_int.shopname?data_int.shopname:'善缘堂'}}</text>
@@ -103,18 +103,37 @@
       <image wx:if="{{opimgurl.imgurl(item.image)!=''}}" src='{{opimgurl.imgurl(item.image)}}'></image>
     </view>
   </view>
-
+  <!-- 相关推荐 -->
+  <view class='recommended'>
+    <text class='xiangguan'>相关推荐</text>
+     <view class="shp {{(idx+1)%2==0?'clear_r':''}}"
+        wx:for="{{recommended}}" 
+        wx:key="item"
+        wx:for-index="idx"
+        data-id="{{idx}}"
+        data-int="{{item.goods_id}}"
+        bindtap='xiangguan'
+           >
+            <image src='{{imgurl+item.pic_cover_mid}}'></image>
+            <view class='int'>{{item.goods_name}}</view>
+            <view class='xiaoliang'>
+              <text>￥{{item.price}}</text>
+              <text>销量：{{item.sales}}</text>
+            </view>
+          </view>
+  </view>
   <!-- 购买 -->
   <view class='footer'>
-    <view class='dian dian_active dian1'>
+    <view class='dian dian_active dian1' bindtap='chat' data-shop_id="{{data_int.goods_detail.shop_id}}">
       <image src='/images/car_ser.png'></image>
       <text>客服</text>
     </view>
-    <view class='dian'>
-      <image src='/images/xin.png'></image>
+    <!-- 收藏宝贝 -->
+    <view class='dian' bindtap='tabloidbaby'>
+      <image src="{{shoucangs=='true'?'/images/active_xin.png':'/images/xin.png'}}"></image>
       <text>收藏</text>
     </view>
-    <view class='dian dain3'>
+    <view class='dian dain3' bindtap='shop' data-shop_id="{{data_int.goods_detail.shop_id}}">
       <image src='/images/shopdian.png'></image>
       <text>店铺</text>
     </view>
@@ -155,23 +174,31 @@
 <view class='guige_b' style='display:{{specifications}}' bindtap='hidden'>
   <view class='guige' catchtap='ibtn'>
     <view class='guige_top'>
-      <image src='{{imgurl+data_int.goods_detail.picture_detail.pic_cover_small}}'></image>
+      <image src='{{imgurl+logo_ban}}'></image>
       <text>{{data_int.goods_detail.goods_name}}</text>
       <text class='price'>￥{{sum}}</text>
     </view>
-    <view class="choose_gui {{textStates[items.isClick]}}" wx:for="{{guige}}" wx:key='this' wx:for-item="dayItem" wx:for-index="fuindex">
+    <!-- <view class="choose_gui " wx:for="{{guige}}" wx:key='this' wx:for-item="dayItem" wx:for-index="fuindex">
       <text>选择{{dayItem.spec_name}}</text>
-      <view class='' wx:for="{{dayItem.value}}" wx:key="this" wx:for-item="item" wx:for-index="idxs" data-fuindex="{{fuindex}}" data-chindex="{{idxs}}" data-item="{{item.spec_value_name}}" catchtap='selectGuige'>{{item.spec_value_name}}</view>
+      <view class="{{item.isSelect?'g_active':''}}" wx:for="{{dayItem.value}}" wx:key="this" wx:for-item="item" wx:for-index="idxs" data-fuindex="{{fuindex}}" data-chindex="{{idxs}}" data-item="{{item.spec_value_name}}" data-content="{{guige}}" catchtap='selectGuige'>{{item.spec_value_name}}</view>
+    </view> -->
+    <view class="choose_gui ">
+      <text>选择{{guige[0].spec_name}}</text>
+      <view class="{{canshu_active==idxs?'g_active':''}}" wx:for="{{guige[0].value}}" wx:key="item"  wx:for-index="idxs"  data-id="{{idxs}}" data-item="{{item.spec_value_name}}" bindtap='canshu'>{{item.spec_value_name}}</view>
+    </view>
+    <view class="choose_gui ">
+      <text>选择{{guige[1].spec_name}}</text>
+      <view class="{{color_active===idx?'g_active':''}}"  wx:for="{{guige[1].value}}" wx:key="item"  wx:for-index="idx"  data-id="{{idx}}" data-item="{{item.spec_value_name}}" bindtap='color'>{{item.spec_value_name}}</view>
     </view>
     <view class='choose_num'>
       <text class='number'>数量</text>
       <view class='add_num'>
         <view class='num'>
-          <text>-</text>
-          <view>1</view>
-          <text>+</text>
+          <text bindtap='ntotpr'>-</text>
+          <view>{{numberType}}</view>
+          <text bindtap='addnum'>+</text>
         </view>
-        <text class='ku'>库存：1000</text>
+        <text class='ku'>库存：{{stock}}</text>
       </view>
     </view>
     <view class='addcar'>

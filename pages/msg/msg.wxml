@@ -20,17 +20,23 @@
       <text class='small_s'>官方官方又出新活动啦舍不得放发放</text>
     </view>
   </view>
-  <view class='message' wx:for="{{message}}" wx:key="item" bindtap='chat'>
+  <view class='message' 
+  wx:for="{{message}}" 
+  wx:key="item" 
+  bindtap='chat' 
+  data-name="{{item.name}}" 
+  data-id="{{item.id}}"
+  bindlongtap='dels'>
     <view class='icon'>
-      <image src="{{item.src}}"></image>
-      <image src='/images/redp.png'></image>
+      <image src="{{item.avator}}"></image>
+      <text></text>
     </view>
     <view class='size'>
       <view >
-         <text>{{item.big_size}}</text>
-        <text class='date'>{{item.date}}</text>
+         <text>{{item.name}}</text>
+        <text class='date'>{{item.create_time}}</text>
       </view>
-      <text class='small_s'>{{item.small_size}}</text>
+      <text class='small_s'>{{item.msg}}</text>
     </view>
   </view>
 </view>

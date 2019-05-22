@@ -6,62 +6,24 @@
   <view wx:if="{{del==1}}" class='del_all'>删除记录</view>
   <image wx:if="{{del==1}}" class='del_s' src='/images/sel_s.png'></image>
 </view>
-<view class='msg_c'>
-  <scroll-view
-scroll-y="true" class='warp'>
-  <view class='date'> 昨天 09：22</view>
-  <view class='dianzhu'>
-    <image src='/images/user_image.jpeg'></image>
-    <view class='msg_content'>
-      <text>Ding~秋冬送双PUMA的鞋温 暖一下大家 http://t.cn、E2vJSit</text>
-      <view class='dian'></view>
+  <scroll-view scroll-y="true" class='warp'>
+    <view class='date'> 昨天 09：22</view>
+    <view class="dianzhu {{another_id==item.user_id?'':'user'}}" wx:for="{{chat_expect}}" wx:key="item" bindtap='del'>
+      <image src='{{item.avator}}'></image>
+      <view class='msg_content'>
+        <text>{{item.content}}</text>
+        <view class='dian'></view>
+      </view>
     </view>
-  </view>
-  <view class='user dianzhu'>
-    <image src='/images/user_image.jpeg'></image>
-    <view class='msg_content'>
-      <text>Ding~秋冬送双PUMA的鞋温 暖一下大家 http://t.cn、E2vJSit</text>
-      <view class='us'></view>
-    </view>
-  </view>
-  <view class='dianzhu'>
-    <image src='/images/user_image.jpeg'></image>
-    <view class='msg_content'>
-      <text>Ding~秋冬送双PUMA的鞋温 暖一下大家 http://t.cn、E2vJSit</text>
-      <view class='dian'></view>
-    </view>
-  </view>
-  <view class='user dianzhu'>
-    <image src='/images/user_image.jpeg'></image>
-    <view class='msg_content'>
-      <text>Ding~秋冬送双PUMA的鞋温 暖一下大家 http://t.cn、E2vJSit</text>
-      <view class='us'></view>
-    </view>
-  </view>
-  <view class='dianzhu'>
-    <image src='/images/user_image.jpeg'></image>
-    <view class='msg_content'>
-      <text>Ding~秋冬送双PUMA的鞋温 暖一下大家 http://t.cn、E2vJSit</text>
-      <view class='dian'></view>
-    </view>
-  </view>
-  <view class='user dianzhu' bindtap='del'>
-    <image src='/images/user_image.jpeg'></image>
-    <view class='msg_content'>
-      <text>Ding~秋冬送双PUMA的鞋温 暖一下大家 http://t.cn、E2vJSit</text>
-      <view class='us'></view>
-    </view>
-  </view>
-</scroll-view>
-</view>
+  </scroll-view>
 <!-- 发送消息 -->
 <view class='footer'>
   <image class='yuyin' src='/images/yuyin.jpg'></image>
   <view>
-    <input  value='nihao'></input>
+    <input value='{{chat_content}}' bindinput='content'></input>
     <image class='biaoqing' src='/images/biaoqing.jpg'></image>
   </view>
-  <text>发送</text>
+  <text bindtap='send'>发送</text>
 </view>
 <!-- 删除消息 -->
 <view class='del_b' style='display:{{show}}'>

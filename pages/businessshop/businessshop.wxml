@@ -1,18 +1,18 @@
 <!--pages/businessshop/businessshop.wxml-->
 <!-- nav -->
 <view class='nav'>
-  <image class='banner' src='/images/shop_banner.jpg'></image>
+  <image class='banner' src='{{shop_name.shop_info.shop_banner}}'></image>
   <view class='content'>
     <view class='header'>
-      <input placeholder='请输入商品名称'></input>
+      <input placeholder='请输入商品名称' value=''/>
       <image src='/images/share2.png'></image>
       <text bindtap='share'>分享</text>
     </view>
     <view class='shop_name'>
-      <image src='/images/shop_logo.png'></image>
+      <image src='{{shop_name.shop_info.shop_logo}}'></image>
       <view>
-        <text>口红专卖店</text>
-        <text>关注 1520</text>
+        <text>{{shop_name.shop_info.shop_name}}</text>
+        <text>关注 {{shop_name.num}}</text>
       </view>
       <text class="concern {{concern=='true'?'concerned':''}}" bindtap='concern'>{{shop_concern}}</text>
     </view>
@@ -23,14 +23,13 @@
 </view>
 <!-- 商品 -->
 <view class='commodity'>
-  <view wx:for="{{commodity}}" wx:key="item" bindtap='com_int'>
-    <image src='{{item.img_url}}'></image>
+  <view wx:for="{{commodity}}" wx:key="item" bindtap='com_int' data-goods_id="{{item.goods_id}}">
+    <image src='{{imgurls+item.pic_cover_mid}}'></image>
     <view class='commo-int'>
-      <text class='zhe int'>{{item.dis}}</text>
-      <text class='int'>{{item.int}}</text>
+      <text class='int'>{{item.goods_name}}</text>
       <view class='price'>
         <text>{{item.price}}</text>
-        <text>{{item.buy}}</text>
+        <text>购买</text>
       </view>
     </view>
   </view>

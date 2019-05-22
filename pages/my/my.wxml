@@ -5,14 +5,14 @@
   <view class='person'>
     <view class='tuxiang'>
       <image src='/images/image_user.png'></image>
-    <view class='username'>
-      <text class='u_name'>131564115</text>
-      <view class='grade'>
-        <image src='/images/user.png'></image>
-        <text>一般用户</text>
+      <view class='username'>
+        <text class='u_name'>131564115</text>
+        <view class='grade'>
+          <image src='/images/user.png'></image>
+          <text>一般用户</text>
+        </view>
       </view>
-    </view>
-     <image class='arrow' src='/images/arrow.png'></image>
+      <image class='arrow' src='/images/arrow.png'></image>
     </view>
     <text class='balance'></text>
   </view>
@@ -30,18 +30,20 @@
     </view>
   </view>
   <view class='pending_order'>
-    <view>
+  <!-- 代付款 -->
+    <view bindtap=''>
       <view>
-       <image src='/images/pendingpay.png'></image>
+        <image src='/images/pendingpay.png'></image>
         <text class='lable'>2</text>
       </view>
       <text>代付款</text>
     </view>
+    <!-- 待发货 -->
     <view>
-     <view>
-      <image src='/images/pendingdelivery.png'></image>
-      <text class='lable'>2</text>
-    </view>
+      <view>
+        <image src='/images/pendingdelivery.png'></image>
+        <text class='lable'>2</text>
+      </view>
       <text>待发货</text>
     </view>
     <view>
@@ -73,36 +75,36 @@
     <image src='/images/shoucang.png'></image>
     <text>我的收藏</text>
   </view>
-   <view bindtap='address'>
+  <view bindtap='address'>
     <image src='/images/address.png'></image>
     <text>地址管理</text>
   </view>
-   <view>
+  <view>
     <image src='/images/person.png'></image>
     <text>个人资料</text>
   </view>
-   <view class='clear' bindtap='safe'>
+  <view class='clear' bindtap='safe'>
     <image src='/images/safe.png'></image>
     <text>安全中心</text>
   </view>
-   <view bindtap='caiwu'>
+  <view bindtap='caiwu'>
     <image src='/images/financial.png'></image>
     <text>财务中心</text>
   </view>
-   <view bindtap='club'>
+  <view bindtap='club'>
     <image src='/images/tuandui.png'></image>
     <text>我的社区</text>
   </view>
-   <view bindtap='share'>
+  <view bindtap='share'>
     <image src='/images/tuiguang.png'></image>
     <text>推广商城</text>
   </view>
-   <view bindtap='jifen' class='clear'>
+  <view bindtap='jifen' class='clear'>
     <image src='/images/integral.png'></image>
     <text>积分中心</text>
   </view>
-   <view bindtap='login'>
+  <view bindtap='login'>
     <image src='/images/out.png'></image>
-    <text >退出账户</text>
+    <text>退出账户</text>
   </view>
 </view>

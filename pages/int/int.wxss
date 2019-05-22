@@ -752,3 +752,63 @@ padding: 0 30rpx;
 .addcar text:last-child{
   background: #e61b2e;
 }
+.shp{
+  width: 350rpx;
+  height: 448rpx;
+  background: #fff;
+  float: left;
+  margin-top: 12rpx;
+  margin-right: 10rpx;
+}
+.clear_r{
+  margin-right: 0;
+}
+.shp image{
+  width: 350rpx;
+  height: 304rpx;
+  margin-bottom: 17rpx;
+}
+.shp .int{
+  width: 330rpx;
+  padding: 0 10rpx;
+  height: 70rpx;
+  line-height: 35rpx;
+  font-size: 24rpx;
+  color: #3b3b3b;
+  overflow: hidden;
+}
+.shp .xiaoliang{
+  height: 57rpx;
+    width: 330rpx;
+  padding: 0 10rpx;
+  overflow: hidden;
+}
+.shp .xiaoliang text{
+  display: block;
+  float: left;
+  line-height: 57rpx;
+}
+.xiaoliang text:first-child{
+  font-size: 26rpx;
+  color: #e34040;
+}
+.xiaoliang text:last-child{
+  font-size: 24rpx;
+  color: #767676;
+  float: right;
+}
+.recommended{
+  width: 710rpx;
+  height: auto;
+  padding: 0 20rpx;
+  overflow: hidden;
+}
+.recommended .xiangguan{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #333;
+  display: block;
+}

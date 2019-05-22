@@ -52,16 +52,19 @@ page{
   float: left;
   position: relative;
 }
-.icon image:first-child{
+.icon image{
   width: 100rpx;
   height: 100rpx;
 }
-.icon image:last-child{
+.icon text{
+  background: #ff5000;
   width: 28rpx;
   height: 28rpx;
   position: absolute;
   right: -8rpx;
   top: -10rpx;
+  display: block;
+  border-radius: 50%;
 }
 .size{
   float: left;

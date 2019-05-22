@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='box'>
+    <view>
+      <input placeholder='请输入手机号码' maxlength='30' name="phone" bindinput='getphone'></input>
+    </view>
+    <view>
+      <input placeholder='请输入验证码' maxlength='6' name="yanzheng"></input>
+      <text class='code' bindtap="{{list ? 'code' : ''}}">{{time}}</text>
+    </view>
+    <view>
+      <input placeholder='请输入新密码' maxlength='30' name="password" type='password'></input>
+    </view>
+    <view>
+      <input placeholder='请重复输入密码' maxlength='30' name="repass" type='password'></input>
+    </view>
+  </view>
+  <button class='btn' form-type='submit'>确定</button>
+</form>

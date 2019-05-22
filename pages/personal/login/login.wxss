@@ -138,3 +138,6 @@ form view.agrees view text{
   font-size: 24rpx;
   color: #888888;
 }
+form view.agrees text.actives{
+  background: #ffa32b;
+}

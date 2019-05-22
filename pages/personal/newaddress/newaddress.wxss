@@ -1,1 +1,66 @@
 /* pages/personal/newaddress/newaddress.wxss */
+page{
+    font-family: "苹方 中等";
+  font-size:36rpx;
+}
+form{
+  overflow: hidden;
+  display: block;
+}
+form view{
+  width: 750rpx;
+  height: 111rpx;
+  border-bottom: 2rpx solid #e8e8e8;
+   background: #fff;
+}
+form view text{
+  float: left;
+  display: block;
+  height: 111rpx;
+  line-height: 111rpx;
+  margin-right: 29rpx;
+  color: #464646;
+  margin-left: 20rpx;
+}
+form view text.choose{
+  width: 486rpx;
+  color: #ccc;
+}
+form view input{
+  width: 500rpx;
+  height: 111rpx;
+  line-height: 111rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+form view input.pal{
+  color: #ccc;
+}
+form view image{
+  width: 13rpx;
+  height: 22rpx;
+  display: block;
+  float: right;
+  margin: 43rpx 20rpx;
+}
+textarea{
+  display: block;
+  padding:  20rpx;
+  width: 710rpx;
+  height: 120rpx;
+  line-height: 40rpx;
+  color: #ccc;
+  background: #fff;
+  margin-bottom: 100rpx;
+  border-bottom:2rpx solid #e8e8e8;
+}
+button{
+  width: 710rpx;
+  height: 102rpx;
+  text-align: center;
+  padding:  0 20rpx;
+  line-height: 102rpx;
+  background: #ff9b2c;
+  border-radius: 7rpx;
+  color: #fff;
+}
