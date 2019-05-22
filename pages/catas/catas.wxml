@@ -19,15 +19,15 @@
   <view class='c_r'>
     <image class='banner' src='/images/b_line.jpg'></image>
     <view class='warp' wx:if="{{active==0}}">
-      <view class='con'>
+      <view class='con' bindtap='list'>
           <image src='/images/caizhuang.jpg'></image>
         <text>景胜</text>
       </view>
-      <view class='con'>
+      <view class='con' bindtap='list'>
           <image src='/images/caizhuang.jpg'></image>
         <text>景胜</text>
       </view>
-      <view class='con'>
+      <view class='con' bindtap='list'>
           <image src='/images/caizhuang.jpg'></image>
         <text>景胜</text>
       </view>

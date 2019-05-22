@@ -47,61 +47,42 @@ Page({
   },
   // 获取页面传入的id
   onLoad(datas) {
-    console.log(datas)
     var that = this;
-    var id = datas.id;
+    var a = datas.id;
     var name = datas.name;
     that.setData({
       shop_name: name
     })
-    //创建聊天室
+
+    // 进入聊天室
     wx.request({
-      url: imgurl + '/api/helpcenter/judgeChat',
-      method: "post",
+      url: imgurl + '/api/helpcenter/inChat',
+      method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       data: {
-        id: id,
-        token: app.globalData.is_login
+        id: a,
+        token: app.globalData.is_login,
       },
-      success(res) {
-        that.setData({
-          chat_id: res.data.data
-        });
-        if (res.data.code == 200) {
-          // 进入聊天室
+      success(reg) {
+        // 获取聊天信息
+        if (reg.data.code == 200) {
           wx.request({
-            url: imgurl + '/api/helpcenter/inChat',
+            url: imgurl + '/api/helpcenter/chatInfo',
             method: "POST",
             header: {
               "Content-Type": "application/x-www-form-urlencoded"
             },
             data: {
-              id: res.data.data,
+              id: a,
               token: app.globalData.is_login,
             },
-            success(reg) {
-              // 获取聊天信息
-              if (reg.data.code == 200) {
-                wx.request({
-                  url: imgurl + '/api/helpcenter/chatInfo',
-                  method: "POST",
-                  header: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                  },
-                  data: {
-                    id: res.data.data,
-                    token: app.globalData.is_login,
-                  },
-                  success(req) {
-                    if (req.data.data != '') {
-                      that.setData({
-                        chat_expect: req.data.data.chat,
-                        another_id: req.data.data.another_id
-                      })
-                    }
-                  }
+            success(req) {
+              if (req.data.data != '') {
+                that.setData({
+                  chat_expect: req.data.data.chat,
+                  another_id: req.data.data.another_id
                 })
               }
             }
@@ -133,7 +114,7 @@ Page({
       },
       success(res) {
         that.setData({
-          chat_content:''
+          chat_content: ''
         })
         wx.request({
           url: imgurl + '/api/helpcenter/chatInfo',
@@ -146,7 +127,7 @@ Page({
             token: app.globalData.is_login,
           },
           success(req) {
-
+            console.log(req);
             that.setData({
               chat_expect: req.data.data.chat,
               another_id: req.data.data.another_id

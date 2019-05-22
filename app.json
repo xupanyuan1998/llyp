@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/logs/logs",
     "pages/int/int",
     "pages/catas/catas",
     "pages/msg/msg",

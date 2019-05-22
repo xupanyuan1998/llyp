@@ -62,7 +62,10 @@ Page({
       success(res) {
         let dataes = res.data.data;
         var article = dataes.goods_detail.description;
+        console.log(res);
         WxParse.wxParse('article', 'html', article, _this);
+        // 判断有没有规格的主图
+        var tu = dataes.goods_detail.picture_detail.pic_cover_small;
         _this.setData({
           image_int: dataes.goods_detail.img_list,
           data_int: dataes,
@@ -70,7 +73,7 @@ Page({
           stock: dataes.goods_detail.stock,
           //  获取goods_id 得到相关推荐
           goods_id: dataes.goods_detail.goods_id,
-          logo_ban: dataes.goods_detail.sku_picture_array[0].sku_picture_query[0].pic_cover_small,
+          logo_ban: tu,
           sum: dataes.goods_detail.sku_list[0].price * _this.data.numberType
         });
         wx.request({
@@ -86,7 +89,35 @@ Page({
             _this.setData({
               // 设置相关推荐的数据
               recommended: res.data.data.data
-            })
+            });
+            wx.request({
+              url: imgurl + '/api/member/myCollection',
+              method: "POST",
+              header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              data: {
+                token: app.globalData.is_login
+              },
+              success(suc) {
+                console.log(suc.data.data.data)
+                var arr = [];
+                var len = suc.data.data.data.length;
+                for (let i = 0; i < len; ++i) {
+                  arr.push(suc.data.data.data[i].goods_id);
+                };
+                // 判断当前商品是否被收藏过
+                var a = dataes.goods_detail.goods_id;
+                console.log(arr);
+                for (var idx in arr) {
+                  if (idx == a) {
+                    _this.setData({
+                      shoucangs: 'true'
+                    })
+                  }
+                }
+              }
+            });
           },
         })
       }
@@ -295,10 +326,11 @@ Page({
             fav_type: 'goods',
             token: app.globalData.is_login
           },
-          success(res) {
-            if (res.data.code == 200) {
+          success(req) {
+            console.log(req)
+            if (req.data.code == 200) {
               wx.showToast({
-                title: res.data.message,
+                title: req.data.message,
               });
               that.setData({
                 shoucangs: 'false'
@@ -322,8 +354,22 @@ Page({
           shop_id: e.currentTarget.dataset.shop_id
         },
         success(res) {
-          wx.navigateTo({
-            url: '/pages/chat/chat?id=' + res.data.data.shop_info.uid + '&name=' + res.data.data.shop_info.shop_name
+          wx.request({
+            url: imgurl + '/api/helpcenter/judgeChat',
+            method: "post",
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            data: {
+              id: res.data.data.shop_info.uid  ,
+              token: app.globalData.is_login
+            },
+            success(req) {
+              console.log(req)
+              // wx.navigateTo({
+              //   url: '/pages/chat/chat?id=' + res.data.data.shop_info.uid + '&name=' + res.data.data.shop_info.shop_name
+              // })
+            }
           })
         }
       })

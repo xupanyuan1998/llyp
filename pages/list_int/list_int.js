@@ -7,14 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:'',
+    imgurls:'http://www.lianlianyp.com/'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    var that = this;
     wx.request({
       url: imgurl + '/api/goods/goodsList',
       method: "POST",
@@ -27,11 +28,18 @@ Page({
         sort: 'asc'
       },
       success(res) {
-        console.log(res)
+        that.setData({
+          list: res.data.data.data
+        })
       }
     })
   },
-
+  // 跳转到商品详情
+  int(e){
+    wx.navigateTo({
+      url: '/pages/int/int?int='+e.currentTarget.dataset.int
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

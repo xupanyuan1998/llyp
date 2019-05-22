@@ -11,13 +11,13 @@
     </view>
   </view>
 </view>
-<view class='warp'>
-  <view class="content">
-    <image src=''></image>
-    <view>
-      <text></text>
+<scroll-view scroll-y="true" class='warp'>
+  <view class="content" wx:for="{{list}}" wx:key="item" data-int="{{item.goods_id}}" bindtap='int'>
+    <image src='{{imgurls+item.pic_cover_mid}}'></image>
+    <view class='top'>
+      <text>{{item.goods_name}}</text>
     </view>
-    <text class='shop_name'>景胜</text>
-    <text class='price'>￥696</text>
+    <text class='shop_name'>{{item.shop_name}}</text>
+    <text class='price'>￥{{item.price}}</text>
   </view>
-</view>
+</scroll-view>

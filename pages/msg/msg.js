@@ -11,7 +11,7 @@ Page({
     {url:"/images/customer.png",text:"平台消息"},
     {url:"/images/business.png",text:"商家消息"}
     ],
-    message: [],
+    abc: '',
     unreadNum:''//未读消息
   },
 //系统通知
@@ -23,7 +23,6 @@ notice(){
 chat(e){
   let id=e.currentTarget.dataset.id,
       name=e.currentTarget.dataset.name;
-      console.log(e);
   wx.navigateTo({
     url: '/pages/chat/chat?id='+id+'&name='+name,
   })
@@ -31,35 +30,38 @@ chat(e){
 // 获取聊天列表
 onLoad(){
   var that=this;
-  wx.request({
-    url: imgurl+'api/helpcenter/chatList',
-    data:{
-      token:app.globalData.is_login
-    },
-    success(res){
-      if (res.data.data!=''){
-        that.setData({
-          message: res.data.data
-        });
-        // 获取未读消息
-        wx.request({
-          url:imgurl+ 'api/goods/unreadNum',
-          data:{
-            token:app.globalData.is_login 
-          },
-          success(res){
-            console.log(res);
-            // 将返回的数据设置给未读的消息；
-            that.setData({
-              unreadNum: res.data.data
-            })
-          }
-        })
-      }
-     
-      
-    }
-  })
+ if(app.globalData.is_login==null){
+   wx.showToast({
+     title: '请登录',
+     icon:'none'
+   })
+ }else{
+   wx.request({
+     url: imgurl + 'api/helpcenter/chatList',
+     data: {
+       token: app.globalData.is_login
+     },
+     success(res) {
+       console.log(res)
+       that.setData({
+         abc: res.data.data
+       });
+       // 获取未读消息
+       wx.request({
+         url: imgurl + 'api/goods/unreadNum',
+         data: {
+           token: app.globalData.is_login
+         },
+         success(req) {
+           // 将返回的数据设置给未读的消息；
+           that.setData({
+             unreadNum: req.data.data
+           })
+         }
+       })
+     }
+   })
+ }
 },
 // 删除聊天
 dels(e){

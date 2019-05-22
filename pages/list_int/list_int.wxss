@@ -64,3 +64,59 @@
   top: -7rpx;
   right: -7rpx;
 }
+.warp{
+  background: #fff;
+  width: 750rpx;
+  height: 1000rpx;
+}
+.content{
+  width: 750rpx;
+  height: 196rpx;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.content image{
+  display: block;
+  float: left;
+  width: 196rpx;
+  height: 196rpx;
+  margin: 0 15rpx 0 20rpx;
+}
+.content .top{
+  float: left;
+  width: 478rpx;
+  max-height: 120rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.content .top text{
+  display: block;
+  width: 478rpx;
+  height: auto;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #333333;
+  font-family: "苹方 中等";
+}
+.content .shop_name{
+  display: block;
+  float: left;
+  width: 478rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+   font-size: 32rpx;
+  color: #e9e9e9;
+  font-family: "苹方 中等";
+   margin-right: 20rpx;
+}
+.content .price{
+   display: block;
+  float: left;
+  width: 478rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 30rpx;
+  color: #ff9b2c;
+  font-family: "DIN";
+   margin-right: 20rpx;
+}
