@@ -1,0 +1,191 @@
+/* pages/search/search.wxss */
+page{
+    font-size: 24rpx;
+  font-family: "苹方 中等";
+}
+.nav{
+  width: 710rpx;
+  height: 210rpx;
+  padding: 0 20rpx 10rpx 20rpx;
+  background: #ffab4d;
+}
+.nav .search{
+  height: 60rpx;
+  padding: 30rpx 0;
+}
+.search input{
+  display: block;
+  float: left;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 465rpx;
+  padding: 0 50rpx;
+  background: #fdf0e1;
+  border-radius: 22rpx;
+}
+.pal{
+  color: #838383;
+}
+.search button{
+  display: block;
+  float: right;
+  width: 110rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 24rpx;
+  background: #fc9028;
+  color: #fff;
+  font-size: 24rpx;
+}
+.content{
+  width: 470rpx;
+  height: 71rpx;
+  margin: 0 auto;
+
+}
+.content view{
+  display: block;
+  float: left;width: 110rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+}
+.content view:last-child{
+  float: right;
+}
+.content view.active{
+  border-bottom: 5rpx solid #fff;
+}
+.warp{
+  width: 750rpx;
+  height: auto;
+}
+.shop,.goods{
+  width: 710rpx;
+  padding: 0 20rpx;
+ background: #fff;
+}
+.shop_d{
+  padding-top: 36rpx;
+    height: 360rpx;
+  background: #fff;
+  margin-bottom: 13rpx;
+}
+.shop_name{
+  height:86rpx; 
+}
+.shop_name image{
+  display: block;
+  float: left;
+  width: 86rpx;
+  height: 86rpx;
+  margin-right: 20rpx;
+}
+.center{
+  float: left;
+  width: 450rpx;
+  height: 86rpx;
+  overflow: hidden;
+}
+.center text.name{
+  display: block;
+  height: 50rpx;
+  width: 450rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  font-size: 42rpx;
+  color: #404040;
+}
+.center view{
+  height: 36rpx;
+  width: 450rpx;
+  line-height: 36rpx;
+}
+.center view text{
+  display: block;
+  float: left;
+  margin-right: 30rpx;
+  color: #858585;
+}
+.shop_name .right{
+  float: right;
+  display: block;
+  height: 64rpx;
+  width: 128rpx;
+  text-align: center;
+  line-height: 64rpx;
+  background: #fe9d3f;
+  border-radius: 26rpx;
+  color: #fefefe;
+  font-size: 28rpx;
+}
+.shop_d .bottom{
+  margin-top: 30rpx;
+  width: 710rpx;
+  height: 227rpx;
+  margin-bottom: 20rpx;
+}
+.bottom image{
+  display: block;
+  float: left;
+  width: 227rpx;
+  height: 227rpx;
+  margin-right: 14rpx;
+}
+.bottom image:last-child{
+  margin-right: 0;
+}
+.contents{
+  width: 750rpx;
+  height: 196rpx;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.contents image{
+  display: block;
+  float: left;
+  width: 196rpx;
+  height: 196rpx;
+  margin: 0 15rpx 0 20rpx;
+}
+.contents .top{
+  float: left;
+  width: 478rpx;
+  max-height: 120rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.contents .top text{
+  display: block;
+  width: 478rpx;
+  height: auto;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #333333;
+  font-family: "苹方 中等";
+}
+.contents .shop_name{
+  display: block;
+  float: left;
+  width: 478rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+   font-size: 32rpx;
+  color: #e9e9e9;
+  font-family: "苹方 中等";
+   margin-right: 20rpx;
+}
+.contents .price{
+   display: block;
+  float: left;
+  width: 478rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 30rpx;
+  color: #ff9b2c;
+  font-family: "DIN";
+   margin-right: 20rpx;
+}

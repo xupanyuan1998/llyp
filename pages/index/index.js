@@ -23,6 +23,12 @@ Page({
     int:'',
     page:1
   },
+  // 在搜素框上面点击的时候
+  search(){
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
+  },
   //商品列表选中状态
   clecked(e){
     this.setData({

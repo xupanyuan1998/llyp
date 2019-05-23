@@ -51,7 +51,8 @@ Page({
     var a = datas.id;
     var name = datas.name;
     that.setData({
-      shop_name: name
+      shop_name: name,
+      chat_id:a
     })
 
     // 进入聊天室
@@ -79,12 +80,10 @@ Page({
               token: app.globalData.is_login,
             },
             success(req) {
-              if (req.data.data != '') {
-                that.setData({
-                  chat_expect: req.data.data.chat,
-                  another_id: req.data.data.another_id
-                })
-              }
+              that.setData({
+                chat_expect: req.data.data.chat,
+                another_id: req.data.data.another_id
+              })
             }
           })
         }
@@ -127,7 +126,6 @@ Page({
             token: app.globalData.is_login,
           },
           success(req) {
-            console.log(req);
             that.setData({
               chat_expect: req.data.data.chat,
               another_id: req.data.data.another_id

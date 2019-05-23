@@ -209,7 +209,7 @@
       <text
        bindtap='addcar'
        >加入购物车</text>
-      <text>立即购买</text>
+      <text bindtap='buyNow'>立即购买</text>
     </view>
   </view>
 </view>

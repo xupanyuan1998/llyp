@@ -231,11 +231,33 @@ Page({
   },
   //商品分享
   share_c() {
+    var that=this;
     this.setData({
       show: 'block'
     });
+    // wx.request({
+    //   url: imgurl + 'api/goods/getShareContents',
+    //   method:"POST",
+    //   header:{
+    //     "Content-Type": "application/x-www-form-urlencoded"
+    //   },
+    //   data:{
+    //     flag:"goods",
+    //     shop_id:that.data.data_int.goods_detail.shop_id,
+    //     token:app.globalData.is_login
+    //   },
+    //   success(res){
+    //     console.log(res)
+    //   }
+    // })
     wx.request({
-      url: '',
+      url: imgurl + 'api/goods/toBase64',
+      data:{
+        path: that.data.image_int[0].pic_cover
+      },
+      success(res){
+        console.log(res)
+      }
     })
   },
   // 规格减少数量
@@ -437,5 +459,33 @@ Page({
         }
       })
     }
+  },
+  // 立即购买
+  buyNow(){
+    var that= this;
+    let color_active = that.data.color_active,
+      select_skuid = that.data.data_int.goods_detail.sku_list[color_active].sku_id;
+    wx.request({
+      url: imgurl + 'api/order_mini/orderCreateSession',
+      method:"POST",
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:{
+        tag:'buy_now',
+        sku_id: select_skuid,
+        num: that.data.numberType,
+        token:app.globalData.is_login,
+        cart_id:''
+      },
+      success(res){
+        console.log(res)
+        if(res.data.code==200){
+          wx.navigateTo({
+            url: '/pages/order/order?list=' + JSON.stringify(res.data.data),
+          })
+        }
+      }
+    })
   }
 })

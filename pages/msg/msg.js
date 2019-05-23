@@ -28,7 +28,7 @@ chat(e){
   })
 },
 // 获取聊天列表
-onLoad(){
+onShow(){
   var that=this;
  if(app.globalData.is_login==null){
    wx.showToast({

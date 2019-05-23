@@ -1,6 +1,6 @@
 // pages/shoping/shoping.js
-const app=getApp();
-const imgurl=app.globalData.imgurl;
+const app = getApp();
+const imgurl = app.globalData.imgurl;
 Page({
 
   /**
@@ -157,16 +157,16 @@ Page({
   add(e) {
     console.log(e);
   },
-  onLoad(){
-    // 判断用户是否登录
-    if(app.globalData.is_login==null){
+  // 页面刷新的时候获取购车列表
+  onShow() {
+    if (app.globalData.is_login == null) {
       wx.showToast({
-        title: '您还没有登录不能查看购物车',
-        icon:'none'
+        title: '您还没有登录 请登录',
+        icon: 'none',
       })
-    }else{
+    } else {
       wx.request({
-        url:imgurl+ '/api/cart/cart',
+        url: imgurl +'api/cart/cart',
         data:{
           token:app.globalData.is_login
         },

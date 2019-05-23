@@ -4,7 +4,7 @@
   <image src='/images/lian.png'></image>
   <view class='search'>
     <image src='/images/search.png'></image>
-    <input placeholder='请输入您搜索商品的名称' value=''></input>
+    <input placeholder='请输入您搜索商品的名称' value='' bindtap='search'></input>
   </view>
   <view class='sign'>
     <image src='/images/qiandao.png'></image>

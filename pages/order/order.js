@@ -1,6 +1,7 @@
 // pages/order/order.js
+const app=getApp();
+const imgurl = app.globalData.imgurl;
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -10,6 +11,22 @@ Page({
   okpay(){
     wx.navigateTo({
       url: '/pages/conpay/conpay',
+    })
+  },
+  // 获取商品信息
+  onLoad(list){
+    var list = JSON.parse(list.list) ;
+    console.log(list)
+    wx.request({
+      url: imgurl + 'api/OrderMini/orderInfo',
+      data:{
+        order_data:list,
+        token:app.globalData.is_login,
+        order_tag: 'buy_now'
+      },
+      success(res){
+        console.log(res)
+      }
     })
   }
 })

@@ -45,7 +45,8 @@
     "pages/personal/order_int/order_int",
     "pages/personal/login/login",
     "pages/personal/repass/repass",
-    "pages/s_cate/s_cate"
+    "pages/s_cate/s_cate",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

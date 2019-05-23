@@ -1,11 +1,13 @@
 // pages/my/my.js
+const app=getApp();
+const imgurl=app.globalData.imgurl;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    tuxiang:'/images/image_user.png'
   },
   person(){
     wx.navigateTo({
@@ -65,4 +67,16 @@ Page({
       url: '/pages/personal/login/login',
     })
   },
+  onLoad(){
+    // 获取个人信息
+    wx.request({
+      url:imgurl+ 'api/member/index',
+      data:{
+        token:app.globalData.is_login
+      },
+      success(res){
+        console.log(res)
+      }
+    });
+  }
 })

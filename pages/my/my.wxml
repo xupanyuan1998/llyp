@@ -4,7 +4,7 @@
   <image class='header_back' src='/images/my_background.png'></image>
   <view class='person'>
     <view class='tuxiang'>
-      <image src='/images/image_user.png'></image>
+      <image src='{{tuxiang}}'></image>
       <view class='username'>
         <text class='u_name'>131564115</text>
         <view class='grade'>
