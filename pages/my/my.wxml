@@ -3,13 +3,20 @@
 <view class='header' bindtap='person'>
   <image class='header_back' src='/images/my_background.png'></image>
   <view class='person'>
-    <view class='tuxiang'>
+    <view class='tuxiang' wx:if="{{username==null}}" bindtap='login'>
       <image src='{{tuxiang}}'></image>
+      <view class='logins username'>
+       未登录
+      </view>
+      <image class='arrow' src='/images/arrow.png'></image>
+    </view>
+    <view class='tuxiang' wx:else>
+      <image src='{{member_img}}'></image>
       <view class='username'>
-        <text class='u_name'>131564115</text>
+        <text class='u_name'>{{member_name}}</text>
         <view class='grade'>
           <image src='/images/user.png'></image>
-          <text>一般用户</text>
+          <text>{{level_name}}</text>
         </view>
       </view>
       <image class='arrow' src='/images/arrow.png'></image>
@@ -103,7 +110,7 @@
     <image src='/images/integral.png'></image>
     <text>积分中心</text>
   </view>
-  <view bindtap='login'>
+  <view bindtap='out'>
     <image src='/images/out.png'></image>
     <text>退出账户</text>
   </view>

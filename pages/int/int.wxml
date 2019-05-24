@@ -147,7 +147,7 @@
 <!-- 商品分享页面 -->
 <view class='share_c' style='display:{{show}}'>
   <view class='share_top'>
-    <image class='big_image' src='/images/com_image.jpg'></image>
+    <image class='big_image' src="{{share_banner==''?'share_banner':imgurl+image_int[0].pic_cover}}"></image>
     <view class='share_shops'>
       <view class='left'>
         <view class='top'>

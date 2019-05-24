@@ -12,6 +12,12 @@ Page({
     imgurls:'http://www.lianlianyp.com/',
     twoCata:''
   },
+  // 搜索页面
+  search() {
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
+  },
 // 选中分类
 active(e){
   this.setData({

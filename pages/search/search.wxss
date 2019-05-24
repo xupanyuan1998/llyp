@@ -56,7 +56,7 @@ page{
 .content view:last-child{
   float: right;
 }
-.content view.active{
+.content view.actives{
   border-bottom: 5rpx solid #fff;
 }
 .warp{
@@ -188,4 +188,14 @@ page{
   color: #ff9b2c;
   font-family: "DIN";
    margin-right: 20rpx;
+}
+.warp text.place{
+ width:100%;
+height:70rpx;
+line-height:70rpx;
+text-align:center;
+color:#333;
+font-size:30rpx;
+display:block;
+
 }

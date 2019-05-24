@@ -19,6 +19,10 @@ Page({
     console.log(list)
     wx.request({
       url: imgurl + 'api/OrderMini/orderInfo',
+      method:"POST",
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       data:{
         order_data:list,
         token:app.globalData.is_login,

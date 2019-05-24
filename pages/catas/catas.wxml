@@ -2,7 +2,7 @@
 <view class='nav'>
   <view class='left'>
     <image src='/images/search1.png'></image>
-    <input placeholder='请输入您搜索商品的名称'></input>
+    <input placeholder='请输入您搜索商品的名称' bindtap='search'></input>
   </view>
   <view class='right'>
     <view>

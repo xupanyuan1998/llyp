@@ -1,44 +1,44 @@
 <!--pages/search/search.wxml-->
 <view class='nav'>
-  <view class='search'> 
+  <view class='search'>
     <form bindsubmit="send">
-      <input value="{{search}}" placeholder='请输入您要搜素的内容' placeholder-class='pla' name="search" focus='true'/>
+      <input value="{{search}}" placeholder='请输入您要搜素的内容' placeholder-class='pla' name="search" focus='true' />
       <button form-type='submit'>搜索</button>
     </form>
   </view>
   <view class='content'>
-    <view class="{{active==idx?'active':''}}" wx:for="{{cata}}" wx:for-index="idx" wx-key="item" data-id="{{idx}}" bindtap='active'>{{item}}</view>
+    <view wx:for="{{cata}}" wx:key="item" wx:for-index="idx" data-id="{{idx}}" class="{{active==idx?'actives':''}}" bindtap='active'>{{item}}</view>
   </view>
 </view>
 <view class='warp'>
   <view class='shop' wx:if="{{active==0}}">
-    <view class='shop_d'>
+    <view class='shop_d' wx:for="{{shop_name}}" wx:key="item">
       <view class='shop_name'>
-        <image src='/images/logo.png'></image>
+        <image src="{{item.shop_logo==''?'/images/dianlogo.png':item.shop_logo}}"></image>
         <view class='center'>
-          <text class='name'>名字</text>
+          <text class='name'>{{item.shop_name}}</text>
           <view>
-            <text>关注人数：</text>
-            <text>商品数量：</text>
+            <text>关注人数：{{item.fav_num}}</text>
+            <text>商品数量：{{item.goods_num}}</text>
           </view>
         </view>
-        <view class='right'>进店</view>
+        <view class='right' bindtap='join' data-shop_id="{{item.shop_id}}">进店</view>
       </view>
       <view class='bottom'>
-        <image></image>
-        <image></image>
-        <image></image>
+        <image wx:for="{{item.goods_list}}" wx:for-item="twoitem" wx:key="items" src="{{imgurls+twoitem.pic_cover_mid}}" bindtap='goods' data-goods_id="{{twoitem.goods_id}}"></image>
       </view>
     </view>
+    <text wx:if="{{shop_name==''}}" class='place'> 没有找到你要的内容！</text>
   </view>
   <view class='goods' wx:if="{{active==1}}">
-     <view class="contents" >
-      <image src=''></image>
+    <view class="contents" wx:for="{{goods}}" wx:key="item" data-goods_id="{{item.goods_id}}" bindtap='goods'>
+      <image src='{{imgurls+item.pic_cover_mid}}'></image>
       <view class='top'>
-        <text>44444</text>
+        <text>{{item.goods_name}}</text>
       </view>
-      <text class='shop_name'>44444</text>
-      <text class='price'>￥1444</text>
+      <text class='shop_name'>{{item.shop_name}}</text>
+      <text class='price'>￥{{item.price}}</text>
     </view>
+    <text wx:if="{{goods==''}}" class='place'> 没有找到你要的内容！</text>
   </view>
 </view>

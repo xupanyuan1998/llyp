@@ -2,9 +2,14 @@
 const app = getApp();
 const imgurl = app.globalData.imgurl;
 var WxParse = require('../../wxParse/wxParse.js');
+const QRCode = require('./weapp-qrcode-test.js')
+import rpx2px from '../../utils/rpx2px.js'
+let qrcode;
 Page({
   data: {
     image_int: '',
+    share_msg:"",
+    saoma:'',
     imgurl: 'http://www.lianlianyp.com/',
     share: [{
         src: '/images/wechart.png',
@@ -235,30 +240,36 @@ Page({
     this.setData({
       show: 'block'
     });
-    // wx.request({
-    //   url: imgurl + 'api/goods/getShareContents',
-    //   method:"POST",
-    //   header:{
-    //     "Content-Type": "application/x-www-form-urlencoded"
-    //   },
-    //   data:{
-    //     flag:"goods",
-    //     shop_id:that.data.data_int.goods_detail.shop_id,
-    //     token:app.globalData.is_login
-    //   },
-    //   success(res){
-    //     console.log(res)
-    //   }
-    // })
+    // 将图片转成64
     wx.request({
       url: imgurl + 'api/goods/toBase64',
-      data:{
+      data: {
         path: that.data.image_int[0].pic_cover
       },
-      success(res){
-        console.log(res)
+      success(res) {
+        that.setData({
+          share_banner:res.data.data
+        })
+        wx.request({
+          url: imgurl + 'api/goods/getShareContents',
+          method: "POST",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          data: {
+            flag: "goods",
+            shop_id: that.data.data_int.goods_detail.shop_id,
+            token: app.globalData.is_login
+          },
+          success(req) {
+            console.log(req)
+          }
+        })
       }
     })
+    // 获取分享二维码
+    
+    
   },
   // 规格减少数量
   ntotpr() {

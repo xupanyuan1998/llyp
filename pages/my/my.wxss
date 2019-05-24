@@ -35,6 +35,11 @@ page{
   float: left;
   height: 78rpx;
 }
+.person .logins{
+  line-height: 78rpx;
+  font-size: 40rpx;
+  color: #fff;
+}
 .person text.u_name{
   height: 40rpx;
   line-height:40rpx;

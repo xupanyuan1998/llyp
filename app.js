@@ -2,7 +2,7 @@
 App({
   globalData: {
     userInfo: null,
-    imgurl:'http://www.lianlianyp.com/',
-    is_login: 'b0af4rd6p043tg4mh5e9tioa6t'
+    imgurl:'http://test.lianlianyp.com/',
+    is_login: 'lgtnhi56irqf4hvhr98u0bnk4s'
   }
 })
