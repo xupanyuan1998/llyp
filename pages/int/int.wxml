@@ -186,11 +186,11 @@
       <text>选择{{dayItem.spec_name}}</text>
       <view class="{{item.isSelect?'g_active':''}}" wx:for="{{dayItem.value}}" wx:key="this" wx:for-item="item" wx:for-index="idxs" data-fuindex="{{fuindex}}" data-chindex="{{idxs}}" data-item="{{item.spec_value_name}}" data-content="{{guige}}" catchtap='selectGuige'>{{item.spec_value_name}}</view>
     </view> -->
-    <view class="choose_gui" wx:if="{{guige[0]==true}}">
+    <view class="choose_gui" wx:if="{{guige!=''}}">
       <text>选择{{guige[0].spec_name}}</text>
       <view class="{{canshu_active==idxs?'g_active':''}}" wx:for="{{guige[0].value}}" wx:key="item"  wx:for-index="idxs"  data-id="{{idxs}}" data-item="{{item.spec_value_name}}" bindtap='canshu'>{{item.spec_value_name}}</view>
     </view>
-    <view class="choose_gui " wx:if="{{guige[1]==true}}">
+    <view class="choose_gui " wx:if="{{guige!=''}}">
       <text>选择{{guige[1].spec_name}}</text>
       <view class="{{color_active===idx?'g_active':''}}"  wx:for="{{guige[1].value}}" wx:key="item"  wx:for-index="idx"  data-id="{{idx}}" data-item="{{item.spec_value_name}}" bindtap='color'>{{item.spec_value_name}}</view>
     </view>

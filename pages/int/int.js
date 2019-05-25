@@ -2,9 +2,6 @@
 const app = getApp();
 const imgurl = app.globalData.imgurl;
 var WxParse = require('../../wxParse/wxParse.js');
-const QRCode = require('./weapp-qrcode-test.js')
-import rpx2px from '../../utils/rpx2px.js'
-let qrcode;
 Page({
   data: {
     image_int: '',
@@ -221,12 +218,21 @@ Page({
   // xuanzhongyashe
   color(e) {
     var that = this;
-    var id = e.currentTarget.dataset.id
-    that.setData({
-      color_active: id,
-      logo_ban: that.data.data_int.goods_detail.sku_picture_array[id].sku_picture_query[0].pic_cover_small,
-      sum: that.data.data_int.goods_detail.sku_list[id].price * that.data.numberType
-    })
+    var id = e.currentTarget.dataset.id;
+    var smallimg = that.data.data_int.goods_detail.sku_picture_array
+    if(smallimg==''){
+      that.setData({
+        color_active: id,
+        sum: that.data.data_int.goods_detail.sku_list[id].price * that.data.numberType
+      })
+    }else{
+      that.setData({
+        color_active: id,
+        logo_ban: that.data.data_int.goods_detail.sku_picture_array[id].sku_picture_query[0].pic_cover_small,
+        sum: that.data.data_int.goods_detail.sku_list[id].price * that.data.numberType
+      })
+    }
+   
   },
   // yincangguige
   hidden() {

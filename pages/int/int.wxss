@@ -708,7 +708,7 @@ padding: 0 30rpx;
   border:1rpx solid #a6a6a6; 
 }
 .choose_num .num view{
-  width: 145rpx;
+  width: 140rpx;
   height: 60rpx;
   text-align: center;
   line-height: 60rpx;

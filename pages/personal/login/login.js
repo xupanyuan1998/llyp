@@ -85,66 +85,6 @@ Page({
       })
     }
   },
-  // 注册
-  formSubmit(e) {
-    var that=this;
-    // 获取提交的数据
-    let phone = e.detail.value.phone,
-      yanzheng = e.detail.value.yanahengma,
-      pass = e.detail.value.pass,
-    repass = e.detail.value.repass,
-    tui = e.detail.value.tui;
-    if (yanzheng == '') {
-      wx.showToast({
-        title: '验证码不能为空',
-        mask: true,
-        icon: 'none'
-      })
-    } else if (pass == '') {
-      wx.showToast({
-        title: '请输入密码',
-        mask: true,
-        icon: 'none'
-      })
-    } else if (repass == '') {
-      wx.showToast({
-        title: '支付密码不能为空',
-        mask: true,
-        icon: 'none'
-      })
-    } else if (that.data.actives != 1) {
-      wx.showToast({
-        title: '请选择用户协议',
-        mask: true,
-        icon: 'none'
-      })
-    } else if (tui=='') {
-      wx.showToast({
-        title: '请填写推荐人',
-        mask: true,
-        icon: 'none'
-      })
-    } else {
-      wx.request({
-        url:imgurl+ 'index.php?s=/api/login/register',
-        method:"post",
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        data:{
-          flag:1,
-          phone:phone,
-          code:yanzheng,
-          password:pass,
-          p_phone:tui,
-          two_password:repass
-        },
-        success(res){
-          console.log(res)
-        }
-      })
-    }
-  },
   // 登录
   formSubmits(e){
     var that=this;

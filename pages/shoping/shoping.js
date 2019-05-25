@@ -252,6 +252,8 @@ Page({
           var arr=[];
           var obj={};
           var lilen;
+          var obj1={};
+          var arr2 = [];
           // con: [{
           //   image: '/images/shop_name.jpg', //商品图片
           //   title: '鸡骨草胶囊（玉林）', //商品名称
@@ -261,27 +263,24 @@ Page({
           //   q: 1 //是否价钱相加的状态  1没有相加 0相加
           // }
           for (let i=0;i<len;++i){
+            console.log(shopcar[i])
            obj.tltie=shopcar[i].shop_name;
             obj.tt = 1  //选中状态 1没有选中 0选中
             lilen = shopcar[i].products.length;
             for(let a=0;a<lilen;++a){
-              var obj1={};
-              var arr2=[];
-              var a1;
               obj1.image = shopcar[i].products[a].picture_info.pic_cover_mid;
               obj1.title = shopcar[i].products[a].goods_name;
               obj1.price = shopcar[i].products[a].price;
               obj1.number = shopcar[i].products[a].num;
               obj1.tt=1;
               obj1.q=1;
-              console.log(obj1);
-              a1=arr2.push(obj1);
-              console.log(a1)
+              arr2.push(obj1);
             };
-            obj.con=a1;
-            console.log(obj);
+            console.log(arr2);
+            obj.con=arr2;
+            console.log(obj)
+            arr.push(obj);
           }
-          arr.push(obj)
           console.log(arr);
           // 储存获取到的购物车数据
           // that.setData({
