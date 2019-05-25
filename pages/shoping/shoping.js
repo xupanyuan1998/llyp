@@ -45,7 +45,8 @@ Page({
         tt: 1,
         q: 1
       }]
-    }]
+    }],
+    imageurls:"http://www.lianlianyp.com/"
   },
   //管理订单
   switch () {
@@ -69,9 +70,10 @@ Page({
     var ti = this; //指定this
     var tt = e.currentTarget.dataset.check_tt; //获取当前状态
     var find = e.currentTarget.dataset.check_find; //当前第几个
-    var cc = this.data.goods[find].con; //这商家有几个商品
+    var cc = this.data.goods[find].products; //这商家有几个商品
+    console.log(cc)
     for (var i = 0; i < cc.length; ++i) { //循环出商品数量
-      var vo = 'goods[' + find + '].con[' + i + '].tt'; //定义商品选中状态
+      var vo = 'goods[' + find + '].products[' + i + '].tt'; //定义商品选中状态
       var oo = 'goods[' + find + '].tt'; //定义商店选中状态
       var arr = Number(cc[i].price); //把商品价格 字符串转换数字
       var aee = Number(ti.data.price); //把总价格 字符串转换数字
@@ -101,12 +103,13 @@ Page({
   },
   //点击商品商店和全选状态
   check_find(e) {
+    console.log(e)
     var ti = this; //指定this
     var tt = e.currentTarget.dataset.check_tt; //获取商品状态
     var find = e.currentTarget.dataset.check_find; //获取第几件商品
     var box = e.currentTarget.dataset.check_box; //获取父级第几家商店
-    var cc = this.data.goods[box].con; //获取商品位置
-    var vo = 'goods[' + box + '].con[' + find + '].tt'; //指定第几个商品的状态
+    var cc = this.data.goods[box].products; //获取商品位置
+    var vo = 'goods[' + box + '].products[' + find + '].tt'; //指定第几个商品的状态
     var pr = e.currentTarget.dataset.price; //商品的价格
     var arr = Number(pr); //商品价格字符串转换数字
     var aee = Number(ti.data.price); //总价格字符串转换数字
@@ -147,6 +150,7 @@ Page({
   },
   //全选状态
   all_box(e) {
+    
     var ti = this;
     var tt = e.currentTarget.dataset.tt;
     var cc = ti.data.goods;
@@ -170,38 +174,39 @@ Page({
         price: '00.00'
       });
     }
-
+    var arr1 = [];
     function fn(l, w, R) {
       for (var f = 0; f < cc.length; ++f) { //循环goods
-        for (var i = 0; i < cc[f].con.length; ++i) { //循环goods下的con
+        for (var i = 0; i < cc[f].products.length; ++i) { //循环goods下的con
           var ss = 'goods[' + f + '].tt'; //第几家商店
-          var vo = 'goods[' + f + '].con[' + i + '].tt'; //第几家商店里的第几件商品
-          if (cc[f].con[i].tt == w) { //判断商品的状态
-            var arr = Number(cc[i].con[f].price); //商品的价格字符串转换数字
-            var aee = Number(ti.data.price); //总价的字符串转换数字
-            if (R) {
+          var vo = 'goods[' + f + '].products[' + i + '].tt'; //第几家商店里的第几件商品
+          if (cc[f].products[i].tt == w) { //判断商品的状态
+            var arr =Number ((cc[f].products[i].price*cc[f].products[i].num).toFixed(2)); //商品的价格字符串转换数字
+            var aee = Number(ti.data.price); //总价的字符串转换数字;
+            
               var pri = aee += arr; //数学加法
-            } else {
-              var pri = aee -= arr; //数学减法
-            }
-            var pric = Math.floor(pri * 100) / 100; /*小数点后两位*/
+            
+            console.log(pri)
+            var pric =Number (pri.toFixed(2)); /*小数点后两位*/
             ti.setData({
               [ss]: l,
               [vo]: l,
-              price: pric
-            })
+              price:pri
+            });
+
           }
         }
       }
     }
   },
   add(e) {
+    console.log(e)
     var ti = this;
     var pr = e.currentTarget.dataset.add;
     var number = e.currentTarget.dataset.number;
     var father = e.currentTarget.dataset.father;
     var child = e.currentTarget.dataset.child;
-    var num = 'goods[' + father + '].con[' + child + '].number';
+    var num = 'goods[' + father + '].products[' + child + '].num';
     var arr = Number(pr);
     var aee = Number(ti.data.price);
     number++;
@@ -211,25 +216,30 @@ Page({
       [num]: number,
       price: pric
     });
-    console.log(pric);
   },
   minus(e) {
     var ti = this;
+    console.log(e)
     var pr = e.currentTarget.dataset.minus;
     var number = e.currentTarget.dataset.number;
     var father = e.currentTarget.dataset.father;
     var child = e.currentTarget.dataset.child;
-    var num = 'goods[' + father + '].con[' + child + '].number';
+    var num = 'goods[' + father + '].products[' + child + '].num';
     var arr = Number(pr);
     var aee = Number(ti.data.price);
-    number--;
-    var ag = aee -= arr;
-    var pric = Math.floor(ag * 100) / 100;
-    ti.setData({
-      [num]: number,
-      price: pric
-    });
-    console.log(pric);
+   
+    if(number<=1){
+      number==1;
+    }else{
+      number--;
+      var ag = aee -= arr;
+      var pric = Math.floor(ag * 100) / 100;
+      ti.setData({
+        [num]: number,
+        price: pric
+      });
+    }
+  
   },
   // 页面展示的时候获取购物车列表
   onShow() {
@@ -246,46 +256,23 @@ Page({
           token:app.globalData.is_login
         },
         success(res){
-          console.log(res.data.data.list.shops)
-          var shopcar = res.data.data.list.shops;
-          var len=shopcar.length;
-          var arr=[];
-          var obj={};
-          var lilen;
-          var obj1={};
-          var arr2 = [];
-          // con: [{
-          //   image: '/images/shop_name.jpg', //商品图片
-          //   title: '鸡骨草胶囊（玉林）', //商品名称
-          //   price: '120.50', //商品价格
-          //   number: 1, //商品数量
-          //   tt: 1,
-          //   q: 1 //是否价钱相加的状态  1没有相加 0相加
-          // }
-          for (let i=0;i<len;++i){
-            console.log(shopcar[i])
-           obj.tltie=shopcar[i].shop_name;
-            obj.tt = 1  //选中状态 1没有选中 0选中
-            lilen = shopcar[i].products.length;
-            for(let a=0;a<lilen;++a){
-              obj1.image = shopcar[i].products[a].picture_info.pic_cover_mid;
-              obj1.title = shopcar[i].products[a].goods_name;
-              obj1.price = shopcar[i].products[a].price;
-              obj1.number = shopcar[i].products[a].num;
-              obj1.tt=1;
-              obj1.q=1;
-              arr2.push(obj1);
+          // console.log(res.data.data.list.shops)
+          var list = res.data.data.list.shops;
+          that.setData({
+            goods:list
+          });
+          
+          for (var i in that.data.goods) {
+            var vo = that.data.goods[i];
+            vo.tt=1;
+
+            for(var f in vo.products){
+              var co = that.data.goods[i].products[f];
+              co.tt = 1;
+              co.q==1;
             };
-            console.log(arr2);
-            obj.con=arr2;
-            console.log(obj)
-            arr.push(obj);
           }
-          console.log(arr);
-          // 储存获取到的购物车数据
-          // that.setData({
-          //   shops_car:res.data.data.list.shops
-          // })
+          console.log(that.data.goods);
         }
       })
     }

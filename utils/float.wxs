@@ -1,0 +1,9 @@
+var float = {
+  floatTwo: function(a) {
+    concle.log(a.toFixed(2))
+    return a.toFixed(2);
+  }
+}
+module.exports = {
+  float: float.floatTwo
+}

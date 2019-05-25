@@ -1,4 +1,5 @@
 <!--pages/shoping/shoping.wxml-->
+<wxs module="float" src="../../utils/float.wxs"></wxs>
 <view class='header'>
   <image src='/images/back_arrow.png'></image>
   <text class='car'>购物车</text>
@@ -6,84 +7,83 @@
   <text wx:else class='gement' bindtap='switch'>完成</text>
 </view>
 <view class='warp'>
-  <view>
-    <view class='login'>
+  <scroll-view scroll-y="true">
+    <view>
+      <!-- <view class='login'>
       <text class='sync'>登陆后可同步购物车信息</text>
       <view>
         <text>去登陆</text>
         <image src='/images/skip_arrow.png'></image>
       </view>
-    </view>
-    <form class='shop'>
-      <!--商品框-->
-      <view wx:for='{{goods}}' wx:key='{{index}}'>
-      
-        <view class='shop_firest'>
-          <view class='name'>
-            <checkbox-group
-              style='margin:0 0 0 20rpx;line-height:20rpx;'
-              data-check_find='{{index}}'
-              data-check_tt='{{item.tt}}'
-              bindtap="all_selected">
-              <checkbox checked='{{item.tt === 0 ? true : false}}'></checkbox>
-            </checkbox-group>
-            <text>{{item.tltie}}</text>
-          </view>
-          <view wx:for='{{item.con}}' wx:key='{{index}}' wx:for-index='box'>
+    </view> -->
+      <form class='shop'>
+        <!--商品框-->
+        <view wx:for='{{goods}}' wx:key='{{index}}'>
 
-            <view class='items'>
-              <checkbox-group data-price='{{item.price}}' data-check_tt='{{item.tt}}' data-check_box='{{index}}' data-check_find='{{box}}' bindtap='check_find'>
+          <view class='shop_firest'>
+            <view class='name'>
+              <checkbox-group style='margin:0 0 0 20rpx;line-height:20rpx;' data-check_find='{{index}}' data-check_tt='{{item.tt}}' bindtap="all_selected">
                 <checkbox checked='{{item.tt === 0 ? true : false}}'></checkbox>
               </checkbox-group>
-              <view class='content'>
-                <view class='shop_tu'><image src='{{item.image}}'></image></view>
-                <view class='message'>
-                  <text class='ji_name'>{{item.tltie}}</text>
-                  <text class='guige'>规格：48s</text>
-                  <view class='number'>
-                    <view class='reduce' bindtap='minus' data-minus='{{item.price}}' data-number='{{item.number}}' data-father='{{index}}' data-child='{{box}}'>
-                      <text></text>
-                    </view>
-                    <text class='number_text'>{{item.number}}</text>
-                    <view class='add' bindtap='add' data-add='{{item.price}}' data-number='{{item.number}}' data-father='{{index}}' data-child='{{box}}'>
-                      <text class='heng'></text>
-                      <text class='shu'></text>
+              <text>{{item.shop_name}}</text>
+            </view>
+            <view wx:for='{{item.products}}' wx:key='{{index}}' wx:for-index='box'>
+
+              <view class='items'>
+                <checkbox-group data-price='{{item.price}}' data-check_tt='{{item.tt}}' data-check_box='{{index}}' data-check_find='{{box}}' bindtap='check_find'>
+                  <checkbox checked='{{item.tt === 0 ? true : false}}'></checkbox>
+                </checkbox-group>
+                <view class='content'>
+                  <view class='shop_tu'>
+                    <image src='{{imageurls+item.picture_info.pic_cover_mid}}'></image>
+                  </view>
+                  <view class='message'>
+                    <text class='ji_name'>{{item.goods_name}}</text>
+                    <text class='guige'>规格：{{item.sku_name}}</text>
+                    <view class='number'>
+                      <view class='reduce' bindtap='minus' data-minus='{{item.price}}' data-number='{{item.num}}' data-father='{{index}}' data-child='{{box}}'>
+                        <text></text>
+                      </view>
+                      <text class='number_text'>{{item.num}}</text>
+                      <view class='add' bindtap='add' data-add='{{item.price}}' data-number='{{item.num}}' data-father='{{index}}' data-child='{{box}}'>
+                        <text class='heng'></text>
+                        <text class='shu'></text>
+                      </view>
                     </view>
                   </view>
+                  <text class='price'>￥{{float.floatTwo(item.price*item.num)}}</text>
                 </view>
-                <text class='price'>￥{{item.price}}</text>
               </view>
+
             </view>
-
           </view>
-        </view>
 
-      </view>  <!--end 商品框-->
-      <!--结算框-->
-      <view class='pay'>
-        <view class='pay_left'>
-          <checkbox-group
-              style='margin: 20rpx 0 0 15rpx;'
-              data-tt='{{tt}}'
-              bindtap="all_box">
+        </view>
+        <!--end 商品框-->
+        <!--结算框-->
+        <view class='pay'>
+          <view class='pay_left'>
+            <checkbox-group style='margin: 20rpx 0 0 15rpx;' data-tt='{{tt}}' bindtap="all_box">
               <checkbox checked='{{tt === 0 ? true : false}}'></checkbox>
             </checkbox-group>
-          <text>全选</text>
-        </view>
-        <view wx:if="{{admin}}">
-          <view class='sum_price'>
-            <view>
-              <text style='width:90rpx;'>合计：</text>
-              <text style='width:122rpx;'>￥{{price}}</text>
-            </view>
-            <text class='shipping' style='display:block;'>不含运费</text>
+            <text>全选</text>
           </view>
-          <view class='go' bindtap='order'>去结算</view>
+          <view wx:if="{{admin}}">
+            <view class='sum_price'>
+              <view>
+                <text style='width:90rpx;'>合计：</text>
+                <text style='width:122rpx;'>￥{{price}}</text>
+              </view>
+              <text class='shipping' style='display:block;'>不含运费</text>
+            </view>
+            <view class='go' bindtap='order'>去结算</view>
+          </view>
+          <view wx:else>
+            <view class='go del'>删除</view>
+          </view>
         </view>
-        <view wx:else>
-          <view class='go del'>删除</view>
-        </view>
-      </view>  <!--end 结算框-->
-    </form>
-  </view>
+        <!--end 结算框-->
+      </form>
+    </view>
+  </scroll-view>
 </view>
