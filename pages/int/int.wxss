@@ -2,6 +2,11 @@
 page{
   padding-bottom: 100rpx;
 }
+video{
+  width: 750rpx;
+  height: 600rpx;
+  display: inline-block;
+}
 .nav{
   height: 60rpx;
   padding: 14rpx 20rpx;
@@ -76,6 +81,7 @@ page{
 .banner_int{
   width: 750rpx;
   height: 600rpx;
+ display: inline-block;
 }
 .banner_int image{
    width: 750rpx;

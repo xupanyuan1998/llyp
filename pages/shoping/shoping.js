@@ -1,5 +1,5 @@
-const app=getApp();
-const imgurl=app.globalData.imgurl;
+const app = getApp();
+const imgurl = app.globalData.imgurl;
 Page({
 
   /**
@@ -9,44 +9,10 @@ Page({
     admin: true,
     tt: 1, //全选状态
     price: '00.00', //总价
-    goods: [{
-      tltie: '健客大药房网定点送', //商家
-      tt: 1, //选中状态 1没有选中 0选中
-      con: [{
-        image: '/images/shop_name.jpg', //商品图片
-        title: '鸡骨草胶囊（玉林）', //商品名称
-        price: '120.50', //商品价格
-        number: 1, //商品数量
-        tt: 1,
-        q: 1 //是否价钱相加的状态  1没有相加 0相加
-      }, {
-        image: '/images/shop_name.jpg',
-        title: '鸡骨草胶囊（玉林）',
-        price: '120.60',
-        number: 1,
-        tt: 1,
-        q: 1
-      }]
-    }, {
-      tltie: '健客大药房网定点送',
-      tt: 1,
-      con: [{
-        image: '/images/shop_name.jpg', //商品图片
-        title: '鸡骨草胶囊（玉林）', //商品名称
-        price: '120.50', //商品价格
-        number: 1, //商品数量
-        tt: 1,
-        q: 1
-      }, {
-        image: '/images/shop_name.jpg',
-        title: '鸡骨草胶囊（玉林）',
-        price: '120.60',
-        number: 1,
-        tt: 1,
-        q: 1
-      }]
-    }],
-    imageurls:"http://www.lianlianyp.com/"
+    goods: [],
+    imageurls: "http://www.lianlianyp.com/",
+    heaHei:0,
+    pay:0
   },
   //管理订单
   switch () {
@@ -71,7 +37,6 @@ Page({
     var tt = e.currentTarget.dataset.check_tt; //获取当前状态
     var find = e.currentTarget.dataset.check_find; //当前第几个
     var cc = this.data.goods[find].products; //这商家有几个商品
-    console.log(cc)
     for (var i = 0; i < cc.length; ++i) { //循环出商品数量
       var vo = 'goods[' + find + '].products[' + i + '].tt'; //定义商品选中状态
       var oo = 'goods[' + find + '].tt'; //定义商店选中状态
@@ -103,31 +68,22 @@ Page({
   },
   //点击商品商店和全选状态
   check_find(e) {
-    console.log(e)
     var ti = this; //指定this
     var tt = e.currentTarget.dataset.check_tt; //获取商品状态
     var find = e.currentTarget.dataset.check_find; //获取第几件商品
     var box = e.currentTarget.dataset.check_box; //获取父级第几家商店
     var cc = this.data.goods[box].products; //获取商品位置
     var vo = 'goods[' + box + '].products[' + find + '].tt'; //指定第几个商品的状态
-    var pr = e.currentTarget.dataset.price; //商品的价格
-    var arr = Number(pr); //商品价格字符串转换数字
-    var aee = Number(ti.data.price); //总价格字符串转换数字
     if (tt == 0) {
-      var pri = aee -= arr; //数学减法
-      var pric = Math.floor(pri * 100) / 100; /*小数点后两位*/
       ti.setData({
         [vo]: 1,
-        price: pric
       })
     } else {
-      var pri = aee += arr; //数学加法
-      var pric = Math.floor(pri * 100) / 100; /*小数点后两位*/
       ti.setData({
         [vo]: 0,
-        price: pric
       })
     }
+    sumPrice(ti.data.goods, ti)
     var ss = 0; //判断商品全选
     var oo = 'goods[' + box + '].tt'; //指定第几家商店状态
     for (var f = 0; f < cc.length; ++f) {
@@ -150,7 +106,6 @@ Page({
   },
   //全选状态
   all_box(e) {
-    
     var ti = this;
     var tt = e.currentTarget.dataset.tt;
     var cc = ti.data.goods;
@@ -160,122 +115,186 @@ Page({
       })
       var l = 0;
       var w = 1;
-      fn(l, w, true);
+      fn(l, w)
     } else {
       ti.setData({
         tt: 1
       })
       var l = 1;
       var w = 0;
-      fn(l, w, false);
+      fn(l, w)
     }
     if (ti.data.price <= 0) {
       ti.setData({
         price: '00.00'
       });
     }
-    var arr1 = [];
-    function fn(l, w, R) {
+
+    function fn(l, w) {
       for (var f = 0; f < cc.length; ++f) { //循环goods
         for (var i = 0; i < cc[f].products.length; ++i) { //循环goods下的con
           var ss = 'goods[' + f + '].tt'; //第几家商店
           var vo = 'goods[' + f + '].products[' + i + '].tt'; //第几家商店里的第几件商品
-          if (cc[f].products[i].tt == w) { //判断商品的状态
-            var arr =Number ((cc[f].products[i].price*cc[f].products[i].num).toFixed(2)); //商品的价格字符串转换数字
-            var aee = Number(ti.data.price); //总价的字符串转换数字;
-            
-              var pri = aee += arr; //数学加法
-            
-            console.log(pri)
-            var pric =Number (pri.toFixed(2)); /*小数点后两位*/
-            ti.setData({
-              [ss]: l,
-              [vo]: l,
-              price:pri
-            });
-
-          }
+          ti.setData({
+            [ss]: l,
+            [vo]: l
+          });
         }
       }
     }
+    // 计算总价格
+    sumPrice(cc,ti)
   },
+  // 增加购物车数量
   add(e) {
-    console.log(e)
     var ti = this;
     var pr = e.currentTarget.dataset.add;
     var number = e.currentTarget.dataset.number;
     var father = e.currentTarget.dataset.father;
     var child = e.currentTarget.dataset.child;
+    var cartid = e.currentTarget.dataset.cart_id;
     var num = 'goods[' + father + '].products[' + child + '].num';
-    var arr = Number(pr);
-    var aee = Number(ti.data.price);
     number++;
-    var ag = aee += arr;
-    var pric = Math.floor(ag * 100) / 100;
     ti.setData({
       [num]: number,
-      price: pric
     });
+    changeNum(cartid,number);
+    sumPrice(ti.data.goods, ti)
   },
   minus(e) {
     var ti = this;
-    console.log(e)
     var pr = e.currentTarget.dataset.minus;
     var number = e.currentTarget.dataset.number;
     var father = e.currentTarget.dataset.father;
     var child = e.currentTarget.dataset.child;
     var num = 'goods[' + father + '].products[' + child + '].num';
-    var arr = Number(pr);
-    var aee = Number(ti.data.price);
-   
-    if(number<=1){
-      number==1;
-    }else{
+    var cartid = e.currentTarget.dataset.cart_id;
+
+    if (number <= 1) {
+      number == 1;
+    } else {
       number--;
-      var ag = aee -= arr;
-      var pric = Math.floor(ag * 100) / 100;
+      changeNum(cartid, number);
       ti.setData({
         [num]: number,
-        price: pric
       });
     }
-  
+    sumPrice(ti.data.goods, ti)
+  },
+  // 删除购物车的商品
+  dels(){
+    var that = this;
+    wx.request({
+      url:imgurl+ 'api/cart/cartDelete',
+      method:"post",
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:{
+        del_id:that.data.cart_id,
+        token:app.globalData.is_login
+      },
+      success(res){
+        if(res.data.code==200){//判断如果删除成功 就重新获取够购物车的列表
+        wx.showToast({
+          title: '删除成功',
+        })
+          wx.request({
+            url: imgurl + 'api/cart/cart',
+            data: {
+              token: app.globalData.is_login
+            },
+            success(res) {
+              var list = res.data.data.list.shops;
+              if (list == undefined) {
+                that.setData({
+                  goods: []
+                });
+              } else {
+                that.setData({
+                  goods: list
+                });
+              }
+              for (var i in that.data.goods) {
+                var vo = that.data.goods[i];
+                vo.tt = 1;
+
+                for (var f in vo.products) {
+                  var co = that.data.goods[i].products[f];
+                  co.tt = 1;
+                  co.q == 1;
+                };
+              }
+            }
+          })
+        }
+      }
+    })
   },
   // 页面展示的时候获取购物车列表
   onShow() {
-    var that=this;
-    if (app.globalData.is_login==null){
+    var that = this;
+    if (app.globalData.is_login == null) {
       wx.showToast({
         title: '您还没有登录哦！',
-        icon:'icon'
+        icon: 'icon'
       })
-    }else{
+    } else {
       wx.request({
-        url:imgurl+ 'api/cart/cart',
-        data:{
-          token:app.globalData.is_login
+        url: imgurl + 'api/cart/cart',
+        data: {
+          token: app.globalData.is_login
         },
-        success(res){
-          // console.log(res.data.data.list.shops)
+        success(res) {
           var list = res.data.data.list.shops;
+          if(list==undefined){
+            that.setData({
+              goods: []
+            });
+          }else{
           that.setData({
-            goods:list
+            goods: list
           });
-          
+          }
           for (var i in that.data.goods) {
             var vo = that.data.goods[i];
-            vo.tt=1;
+            vo.tt = 1;
 
-            for(var f in vo.products){
+            for (var f in vo.products) {
               var co = that.data.goods[i].products[f];
               co.tt = 1;
-              co.q==1;
+              co.q == 1;
             };
           }
-          console.log(that.data.goods);
         }
       })
     }
+  },
+  onLoad(){
+    var that=this;
+    //获取屏幕可视高度
+    let windowHeight =Number(wx.getSystemInfoSync().windowHeight )// 屏幕的高度
+    that.setData({
+      windowHeight: windowHeight
+    })
+    //获取header的高度
+    wx.createSelectorQuery().select('#header').boundingClientRect(function (res) {
+      that.setData({
+        heaHei:res.height
+      })
+    }).exec();
+    //获取pay的高度
+    wx.createSelectorQuery().select('#pay').boundingClientRect(function (res) {
+      that.setData({
+        pay:res.height
+      })
+    }).exec();
+  },
+  // 在商品上点击跳转到商品详情页面
+  int(e){
+    wx.navigateTo({
+      url: '/pages/int/int?int='+e.currentTarget.dataset.goods,
+    })
   }
 })
 //全部点击商品全选状态
@@ -297,4 +316,43 @@ function fun(ti) {
       tt: 1
     });
   }
+};
+// 计算总价格
+function sumPrice(cc,a) {
+  var cart_id=[];
+  var sum=0;
+  for (var f = 0; f < cc.length; ++f) { //循环goods
+    for (var i = 0; i < cc[f].products.length; ++i) {
+      if (cc[f].products[i].tt == 0) {
+        sum += cc[f].products[i].price * cc[f].products[i].num;
+        cart_id.push((cc[f].products[i].cart_id));
+      }
+    }
+  }
+  if(sum<0){
+    a.setData({
+      price: Number(0.00)
+    })
+  }else{
+    a.setData({
+      price: Number(sum.toFixed(2)),
+      cart_id:cart_id
+    })
+  }
+
+}
+// 改变购物车商品数量
+function changeNum(id,number){
+  wx.request({
+    url: imgurl + 'api/cart/cartAdjustNum',
+    method: "POST",
+    header: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    data: {
+      cartid: id,
+      num: number,
+      token: app.globalData.is_login
+    }
+  })
 }

@@ -1,9 +1,10 @@
-var float = {
-  floatTwo: function(a) {
-    concle.log(a.toFixed(2))
-    return a.toFixed(2);
+
+var filter = {
+  numberToFixed: function (value) {
+    return value.toFixed(2)
   }
 }
+// 导出对外暴露的属性
 module.exports = {
-  float: float.floatTwo
+  numberToFixed: filter.numberToFixed
 }

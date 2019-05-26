@@ -17,6 +17,11 @@
   </view>
 </view>
   <!-- 商品展示 -->
+ <scroll-view scroll-x="true "class='index_banner' style='white-space: nowrap'>
+     <video wx:if="{{data_int.goods_detail.video_url != ''}}"
+    src="{{data_int.goods_detail.video_url}}"
+    show-center-play-btn="true"
+    auto-pause-if-open-native="true"></video>
   <swiper id="boby0" autoplay='true' interval='3000' indicator-dots='true' indicator-active-color='#f6441c' indicator-color='rgba(170,166,165,.5)' class='banner_int'>
     <block wx:for="{{image_int}}" wx:key="item">
       <swiper-item>
@@ -24,6 +29,7 @@
       </swiper-item>
     </block>
   </swiper>
+</scroll-view>
   <!-- 商品信息 -->
   <view class='com_int'>
     <view class='com_name'>
