@@ -1,18 +1,21 @@
 /* pages/personal/address/address.wxss */
-.nav{
+
+.nav {
   width: 750rpx;
   height: 90rpx;
   background: #fff;
   border-bottom: 1rpx solid #e8e8e8;
 }
-.nav .add{
+
+.nav .add {
   width: 38rpx;
   height: 38rpx;
   display: block;
   float: left;
   margin: 26rpx 24rpx 0 20rpx;
 }
-.nav text{
+
+.nav text {
   width: 260rpx;
   display: block;
   float: left;
@@ -21,56 +24,78 @@
   color: #3f3f3f;
   font-size: 30rpx;
 }
-.nav .next{
+
+.nav .next {
   width: 13rpx;
   height: 22rpx;
   display: block;
   float: right;
   margin: 34rpx 20rpx;
 }
-.content{
-  margin-top: 22rpx;
+radio-group{
+  width: 35rpx;
+  height: 35rpx;
+  float: left;
+}
+radio .wx-radio-input {
+  height: 28rpx;
+  width: 28rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 50% !important;
+  margin-right: 15rpx;
+}
+
+radio .wx-radio-input .wx-radio-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1);
+  background: #ff9b2c;
+  border: 1rpx solid #ff9b2c;
+  border-radius: 50% !important;
+}
+
+.content {
+ margin-top: 20rpx;
   height: 260rpx;
   width: 750rpx;
   border-bottom: 1rpx solid #e8e8e8;
   background: #fff;
 }
-.content .top{
+
+.content .top {
   width: 750rpx;
   height: 70rpx;
-   border-bottom: 1rpx solid #e8e8e8;
-}
-.left{
-  width: 190rpx;
-  height:70rpx;
-  float: left; 
-  margin-left: 20rpx;
-}
-.left radio{
-  width: 31rpx;
-  height: 31rpx;
-  display: block;
-  float: left;
-  margin: 28rpx 15rpx 28rpx 0;
+  border-bottom: 1rpx solid #e8e8e8;
 }
 
-.left text{
+.left {
+  width: 190rpx;
+  height: 70rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+
+.left text {
   line-height: 70rpx;
   height: 70rpx;
   display: block;
-  float: left;
   font-size: 24rpx;
   font-family: "微软雅黑";
   color: #676767;
-  
 }
-.right{
+
+.right {
   float: right;
   height: 70rpx;
   width: 150rpx;
   margin-right: 20rpx;
 }
-.right text{
+
+.right text {
   height: 70rpx;
   display: block;
   line-height: 70rpx;
@@ -78,40 +103,48 @@
   font-family: "微软雅黑";
   color: #676767;
 }
-.right text:first-child{
+
+.right text:first-child {
   float: left;
 }
-.right text:last-child{
+
+.right text:last-child {
   float: right;
 }
-.name{
+
+.name {
   margin-top: 11rpx;
   height: 65rpx;
   width: 750rpx;
 }
-.name text{
-   height: 65rpx;
-   line-height: 65rpx;
-   display: block;
-   float: left;
-   font-weight: bold;
-   color: #353535;
-   font-size: 36rpx;
+
+.name text {
+  height: 65rpx;
+  line-height: 65rpx;
+  display: block;
+  float: left;
+  font-weight: bold;
+  color: #353535;
+  font-size: 36rpx;
 }
-.name text:first-child{
+
+.name text:first-child {
   margin-left: 20rpx;
 }
-.name text:last-child{
+
+.name text:last-child {
   margin-right: 20rpx;
   float: right;
 }
-.addre{
+
+.addre {
   height: 94rpx;
   width: 710rpx;
-  padding:  0 20rpx;
+  padding: 0 20rpx;
   line-height: 47rpx;
   overflow: hidden;
   font-family: "苹方";
   font-size: 26rpx;
   color: #999;
+  display: block;
 }

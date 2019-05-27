@@ -35,6 +35,7 @@
   height: 211rpx;
   background: #fff;
   border-bottom: 1rpx solod #e8e8e8;
+  margin-bottom: 20rpx;
 }
 .warp image{
   width: 170rpx;

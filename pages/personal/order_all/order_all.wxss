@@ -20,11 +20,14 @@ scroll-view text.active{
   color: #ff9b2c;
 }
 .content{
-  margin-top: 20rpx;
+ 
   width: 710rpx;
   height: auto;
   border-radius: 20rpx;
   padding: 0 20rpx;
+}
+.order_all{
+   margin-top: 20rpx;
 }
 .warp{
   height: 266rpx;
@@ -71,7 +74,7 @@ scroll-view text.active{
   width: 500rpx;
 }
 .right .name text{
-  width: 400rpx;
+  width: 360rpx;
   float: left;
   height: 70rpx;
   line-height: 35rpx;
@@ -82,7 +85,7 @@ scroll-view text.active{
 .right .name text:last-child{
   height: 35rpx;
   line-height: 35rpx;
-  width: 75rpx;
+  width: 100rpx;
   color: #f7962e;
   font-size: 26rpx;
   float: right;
@@ -144,4 +147,11 @@ padding-bottom: 20rpx;
   border: none;
   color: #fff;
   background: #fe992d;
+}
+.content view.place{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 40rpx;
 }

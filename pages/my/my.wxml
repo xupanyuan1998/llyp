@@ -31,46 +31,48 @@
       <image src='/images/order.png'></image>
       <text>我的订单</text>
     </view>
-    <view class='all_order' bindtap='order'>
+    <view class='all_order' bindtap='order' data-id="{{'all'}}" data-active='{{0}}'>
       <text>查看全部订单</text>
       <image src='/images/my_arrow.png'></image>
     </view>
   </view>
   <view class='pending_order'>
   <!-- 代付款 -->
-    <view bindtap=''>
+    <view bindtap='dfk' data-id="{{0}}" data-active='{{1}}'>
       <view>
         <image src='/images/pendingpay.png'></image>
-        <text class='lable'>2</text>
+        <text wx:if="{{dfk>0}}" class='lable'>{{dfk}}</text>
       </view>
       <text>代付款</text>
     </view>
     <!-- 待发货 -->
-    <view>
+    <view bindtap='dfh'  data-id="{{1}}" data-active='{{2}}'>
       <view>
         <image src='/images/pendingdelivery.png'></image>
-        <text class='lable'>2</text>
+        <text wx:if="{{dfh>0}}" class='lable'>{{dfh}}</text>
       </view>
       <text>待发货</text>
     </view>
-    <view>
+    <!-- 待收货 -->
+    <view  bindtap='dsh'  data-id="{{2}}" data-active='{{3}}'>
       <view>
         <image src='/images/pendingreceipt.png'></image>
-        <text class='lable'>2</text>
+        <text wx:if="{{dsh>0}}" class='lable'>{{dsh}}</text>
       </view>
       <text>待收货</text>
     </view>
-    <view>
+    <!-- 待评价 -->
+    <view  bindtap='dpj'  data-id="{{4}}" data-active='{{5}}'>
       <view>
         <image src='/images/pendingevaluation.png'></image>
-        <text class='lable'>2</text>
+        <text wx:if="{{dpj>0}}" class='lable'>{{dpj}}</text>
       </view>
       <text>待评价</text>
     </view>
-    <view>
+    <!-- 售后 -->
+    <view  bindtap='sh'  data-id="{{5}}" data-active='{{6}}'>
       <view>
         <image src='/images/pending_5.png'></image>
-        <text class='lable'>2</text>
       </view>
       <text>售后</text>
     </view>

@@ -11,13 +11,39 @@ Page({
     username: app.globalData.is_login,
     member_img: '',
     member_name: '',
-    level_name: ''
+    level_name: '',
+    dfk: '',
+    dfh: '',
+    dsh: '',
+    dpj: ''
   },
+  // 代付款
+  dfk(e) {
+    inOrder(e)
+  },
+  // 待发货
+  dfh(e) {
+    inOrder(e)
+  },
+  // 待收货
+  dsh(e) {
+    inOrder(e)
+  },
+  // 待评价
+  dpj(e) {
+    inOrder(e)
+  },
+  // 售后
+  sh(e) {
+    inOrder(e)
+  },
+  // 个人资料
   person() {
     wx.navigateTo({
       url: '/pages/personal/personmsg/personmsg',
     })
   },
+  // 财务中心
   caiwu() {
     wx.navigateTo({
       url: '/pages/personal/caiwu/caiwu',
@@ -37,9 +63,16 @@ Page({
   },
   //地址管理
   address() {
-    wx.navigateTo({
-      url: '/pages/personal/address/address',
-    })
+    if (app.globalData.is_login == 'null') {//判断用户是否登录
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/address/address',
+      })
+    }
   },
   //我的社区
   club() {
@@ -60,10 +93,8 @@ Page({
     })
   },
   //全部订单
-  order() {
-    wx.navigateTo({
-      url: '/pages/personal/order_all/order_all',
-    })
+  order(e) {
+    inOrder(e)
   },
   // 登录页面
   login() {
@@ -78,7 +109,7 @@ Page({
     })
   },
   onLoad() {
-    var that=this;
+    var that = this;
     if (app.globalData.is_login == null) {
       wx.showToast({
         title: '您还没有登录',
@@ -87,19 +118,34 @@ Page({
     } else {
       // 获取个人信息
       wx.request({
-        url: imgurl + 'api/member/personalData',
+        url: imgurl + '/api/member/index',
         data: {
           token: app.globalData.is_login
         },
         success(res) {
-          let data=res.data.data;
+          let data = res.data.data;
+          console.log(data.user_info)
           that.setData({
-            member_img: data.member_img,
-            member_name:data.member_info.member_name,
-            level_name: data.member_info.level_name
-          })
+            member_img: data.user_info.user_headimg,
+            member_name: data.user_info.user_name,
+            level_name: data.level_name,
+            dfk: data.order_list.dfk,
+            dfh: data.order_list.dfh,
+            dsh: data.order_list.dsh,
+            dpj: data.order_list.dpj,
+          });
+          console.log(that.data.dfh)
         }
       });
     }
   }
 })
+//点击订单分类 进入相应的页面
+function inOrder(e) {
+  var that = this;
+  var order = e.currentTarget.dataset.id;
+  var active = e.currentTarget.dataset.active;
+  wx.navigateTo({
+    url: '/pages/personal/order_all/order_all?order=' + order + '&active=' + active,
+  })
+}

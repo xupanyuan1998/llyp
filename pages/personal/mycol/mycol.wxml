@@ -1,24 +1,24 @@
 <!--pages/personal/mycol/mycol.wxml-->
 <view class='head'>
-  <text class="{{indexs==item.num?'active':''}}" wx:for="{{active}}" wx:key='item' data-id="{{item.num}}" bindtap='active'>{{item.text}}</text>
+  <text class="{{indexs==idx?'active':''}}" wx:for="{{active}}" wx:key='item' wx:for-index="idx" data-id="{{idx}}" bindtap='active'>{{item}}</text>
 </view>
 <view class='contents' wx:if="{{indexs==0}}">
-  <view class='warp'>
-  <image src='/images/ladies.jpg'></image>
-  <view class='content'>
-    <text class='int'>999三九感冒灵颗粒冲剂9袋咽痛头痛流鼻涕鼻塞咳嗽药店</text>
-    <text class='man'>100人收藏</text>
-    <view>
-      <text>￥90.00</text>
-      <text>取消收藏</text>
+  <view class='warp' wx:for="{{goods_list}}" wx:key="itx">
+    <image src='{{imgurls+item.goods_image}}'></image>
+    <view class='content'>
+      <text class='int'>{{item.goods_name}}</text>
+      <text class='man'>{{item.collects}}收藏</text>
+      <view>
+        <text>￥{{item.price}}</text>
+        <text bindtap='cancleGoods' data-goods="{{item.goods_id}}">取消收藏</text>
+      </view>
     </view>
   </view>
 </view>
-</view>
-<view class='contents'  wx:if="{{indexs==1}}">
-  <view class='dian'>
-    <image src='/images/dianlogo.png'></image>
-    <text>碧生源药品旗舰店</text>
-    <view>取消收藏</view>
+<view class='contents' wx:if="{{indexs==1}}"><!--判断用户点的哪一个-->
+  <view class='dian' wx:for="{{shop_list}}" wx:key="its">
+    <image src='{{imgurls+item.shop_logo}}'></image>
+    <text>{{item.shop_name}}</text>
+    <view bindtap='cancleShop' data-shop_id="{{item.shop_id}}">取消收藏</view>
   </view>
 </view>
