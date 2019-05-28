@@ -40,10 +40,9 @@
 <text class='out'>退出账户</text>
 <!-- 更换图像 -->
 <view class='changeimg_b' style='display:{{changeimg}}'>
-  <camera  device-position="back" flash="off" binderror="error" ></camera>
   <view class='changeimg'>
     <text bindtap='tuku'>相册</text>
-    <text bindtap='takephoto'>拍照</text>
+    <text >拍照</text>
     <text bindtap='cancle'>取消</text>
   </view>
 </view>

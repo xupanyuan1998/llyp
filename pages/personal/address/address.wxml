@@ -8,7 +8,7 @@
     <view class='top'>
       <view class='left'>
         <radio-group>
-          <radio></radio>
+          <radio checked="{{id === index ? 'false' : '' }}" bindtap='list' data-index='{{index}}' color='#ff9b2c' data-list_id='{{item.id}}'></radio>
         </radio-group>
         <text>默认地址</text>
       </view>

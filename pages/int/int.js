@@ -504,5 +504,10 @@ Page({
         }
       }
     })
+  },
+  swi(){
+    console.log(1111);
+    this.videoContext = wx.createVideoContext('myVideo');
+    this.videoContext.pause();
   }
 })
