@@ -18,13 +18,14 @@
 </view>
   <!-- 商品展示 -->
  <scroll-view scroll-x="true "class='index_banner' style='white-space: nowrap'>
-  <swiper id="boby0" autoplay='true' interval='3000' indicator-dots='true' indicator-active-color='#f6441c' indicator-color='rgba(170,166,165,.5)' class='banner_int'>
-  <swiper-item  wx:if="{{data_int.goods_detail.video_url != ''}}">
-    <video
-    src="{{data_int.goods_detail.video_url}}"
-    show-center-play-btn="true"
-    auto-pause-if-open-native="true"></video>
-  </swiper-item>
+  <swiper id="boby0" bindchange='swi' interval='3000' indicator-dots='true' indicator-active-color='#f6441c' indicator-color='rgba(170,166,165,.5)' class='banner_int'>
+    <swiper-item  wx:if="{{data_int.goods_detail.video_url != ''}}">
+      <video
+      src="{{data_int.goods_detail.video_url}}"
+      show-center-play-btn="true"
+      auto-pause-if-open-native="true"
+      id='myVideo'></video>
+    </swiper-item>
     <block wx:for="{{image_int}}" wx:key="item">
       <swiper-item>
         <image src="{{imgurl+item.pic_cover}}"></image>

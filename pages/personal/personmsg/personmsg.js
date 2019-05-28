@@ -35,26 +35,44 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: function(res) {
-        console.log(res.tempFilePaths[0])
+        // console.log(res.tempFilePaths[0])
         _this.setData({
           changeimg: 'none',
           imgurles: res.tempFilePaths[0]
         })
+        var date = new Date().getTime;
+        console.log(_this.data.imgurles);
+        // wx.uploadFile({
+        //   url: 'http://www.lianlianyp.com/api/upload/uploadPic',
+        //   filePath: _this.data.imgurles,
+        //   name: 'date',
+        //   formData: {
+        //     'user': 'test'
+        //   },
+        //   header: {
+        //     'content-type': 'application/text'
+        //   },
+        //   success(res) {
+        //     console.log(res)
+        //   }
+        // })
+
+        wx.request({
+          url: 'http://www.lianlianyp.com/api/upload/uploadPic',
+          method: "POST",
+          data: {
+            image: _this.data.imgurles
+          },
+          // 请求头部
+          header: {
+            'content-type': 'application/text'
+          },
+          success: function (res) {
+            console.log(res);
+          }
+        })
       },
     });
-    var date=new Date().getTime;
-    console.log(_this.data.imgurles);
-    wx.uploadFile({
-      url: 'http://www.lianlianyp.com/api/upload/uploadPic',
-      filePath: _this.data.imgurles,
-      name:'date',
-      formData: {
-        'user': 'test'
-      },
-      success(res){
-        console.log(res)
-      }
-    })
   },
   //改变性别
   changesex(){
@@ -86,7 +104,7 @@ Page({
         token:app.globalData.is_login
       },
       success(res){
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -113,19 +131,19 @@ Page({
     })
   },
   //调用相机
-  takephoto(){
-    var _this=this;
-    this.ctx = wx.createCameraContext();
-    this.ctx.takePhoto({
-      quality: 'high',
-      success: (res) => {
-        _this.setData({
-          changeimg: 'none',
-          imgurl: res.tempFilePaths
-        })
-      }
-    })
-  },
+  // takephoto(){
+  //   var _this=this;
+  //   this.ctx = wx.createCameraContext();
+  //   this.ctx.takePhoto({
+  //     quality: 'high',
+  //     success: (res) => {
+  //       _this.setData({
+  //         changeimg: 'none',
+  //         imgurl: res.tempFilePaths
+  //       })
+  //     }
+  //   })
+  // },
   // nicheng
   nicheng(){
    wx.navigateTo({
@@ -141,7 +159,7 @@ Page({
         token:app.globalData.is_login
       },
       success(res){
-        console.log(res.data.data.member_info.user_info.sex)
+        // console.log(res.data.data.member_info.user_info.sex)
         if (res.data.data.member_info.user_info.sex==1){
           that.setData({
             sex:'男'

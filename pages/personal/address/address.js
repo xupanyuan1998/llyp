@@ -7,7 +7,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address_list: ''
+    address_list: '',
+    id:0
+  },
+  list(e){
+    var index = e.currentTarget.dataset.index;
+    var id = e.currentTarget.dataset.list_id;
+    console.log(id);
+    this.setData({
+      id:index
+    });
+    wx.request({
+      url: imgurl+'api/member/memberAddress',
+      data: {
+        id:id,
+        tokea:app.globalData.is_login
+      },
+      success(res) {
+       console.log(res);
+      }
+    })
   },
   // 新增地址
   newaddress() {

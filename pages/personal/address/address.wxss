@@ -32,30 +32,10 @@
   float: right;
   margin: 34rpx 20rpx;
 }
-radio-group{
-  width: 35rpx;
-  height: 35rpx;
+radio{
   float: left;
-}
-radio .wx-radio-input {
-  height: 28rpx;
-  width: 28rpx;
-  border: 1rpx solid #ccc;
-  border-radius: 50% !important;
-  margin-right: 15rpx;
-}
-
-radio .wx-radio-input .wx-radio-input-checked::before {
-  width: 28rpx;
-  height: 28rpx;
-  line-height: 28rpx;
-  text-align: center;
-  font-size: 22rpx;
-  color: #fff;
-  transform: translate(-50%, -50%) scale(1);
-  background: #ff9b2c;
-  border: 1rpx solid #ff9b2c;
-  border-radius: 50% !important;
+  transform:scale(0.6);
+  margin-top: 4rpx;
 }
 
 .content {
