@@ -1,0 +1,5 @@
+<!--pages/personal/trueName/trueName.wxml-->
+<view class='nav'>
+  <input placeholder='真实姓名只能修改一次'  placeholder-class='pla' value='{{name}}' bindinput='shuru' maxlength='20'/>
+</view>
+<text class='save' bindtap='send'>保存</text>

@@ -1,41 +1,20 @@
 // pages/personal/personmsg/personmsg.js
-const date = new Date()
-const years = []
-const months = []
-const days = []
-
-for (let i = 1990; i <= date.getFullYear(); i++) {
-  years.push(i)
-}
-
-for (let i = 1; i <= 12; i++) {
-  months.push(i)
-}
-
-for (let i = 1; i <= 31; i++) {
-  days.push(i)
-}
+const app=getApp();
+const imgurl=app.globalData.imgurl;
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     username:'风起云涌',
     changeimg:'none',
-    imgurl:'/images/user_image.jpeg',
+    imgurles:'/images/user_image.jpeg',
     change_sex:'none',
     sex:'女',
     sex_choose:['男','女'],
-    birth:'请添加',
-    changebirth:'none',
-    years,
-    year: date.getFullYear(),
-    months,
-    month: 2,
-    days,
-    day: 2,
-    value: [9999, 1, 1]
+    phone:'',
+    p_phone: '', 
+    real_name:''
   },
   changeimg(){
     this.setData({
@@ -56,11 +35,25 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: function(res) {
+        console.log(res.tempFilePaths[0])
         _this.setData({
           changeimg: 'none',
-          imgurl: res.tempFilePaths
+          imgurles: res.tempFilePaths[0]
         })
       },
+    });
+    var date=new Date().getTime;
+    console.log(_this.data.imgurles);
+    wx.uploadFile({
+      url: 'http://www.lianlianyp.com/api/upload/uploadPic',
+      filePath: _this.data.imgurles,
+      name:'date',
+      formData: {
+        'user': 'test'
+      },
+      success(res){
+        console.log(res)
+      }
     })
   },
   //改变性别
@@ -74,22 +67,34 @@ Page({
     this.setData({
       sex:e.target.dataset.id,
       change_sex: 'none'
+    });
+    var sexs;
+    if (e.target.dataset.id=='男'){
+      sexs=1
+    }else{
+      sexs=2
+    }
+    wx.request({
+      url:imgurl+ 'api/member/editUser',
+      method:"POST",
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:{
+        field:'sex',
+        value: sexs,
+        token:app.globalData.is_login
+      },
+      success(res){
+        console.log(res)
+      }
     })
   },
   //修改生日
   change_birth(){
-    this.setData({
-      changebirth:'block'
-    })
-  },
-  //获取生日
-  bindChange(e) {
-    const val = e.detail.value
-    this.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]],
-      day: this.data.days[val[2]]
-    })
+   wx.navigateTo({
+     url: '/pages/personal/trueName/trueName',
+   })
   },
   //取消
   quxiao(){
@@ -99,10 +104,7 @@ Page({
   },
   //确定
   ok(){
-    this.setData({
-      changebirth: 'none',
-      birth: this.data.year + '-' + this.data.month + '-'+this.data.day
-    })
+    
   },
   //添加推荐人
   add_man(){
@@ -123,5 +125,44 @@ Page({
         })
       }
     })
-  }
+  },
+  // nicheng
+  nicheng(){
+   wx.navigateTo({
+     url: '/pages/personal/nicheng/nicheng',
+   })
+  },
+  //获取个人信息
+  onLoad(){
+    var that=this;
+    wx.request({
+      url:imgurl+ 'api/member/personalData',
+      data:{
+        token:app.globalData.is_login
+      },
+      success(res){
+        console.log(res.data.data.member_info.user_info.sex)
+        if (res.data.data.member_info.user_info.sex==1){
+          that.setData({
+            sex:'男'
+          })
+        }else{
+          that.setData({
+            sex: '女'
+          })
+        }
+        that.setData({
+          imgurles: res.data.data.member_img,
+          username: res.data.data.member_info.user_info.user_name,
+          nick_name: res.data.data.member_info.user_info.nick_name,
+          birth: res.data.data.member_info.user_info.birthday,
+          phone: res.data.data.member_info.user_info.user_tel,
+          p_phone: res.data.data.member_info.user_info.p_phone,
+          real_name: res.data.data.member_info.user_info.real_name
+        })
+      }
+    })
+  },
+
+
 })

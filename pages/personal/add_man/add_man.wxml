@@ -1,6 +1,6 @@
 <!--pages/personal/add_man/add_man.wxml-->
 <view class='nav'>
-  <input />
+  <input placeholder='添加推荐人' bindinput='per' type='number'/>
   <text>添加推荐人，获得更多粉丝红包</text>
 </view>
-<text class='save'>保存</text>
+<text class='save' bindtap='send'>保存</text>

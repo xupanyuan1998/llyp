@@ -1,0 +1,5 @@
+<!--pages/personal/nicheng/nicheng.wxml-->
+<view class='nav'>
+  <input placeholder='长度最多为6个汉字或12个字符'  placeholder-class='pla' bindinput='shuru'/>
+</view>
+<text class='save' bindtap='send'>保存</text>

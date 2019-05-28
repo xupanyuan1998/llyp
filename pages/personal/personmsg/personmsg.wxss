@@ -1,7 +1,6 @@
 /* pages/personal/personmsg/personmsg.wxss */
 .head{
   width: 750rpx;
-  height: 227rpx;
   background: #fff;
 }
 .content{
