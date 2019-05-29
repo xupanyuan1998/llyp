@@ -132,8 +132,6 @@
   float: left;
   line-height: 66rpx;
   height: 66rpx;
-  width: 86rpx;
-  margin-right: 30rpx;
     font-family: "微软雅黑";
   color: #fffefe;
   font-size: 30rpx;

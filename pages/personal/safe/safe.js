@@ -9,9 +9,9 @@ Page({
     { src: '/images/suo.png', text: '修改二级密码', img: '/images/int.png' },]
   },
 // 改密码页面
-changepass(){
+changepass(e){
   wx.navigateTo({
-    url: '/pages/personal/changepass/changepass',
+    url: '/pages/personal/changepass/changepass?id='+e.currentTarget.dataset.id,
   })
 }
 })

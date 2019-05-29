@@ -19,51 +19,116 @@ Page({
   },
   // 代付款
   dfk(e) {
-    inOrder(e)
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      inOrder(e)
+    }
   },
   // 待发货
   dfh(e) {
-    inOrder(e)
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      inOrder(e)
+    }
   },
   // 待收货
   dsh(e) {
-    inOrder(e)
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      inOrder(e)
+    }
   },
   // 待评价
   dpj(e) {
-    inOrder(e)
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      inOrder(e)
+    }
   },
   // 售后
   sh(e) {
-    inOrder(e)
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      inOrder(e)
+    }
   },
   // 个人资料
   person() {
-    wx.navigateTo({
-      url: '/pages/personal/personmsg/personmsg',
-    })
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/personmsg/personmsg',
+      })
+    }
+   
   },
   // 财务中心
   caiwu() {
-    wx.navigateTo({
-      url: '/pages/personal/caiwu/caiwu',
-    })
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/caiwu/caiwu',
+      })
+    }
   },
   // 安全中心
   safe() {
-    wx.navigateTo({
-      url: '/pages/personal/safe/safe',
-    })
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/safe/safe',
+      })
+    }
   },
   //我的收藏
   mycol() {
-    wx.navigateTo({
-      url: '/pages/personal/mycol/mycol',
-    })
+    if (app.globalData.is_login == null) {
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/mycol/mycol',
+      })
+    }
+  
   },
   //地址管理
   address() {
-    if (app.globalData.is_login == 'null') {//判断用户是否登录
+    if (app.globalData.is_login == 'null') { //判断用户是否登录
       wx.showToast({
         title: '您还没有登录',
         icon: 'none'
@@ -76,25 +141,55 @@ Page({
   },
   //我的社区
   club() {
-    wx.navigateTo({
-      url: '/pages/personal/club/club',
-    })
+    if (app.globalData.is_login == 'null') { //判断用户是否登录
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/club/club',
+      })
+    }
+   
   },
   // 积分中心
   jifen() {
-    wx.navigateTo({
-      url: '/pages/personal/jifen/jifen',
-    })
+    if (app.globalData.is_login == 'null') { //判断用户是否登录
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/jifen/jifen',
+      })
+    }
   },
   // 商城分享
   share() {
-    wx.navigateTo({
-      url: '/pages/personal/shareshop/shareshop',
-    })
+    if (app.globalData.is_login == 'null') { //判断用户是否登录
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/personal/shareshop/shareshop',
+      })
+    }
+    
   },
   //全部订单
   order(e) {
-    inOrder(e)
+    if (app.globalData.is_login == 'null') { //判断用户是否登录
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    } else {
+      inOrder(e)
+    }
   },
   // 登录页面
   login() {
@@ -124,7 +219,6 @@ Page({
         },
         success(res) {
           let data = res.data.data;
-          console.log(data.user_info)
           that.setData({
             member_img: data.user_info.user_headimg,
             member_name: data.user_info.user_name,
@@ -134,7 +228,6 @@ Page({
             dsh: data.order_list.dsh,
             dpj: data.order_list.dpj,
           });
-          console.log(that.data.dfh)
         }
       });
     }

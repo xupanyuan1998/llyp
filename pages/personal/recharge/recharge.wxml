@@ -4,7 +4,7 @@
     <text class='pla'>请输入充值金额</text>
     <view class='jine'>
       <text>￥</text>
-      <input placeholder='填写金额' value='' placeholder-class='place' type="digit"/>
+      <input placeholder='填写金额' value='' placeholder-class='place' type="digit" bindinput='chongzhi'/>
     </view>
   </view>
   <view class='jilu' bindtap='chjilu'>

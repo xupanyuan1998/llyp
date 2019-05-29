@@ -32,10 +32,11 @@
   display: block;
   line-height: 113rpx;
   height: 113rpx;
+   font-size: 28rpx;
 }
 .addcard view input.place{
   color:#999;
-  font-size: 34rpx;
+ 
   font-family: "苹方";
 }
 .addcard button{

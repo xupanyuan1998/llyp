@@ -2,11 +2,11 @@
 <view class='head'>
   <view class='warp'>
     <view>
-      <text>600.54</text>
-      <text>累计输入</text>
+      <text>{{shou}}</text>
+      <text>累计收入</text>
     </view>
     <view>
-      <text>508.26</text>
+      <text>{{money}}</text>
       <text>当前余额</text>
     </view>
   </view>
@@ -26,21 +26,18 @@
     <text>提现</text>
   </view>
 </view>
-<view class='card'>
+<view class='card' wx:for="{{list}}" wx:key="its">
   <view class='bank'>
-    <text>中国建设银行</text>
+    <text>{{item.branch_bank_name}}</text>
     <text>储蓄卡</text>
   </view>
   <view class='card_num'>
-    <text>7246</text>
-    <text>3631</text>
-    <text>5240</text>
-    <text>3211</text>
+    <text>{{item.account_number}}</text>
   </view>
   <view class='card_name'>
-    <text>张三</text>
-    <text>12345678901</text>
-    <text>删除</text>
+    <text>{{item.realname}}</text>
+    <text>{{item.mobile}}</text>
+    <text bindtap='dels' data-id="{{item.id}}">删除</text>
   </view>
 </view>
 <text class='add_card' bindtap='add_card'>+ 添加银行卡</text>

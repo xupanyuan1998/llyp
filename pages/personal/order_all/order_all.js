@@ -65,7 +65,6 @@ Page({
   // 获取全部订单
   onLoad(datas){
     var that=this;
-    console.log(datas);
     that.setData({
       data_s:datas.order,
       active:datas.active

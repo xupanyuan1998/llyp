@@ -25,7 +25,16 @@
   float: left;
   height: 116rpx;
   line-height: 116rpx;
-  font-size: 36rpx;
+  font-size: 30rpx;
+    margin-right: 20rpx;
+}
+.pass view.phone view{
+   width: 530rpx;
+  display: block;
+  float: left;
+  height: 116rpx;
+  line-height: 116rpx;
+  font-size: 30rpx;
     margin-right: 20rpx;
 }
 .pass view input.pal{

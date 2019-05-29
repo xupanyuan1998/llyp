@@ -35,40 +35,27 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: function(res) {
-        // console.log(res.tempFilePaths[0])
         _this.setData({
           changeimg: 'none',
           imgurles: res.tempFilePaths[0]
         })
         var date = new Date().getTime;
-        console.log(_this.data.imgurles);
-        // wx.uploadFile({
-        //   url: 'http://www.lianlianyp.com/api/upload/uploadPic',
-        //   filePath: _this.data.imgurles,
-        //   name: 'date',
-        //   formData: {
-        //     'user': 'test'
-        //   },
-        //   header: {
-        //     'content-type': 'application/text'
-        //   },
-        //   success(res) {
-        //     console.log(res)
-        //   }
-        // })
-
-        wx.request({
+        wx.uploadFile({
           url: 'http://www.lianlianyp.com/api/upload/uploadPic',
-          method: "POST",
-          data: {
-            image: _this.data.imgurles
+          filePath: _this.data.imgurles,//文件路径
+          name: 'avatar',//文件名称
+          formData: {
+            'user': 'test'
           },
-          // 请求头部
           header: {
             'content-type': 'application/text'
           },
-          success: function (res) {
-            console.log(res);
+          success(res) {
+            if(res.data.code==200){
+              wx.showToast({
+                title: '更换成功',
+              })
+            }
           }
         })
       },
@@ -104,7 +91,11 @@ Page({
         token:app.globalData.is_login
       },
       success(res){
-        // console.log(res)
+        if(res.data.code==200){
+          wx.showToast({
+            title: '修改成功',
+          })
+        }
       }
     })
   },

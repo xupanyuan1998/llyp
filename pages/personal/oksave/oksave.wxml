@@ -4,12 +4,12 @@
     <text class='ormsg'>订单信息</text>
     <view>
       <text >账户充值</text>
-      <text>20152525325525225223</text>
+      <text>{{int.out_trade_no}}</text>
     </view>
   </view>
   <view class='or_jie'>
     <text>订单金额</text>
-    <text>￥50</text>
+    <text>￥{{int.number}}</text>
   </view>
 </view>
 <text class='pay_fs'>充值方式</text>

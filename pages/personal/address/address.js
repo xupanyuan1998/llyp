@@ -13,18 +13,25 @@ Page({
   list(e){
     var index = e.currentTarget.dataset.index;
     var id = e.currentTarget.dataset.list_id;
-    console.log(id);
     this.setData({
       id:index
     });
     wx.request({
-      url: imgurl+'api/member/memberAddress',
+      url: imgurl +'api/member/updateAddressDefault',
+      method:"post",
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       data: {
         id:id,
-        tokea:app.globalData.is_login
+        token:app.globalData.is_login
       },
       success(res) {
-       console.log(res);
+       if(res.data.code==200){
+         wx.showToast({
+           title: '修改成功'
+         })
+       }
       }
     })
   },

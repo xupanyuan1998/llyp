@@ -1,4 +1,6 @@
 // pages/personal/chjilu/chjilu.js
+const app = getApp();
+const imgurl = app.globalData.imgurl;
 Page({
 
   /**
@@ -12,9 +14,29 @@ Page({
     ]
   },
 //充值详情
-chint(){
+chint(e){
     wx.navigateTo({
-      url: '/pages/personal/chint/chint',
+      url:'/pages/personal/chint/chint?id='+e.currentTarget.dataset.id,
+    })
+  },
+  // 充值记录
+  onLoad(){
+    var that=this;
+    wx.request({
+      url: imgurl+'api/member/rechargeLog',
+      method:'POST',
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:{
+        page:1,
+        token:app.globalData.is_login
+      },
+      success(res){
+        that.setData({
+          chjilu:res.data.data
+        })
+      }
     })
   }
 })

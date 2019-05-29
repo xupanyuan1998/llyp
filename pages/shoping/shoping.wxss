@@ -260,6 +260,8 @@ overflow:hidden;
   width: 750rpx;
   height: 100rpx;
   background: #fff;
+  position: fixed;
+  bottom: 0;
 }
 
 .pay_left {

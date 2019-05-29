@@ -136,7 +136,6 @@ Page({
   // 提交表单
   submit(e) {
     var that = this;
-    console.log(e.detail.value)
     var shou_name = e.detail.value.shou_name,
       phone = e.detail.value.phone,
       int = e.detail.value.int;
@@ -242,7 +241,6 @@ Page({
             var obj1 = {};
            for( var i in arr){
              if (arr[i].province_id== pro_id){
-               console.log(arr[i]);
                that.setData({
                  pro: arr[i].province_name,
                  pro_id:arr[i].province_id
@@ -263,7 +261,6 @@ Page({
                var arr1=res.data.data;
                for( var b in arr1){
                  if (arr1[b].city_id==city_id){
-                   console.log(arr1[b])
                    that.setData({
                      cit: arr1[b].city_name,
                      city_id:arr1[b].city_id

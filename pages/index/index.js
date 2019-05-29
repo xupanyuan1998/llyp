@@ -90,7 +90,6 @@ Page({
   },
   // 请求首页数据
   onLoad: function (options) {
-    console.log(is_login);
     var _this=this;
     var pages=this.data.page;
     wx.request({

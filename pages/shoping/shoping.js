@@ -270,26 +270,6 @@ Page({
       })
     }
   },
-  onLoad(){
-    var that=this;
-    //获取屏幕可视高度
-    let windowHeight =Number(wx.getSystemInfoSync().windowHeight )// 屏幕的高度
-    that.setData({
-      windowHeight: windowHeight
-    })
-    //获取header的高度
-    wx.createSelectorQuery().select('#header').boundingClientRect(function (res) {
-      that.setData({
-        heaHei:res.height
-      })
-    }).exec();
-    //获取pay的高度
-    wx.createSelectorQuery().select('#pay').boundingClientRect(function (res) {
-      that.setData({
-        pay:res.height
-      })
-    }).exec();
-  },
   // 在商品上点击跳转到商品详情页面
   int(e){
     wx.navigateTo({

@@ -419,7 +419,6 @@ Page({
   },
   // 加入购物车
   addcar() {
-    console.log(1111)
     var that = this;
     const datas = that.data.data_int;
     let color_active = that.data.color_active,
@@ -452,7 +451,6 @@ Page({
         mask: 'true'
       })
     } else {
-      console.log(cart_detail);
       wx.request({
         url: imgurl + 'api/cart/addcart',
         method: "POST",
@@ -467,7 +465,6 @@ Page({
         },
         success(res) {
         var dataes=JSON.parse(res.data)
-        console.log(dataes);
           if(dataes.code==200){
             wx.showToast({
               title:dataes.message
@@ -496,7 +493,6 @@ Page({
         cart_id:''
       },
       success(res){
-        console.log(res)
         if(res.data.code==200){
           wx.navigateTo({
             url: '/pages/order/order?list=' + JSON.stringify(res.data.data),
@@ -506,7 +502,6 @@ Page({
     })
   },
   swi(){
-    console.log(1111);
     this.videoContext = wx.createVideoContext('myVideo');
     this.videoContext.pause();
   }

@@ -1,20 +1,20 @@
 <!--pages/personal/addcard/addcard.wxml-->
-<form class='addcard'>
+<form class='addcard' bindsubmit='addcard'>
   <view>
     <text>银行卡</text>
-     <input placeholder='请选择您的银行卡' placeholder-class='place' value='' type="number"/>
+     <input placeholder='请选择您的银行卡' placeholder-class='place' value='{{info}}' name="bankName"/>
   </view>
   <view>
     <text>卡号</text>
-     <input placeholder='请输入银行卡号' placeholder-class='place' value='' type="number"/>
+     <input placeholder='请输入银行卡号' placeholder-class='place' value='{{info}}' type="number" name="card"/>
   </view>
   <view>
     <text>姓名</text>
-     <input placeholder='请输入持卡人姓名' placeholder-class='place' value='' type="number"/>
+     <input placeholder='请输入持卡人姓名' placeholder-class='place' value='{{info}}' name="userName"/>
   </view>
   <view>
     <text>手机号</text>
-     <input placeholder='请输入持卡人手机号' placeholder-class='place' value='' type="number"/>
+     <input placeholder='请输入持卡人手机号' placeholder-class='place' value='{{info}}' type="number" name="phone"/>
   </view>
   <button form-type="submit">确认</button>
 </form>

@@ -1,5 +1,5 @@
 <!--pages/personal/safe/safe.wxml-->
-<view class='content' wx:for="{{xiugai}}" wx:key="item" bindtap='changepass'>
+<view class='content' wx:for="{{xiugai}}" wx:key="item" wx:for-index="idx" data-id="{{idx}}" bindtap='changepass'>
   <image class='suo' src='{{item.src}}'></image>
   <text>{{item.text}}</text>
   <image class='int' src='{{item.img}}'></image>

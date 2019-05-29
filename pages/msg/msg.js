@@ -42,7 +42,6 @@ onShow(){
        token: app.globalData.is_login
      },
      success(res) {
-       console.log(res)
        that.setData({
          abc: res.data.data
        });

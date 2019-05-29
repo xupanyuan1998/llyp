@@ -16,7 +16,6 @@ Page({
   // 获取商品信息
   onLoad(list){
     var list = JSON.parse(list.list) ;
-    console.log(list)
     wx.request({
       url: imgurl + 'api/OrderMini/orderInfo',
       method:"POST",

@@ -30,7 +30,6 @@ Page({
         token: app.globalData.is_login
       },
       success(res) {
-        console.log(res.data.data.data)
         that.setData({
           goods_list: res.data.data.data
         })
@@ -72,7 +71,6 @@ Page({
          token:app.globalData.is_login
        },
        success(res){
-         console.log(res.data.data.data)
          that.setData({
            goods_list: res.data.data.data
          })

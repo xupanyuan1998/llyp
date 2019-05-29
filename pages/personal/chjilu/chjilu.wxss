@@ -9,12 +9,13 @@
   height: 60rpx;
   display: block;
   float: left;
-  margin: 27rpx 20rpx;
+  margin: 27rpx 0 27rpx 20rpx;
 }
 .content{
   width: 474rpx;
   height: 114rpx;
   float: left;
+  margin-left: 20rpx;
 }
 .top{
   display: block;
