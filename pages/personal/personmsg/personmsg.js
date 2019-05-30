@@ -172,6 +172,12 @@ Page({
       }
     })
   },
-
+//退出登录
+  out() {
+    app.globalData.is_login = null;
+    wx.navigateTo({
+      url: '/pages/personal/login/login',
+    })
+  },
 
 })

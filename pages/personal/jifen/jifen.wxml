@@ -2,20 +2,19 @@
 <view class='head'>
   <view>
     <image src='/images/jifen_icon.png'></image>
-    <text>0.00</text>
+    <text>{{point}}</text>
   </view>
 </view>
 <view class='jifen_all'>
-  <text class='active'>全部</text>
-  <text>输入</text>
-  <text>支出</text>
+  <text class="{{active==idx?'active':''}}" wx:for="{{cata}}" wx:key="its" wx:for-index="idx" data-id="{{idx}}" bindtap='active'>{{item}}</text>
 </view>
 <view class='content'>
-  <view class='warp'>
+  <view class='warp' wx:for="{{list}}" wx:key="ide">
     <view class='left'>
-      <text>今日签到</text>
-      <text>2019-5-11 11:06:00</text>
+      <text>{{item.text}}</text>
+      <text>{{item.create_time}}</text>
     </view>
-    <text class='right'>+10</text>
+    <text wx:if="{{item.number>0}}" class='right'>+{{item.number}}</text>
+    <text wx:if="{{item.number<0}}" class='right'>{{item.number}}</text>
   </view>
 </view>

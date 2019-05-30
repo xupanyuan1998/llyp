@@ -27,9 +27,33 @@ Page({
     }
   },
   order() {
-    wx.navigateTo({
-      url: '/pages/order/order',
+    var that=this;
+    if (that.data.cart_id==undefined){
+      wx.showToast({
+        title: '请选择商品',
+        icon:'none'
+      })
+    }else{
+    wx.request({
+      url: imgurl +'api/order/orderCreateSession',
+      method:"POST",
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:{
+        tag:'cart',
+        cart_id: that.data.cart_id,
+        token:app.globalData.is_login
+      },
+      success(res){
+        if(res.data.code==200){
+          wx.navigateTo({
+            url: '/pages/order/order',
+          })
+        }
+      }
     })
+    }
   },
   //商店状态
   all_selected(e) {
@@ -305,7 +329,7 @@ function sumPrice(cc,a) {
     for (var i = 0; i < cc[f].products.length; ++i) {
       if (cc[f].products[i].tt == 0) {
         sum += cc[f].products[i].price * cc[f].products[i].num;
-        cart_id.push((cc[f].products[i].cart_id));
+        cart_id.push(cc[f].products[i].cart_id);
       }
     }
   }

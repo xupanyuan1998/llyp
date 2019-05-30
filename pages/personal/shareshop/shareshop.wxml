@@ -11,7 +11,7 @@
   </block>
 </swiper>
 <view class='share'>
-  <text>http://m.lianlianyp.com/#/login?isShow=2&p_phone=13193628981</text>
-  <text>复制</text>
-  <text>保存图片</text>
+  <text>{{msgurl}}</text>
+  <text bindtap='copy'>复制</text>
+  <text bindtap='img'>保存图片</text>
 </view>

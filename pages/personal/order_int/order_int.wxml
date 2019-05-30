@@ -6,25 +6,25 @@
   <view class='zt'>
     <view>
       <text>订单状态</text>
-      <text>等待商家发货</text>
+      <text>{{int.pay_status_name}}</text>
     </view>
     <view>
       <text>订单编号</text>
-      <text>201582356525</text>
+      <text>{{int.out_trade_no}}</text>
     </view>
     <view>
       <text>下单时间</text>
-      <text>2019-5-12 18:40:40</text>
+      <text>{{int.time}}</text>
     </view>
   </view>
 </view>
 <view class='shop'>
   <view class='top'>
-    <text>阿里健康大药房</text>
+    <text>{{int.shop_name}}</text>
     <image src='/images/int.png'></image>
   </view>
   <view class='int'>
-    <image src='/images/com_image.jpg' ></image>
+    <image src='{{int}}' ></image>
     <view>
       <text>血糖测试仪家用测血糖的仪器试纸精准医用测量仪糖尿病全自动测糖</text>
       <text>￥120</text>

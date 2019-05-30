@@ -25,13 +25,11 @@
   height: 116rpx;
 }
 .left{
-  width: 286rpx;
   height: 116rpx;
   float: left;
   margin-left: 29rpx;
 }
 .tu{
-  width: 286rpx;
   height: 47rpx;
 }
 .lv{
@@ -313,4 +311,11 @@
   margin-top: 20rpx;
   float: right;
   display: block;
+}
+.shouyi .place{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
 }

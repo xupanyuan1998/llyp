@@ -5,23 +5,31 @@
       <text>记录</text>
   </view>
 </view>
-<view class='head'>
+<view class='head' bindtap='changeCard'>
   <image class='icon' src='/images/bank.png'></image>
-  <view>
-    <text>招商银行</text>
-    <text>(尾号1558)</text>
+  <view >
+    <text>{{name}}</text>
+    <text>(尾号{{num}})</text>
   </view>
   <image class='next' src='/images/next.jpg'></image>
 </view>
-<form>
+<form bindsubmit='send'>
   <view>
     <text>提现金额</text>
-    <input placeholder='当前克提现金额88.88元' value='' placeholder-class='palc'/>
-    <text class='all'>全额</text>
+    <input placeholder='当前可提现金额{{yue}}元' value='{{money}}' placeholder-class='palc' name="jine"/>
+    <text class='all' bindtap='all'>全额</text>
   </view>
   <view>
     <text>二级密码</text>
-    <input placeholder='输入二级密码' value=''  placeholder-class='palc'/>
+    <input placeholder='输入二级密码' value='{{clear}}'  placeholder-class='palc' type="password" name="pass"/>
   </view>
   <button form-type="submit">确认提现</button>
 </form>
+<view class='card' style="display:{{show}}" bindtap='can'>
+  <scroll-view scroll-y="true" catchtap='cancle' >
+    <view wx:for="{{list}}" wx:key="its" wx:for-index="idx" bindtap='active' data-name="{{item.branch_bank_name}}" data-num="{{arr[idx]}}" data-id="{{item.id}}">
+    <text>{{item.branch_bank_name}}</text>
+    <text>（尾号{{arr[idx]}}）</text>
+    </view>
+  </scroll-view>
+</view>

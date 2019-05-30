@@ -57,9 +57,9 @@ Page({
     })
   },
   // 订单详情
-  order_int() {
+  order_int(e) {
     wx.navigateTo({
-      url: '/pages/personal/order_int/order_int',
+      url: '/pages/personal/order_int/order_int?id='+e.currentTarget.dataset.id,
     })
   },
   // 获取全部订单

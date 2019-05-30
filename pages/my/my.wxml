@@ -116,4 +116,8 @@
     <image src='/images/out.png'></image>
     <text>退出账户</text>
   </view>
+  <view bindtap=''>
+    <image src=''></image>
+    <text>申请开店</text>
+  </view>
 </view>

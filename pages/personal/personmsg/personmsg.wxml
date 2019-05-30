@@ -37,7 +37,7 @@
     <text>推荐人</text>
     <text class='name'>{{p_phone}}</text>
 </view>
-<text class='out'>退出账户</text>
+<text class='out' bindtap='out'>退出账户</text>
 <!-- 更换图像 -->
 <view class='changeimg_b' style='display:{{changeimg}}'>
   <view class='changeimg'>

@@ -8,7 +8,7 @@ Page({
    */
   data: {
     tuxiang: '/images/image_user.png',
-    username: app.globalData.is_login,
+    username: '',
     member_img: '',
     member_name: '',
     level_name: '',
@@ -199,6 +199,7 @@ Page({
   },
   // 退出登录
   out() {
+    app.globalData.is_login = null;
     wx.navigateTo({
       url: '/pages/personal/login/login',
     })
@@ -227,6 +228,7 @@ Page({
             dfh: data.order_list.dfh,
             dsh: data.order_list.dsh,
             dpj: data.order_list.dpj,
+            username:app.globalData.is_login
           });
         }
       });

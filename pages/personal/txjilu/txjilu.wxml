@@ -1,11 +1,14 @@
 <!--pages/personal/txjilu/txjilu.wxml-->
-<view class='content'>
+<view class='content' wx:for="{{list}}" wx:key="idx">
   <view class='bank'>
-    <text>提现-工商银行</text>
-    <text>￥260.00</text>
+    <text>提现-{{item.bank_name}}</text>
+    <text>￥{{item.cash}}</text>
   </view>
   <view class='date'>
-    <text>12-28 16:32</text>
-    <text>处理中</text>
+    <text>{{item.modify_date}}</text>
+    <!-- 判断订单状态 -->
+    <text wx:if="{{item.status==0}}">处理中</text>
+    <text wx:if="{{item.status==1}}">完成</text>
+    <text wx:if="{{item.status==2}}">失败</text>
   </view>
 </view>

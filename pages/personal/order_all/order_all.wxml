@@ -13,7 +13,7 @@
 <view class='content'>
   <view class='place' wx:if="{{order_list==''}}">暂无订单</view>
   <view class='order_all' wx:for="{{order_list}}" wx:key="this">
-    <view class='warp' bindtap='order_int' >
+    <view class='warp' bindtap='order_int' data-id="{{item.order_id}}">
       <view class='tap'>
         <text>{{item.shop_name}}</text>
         <text>{{item.status_name}}</text>

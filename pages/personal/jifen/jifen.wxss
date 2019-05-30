@@ -55,6 +55,7 @@
 }
 .jifen_all text.active{
   border-bottom: 3rpx solid #ff7c32;
+  color:#ff7c32 
 }
 .content{
   width: 690rpx;
