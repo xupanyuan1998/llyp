@@ -199,17 +199,20 @@ Page({
   },
   // 退出登录
   out() {
-    app.globalData.is_login = null;
     wx.navigateTo({
       url: '/pages/personal/login/login',
     })
   },
   onLoad() {
     var that = this;
+    
     if (app.globalData.is_login == null) {
       wx.showToast({
         title: '您还没有登录',
         icon: 'none'
+      })
+      that.setData({
+        username: app.globalData.is_login
       })
     } else {
       // 获取个人信息
@@ -230,8 +233,22 @@ Page({
             dpj: data.order_list.dpj,
             username:app.globalData.is_login
           });
+          
         }
       });
+    }
+  },
+  // 申请店铺
+  houston(){
+    if(app.globalData.is_login==null){
+      wx.showToast({
+        title: '您还没有登录',
+        icon: 'none'
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/personal/houston/houston',
+      })
     }
   }
 })

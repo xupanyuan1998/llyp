@@ -10,7 +10,7 @@
       </view>
       <image class='arrow' src='/images/arrow.png'></image>
     </view>
-    <view class='tuxiang' wx:else>
+    <view class='tuxiang' wx:if="{{username!==null}}" >
       <image src='{{member_img}}'></image>
       <view class='username'>
         <text class='u_name'>{{member_name}}</text>
@@ -116,8 +116,8 @@
     <image src='/images/out.png'></image>
     <text>退出账户</text>
   </view>
-  <view bindtap=''>
-    <image src=''></image>
+  <view bindtap='houston'>
+    <image src='/images/shop_1.png'></image>
     <text>申请开店</text>
   </view>
 </view>
