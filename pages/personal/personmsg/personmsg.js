@@ -51,7 +51,7 @@ Page({
             'content-type': 'application/text'
           },
           success(res) {
-            if(res.data.code==200){
+            if (res.statusCode==200){
               wx.showToast({
                 title: '更换成功',
               })

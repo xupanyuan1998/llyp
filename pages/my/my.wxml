@@ -112,12 +112,12 @@
     <image src='/images/integral.png'></image>
     <text>积分中心</text>
   </view>
-  <view bindtap='out'>
-    <image src='/images/out.png'></image>
-    <text>退出账户</text>
-  </view>
   <view bindtap='houston'>
     <image src='/images/shop_1.png'></image>
     <text>申请开店</text>
+  </view>
+  <view bindtap='out'>
+    <image src='/images/out.png'></image>
+    <text>退出账户</text>
   </view>
 </view>

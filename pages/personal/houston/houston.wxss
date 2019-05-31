@@ -1,1 +1,406 @@
 /* pages/personal/houston/houston.wxss */
+
+form {
+  width: 750rpx;
+  height: auto;
+}
+
+form view.shop, .tell, .sheng {
+  height: 110rpx;
+  width: 750rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.shop text, .tell text.ph, .sheng text:first-child {
+  display: block;
+  float: left;
+  height: 110rpx;
+  line-height: 110rpx;
+  width: 150rpx;
+  font-size: 30rpx;
+  color: #2e2e2e;
+  margin-left: 30rpx;
+}
+
+.shop input {
+  width: 460rpx;
+  padding: 0 40rpx;
+  height: 110rpx;
+  display: block;
+  float: left;
+  line-height: 110rpx;
+  font-size: 26rpx;
+}
+
+.shop input.plc {
+  color: #717171;
+}
+
+.tell input {
+  height: 110rpx;
+  line-height: 110rpx;
+  width: 190rpx;
+  padding: 0 40rpx;
+  color: #515151;
+  font-size: 28rpx;
+  float: left;
+}
+
+.tell view {
+  float: right;
+  margin-right: 30rpx;
+  width: 222rpx;
+  height: 110rpx;
+}
+
+.tell view image {
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  float: left;
+  margin: 40rpx 10rpx 0 0;
+}
+
+.tell view text {
+  display: block;
+  float: left;
+  height: 110rpx;
+  line-height: 110rpx;
+  margin-left: 0;
+  font-size: 26rpx;
+  color: #717171;
+}
+
+.shop view {
+  height: 110rpx;
+  margin-right: 30rpx;
+  float: right;
+  width: 500rpx;
+}
+
+.shop view image {
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  float: left;
+  margin: 40rpx 10rpx 0 0;
+}
+
+.shop view text {
+  width: 300rpx;
+  margin-left: 0;
+  font-size: 26rpx;
+  color: #717171;
+}
+
+.sheng text.choose {
+  width: 300rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 26rpx;
+  color: #717171;
+  margin-left: 40rpx;
+}
+
+.sheng text:last-child {
+  margin-right: 30rpx;
+  float: right;
+  width: 0;
+  height: 0;
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: #686868 transparent transparent transparent;
+  margin-top: 50rpx;
+}
+
+.file {
+  margin-top: 22rpx;
+  width: 100%;
+  background: #fff;
+ padding-top: 22rpx;
+ padding-bottom: 30rpx;
+}
+.file image{
+  width: 400rpx;
+  height: 254rpx;
+  display: block;
+  margin: 0 auto ;
+}
+.file text{
+  width: 100%;
+  height: 83rpx;
+  line-height: 83rpx;
+  display: block;
+  text-align: center;
+  color: #646464;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+button{
+  width: 690rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #ffa13c;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+/* 店铺审核 */
+.top view.color{
+  background: #2c8aff;
+}
+.content{
+  width: 661rpx;
+  border-radius: 7rpx;
+  margin: 25rpx auto;
+  background: #fff;
+  padding: 0 15rpx;
+}
+.top{
+  width: 661rpx;
+  height: 63rpx;
+  border-bottom: 3rpx dashed #a2a2a2;
+  padding:18rpx 0;
+}
+.top .date{
+  display: block;
+  float: left;
+  height: 63rpx;
+  line-height: 63rpx;
+  color: #505050;
+  font-size: 28rpx;
+}
+.top view{
+  float: right;
+  height: 63rpx;
+  border-radius: 25rpx;
+  background: #ff592c;
+  padding: 0 18rpx 0 25rpx;
+}
+.top view image{
+  width: 32rpx;
+  height: 32rpx;
+  float: left;
+  display: block;
+  margin: 15rpx 13rpx 15rpx 0;
+}
+.top view text{
+  height: 63rpx;
+  line-height: 63rpx;
+  color: #fff;
+  font-size: 28rpx;
+  display: block;
+  float: right;
+}
+.contents{
+  padding: 43rpx 0;
+  height: 184rpx;
+  width: 661rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.contents image{
+  width: 190rpx;
+  height: 180rpx;
+  display: block;
+  float: left;
+  margin-right: 30rpx;
+}
+.contents .right{
+  width:440rpx;
+  height: 184rpx; 
+  float: left;
+}
+.contents .right text{
+  width: 440rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  display: block;
+  color: #424242;
+  font-size: 26rpx;
+}
+.banner{
+  width: 400rpx;
+  height: 256rpx;
+  display: block;
+  margin: 30rpx auto 60rpx auto;
+}
+.bottom{
+  width: 661rpx;
+  margin-bottom: 25rpx;
+}
+.bottom view{
+  width: 661rpx;
+  height: 60rpx;
+}
+.bottom view.dress{
+  height: 89rpx;
+}
+.bottom view.dress text{
+  height: 62rpx;
+  line-height: 62rpx;
+  display: block;
+  float: left;
+}
+.bottom view.dress view{
+  height: 89rpx;
+  line-height: 44rpx;
+  width: 397rpx;
+   float: left;
+  word-break:break-all;
+   color: #505050;
+  font-size: 28rpx;
+  font-family: "苹方"
+}
+.bottom view text{
+  height: 60rpx;
+  line-height: 60rpx;
+  display: block;
+  float: left;
+  color: #2a2a2a;
+  font-size: 28rpx;
+}
+.bottom view text.msg{
+  color: #505050;
+  width: 510rppx;
+}
+/* 店铺绑定 */
+.bind{
+  width: 690rpx;
+  height: 98rpx;
+}
+.bind image{
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  float: left;
+  margin: 34rpx 30rpx;
+}
+.bind text{
+  display: block;
+  float: left;
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 26rpx;
+  color: #f04d4d;
+}
+.bindshop{
+  margin-top: 0;
+}
+/* 遮罩层 */
+.back{
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.warp{
+  width: 643rpx;
+  height: 643rpx;
+  background: #fff;
+  border-radius: 5rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.warp image{
+  width: 125rpx;
+  height: 103rpx;
+  display: block;
+  margin: 60rpx auto 0;
+}
+.warp text{
+  width: 643rpx;
+  height: 113rpx;
+  line-height: 113rpx;
+  text-align: center;
+  color: #575757;
+  font-size: 30rpx;
+  display:block;
+}
+.pass{
+  width: 490rpx;
+  height: 84rpx;
+  margin: 20rpx auto;
+}
+.pass view{
+  width: 90rpx;
+  height: 83rpx;
+  border-bottom: 1rpx solid #333;
+  float: left;
+  margin-right: 43rpx;
+  text-align: center;
+}
+.pass view:last-child{
+  margin-right: 0;
+}
+.key-input{
+  position: fixed;
+  top: -200rpx;
+}
+.warp button{
+  width: 560rpx;
+  height: 99rpx;
+  margin: 70rpx auto;
+}
+
+.citys {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+scroll-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  width: 700rpx;
+  height: 1000rpx;
+  background: #fff;
+}
+
+scroll-view view {
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 650rpx;
+  padding: 0 30rpx;
+  color: #333;
+  font-size: 40rpx;
+  font-family: "苹方";
+  border-bottom: 1rpx solid #ccc;
+  position: relative;
+}
+scroll-view view::before{
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid #ccc;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  margin-top:-10rpx ;
+}
+scroll-view view.actives{
+  background: #ff9b2c;
+  color: #fff;
+}
+scroll-view view.actives::before{
+  background: #ff9b2c;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

@@ -34,12 +34,12 @@
   </view>
   <view wx:if="{{num==2}}">
     <scroll-view scroll-y="true" catchtap='test'>
-     <view class="{{ci_ac==idx?'actives':''}}" wx:for="{{city}}" wx:key="its" data-pro="{{item.city_name}}" bindtap='citys' data-id="{{item.city_id}}" wx:for-index="{{idx}}" data-idx="{{idx}}">{{item.city_name}}</view>
+     <view class="{{ci_ac==idx?'actives':''}}" wx:for="{{city}}" wx:key="its" data-pro="{{item.city_name}}" bindtap='citys' data-id="{{item.city_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.city_name}}</view>
     </scroll-view>
   </view>
   <view wx:if="{{num==3}}">
     <scroll-view scroll-y="true" catchtap='test'>
-     <view class="{{qu_ac==idx?'actives':''}}" wx:for="{{qu}}" wx:key="its" data-pro="{{item.district_name}}" bindtap='qus' data-id="{{item.district_id}}" wx:for-index="{{idx}}" data-idx="{{idx}}">{{item.district_name}}</view>
+     <view class="{{qu_ac==idx?'actives':''}}" wx:for="{{qu}}" wx:key="its" data-pro="{{item.district_name}}" bindtap='qus' data-id="{{item.district_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.district_name}}</view>
     </scroll-view>
   </view>
 </view>

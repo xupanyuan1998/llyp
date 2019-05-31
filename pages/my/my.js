@@ -15,7 +15,8 @@ Page({
     dfk: '',
     dfh: '',
     dsh: '',
-    dpj: ''
+    dpj: '',
+    user_tel:''
   },
   // 代付款
   dfk(e) {
@@ -84,7 +85,7 @@ Page({
         url: '/pages/personal/personmsg/personmsg',
       })
     }
-   
+
   },
   // 财务中心
   caiwu() {
@@ -124,7 +125,7 @@ Page({
         url: '/pages/personal/mycol/mycol',
       })
     }
-  
+
   },
   //地址管理
   address() {
@@ -151,7 +152,7 @@ Page({
         url: '/pages/personal/club/club',
       })
     }
-   
+
   },
   // 积分中心
   jifen() {
@@ -178,7 +179,7 @@ Page({
         url: '/pages/personal/shareshop/shareshop',
       })
     }
-    
+
   },
   //全部订单
   order(e) {
@@ -203,9 +204,9 @@ Page({
       url: '/pages/personal/login/login',
     })
   },
-  onLoad() {
+  onShow() {
     var that = this;
-    
+
     if (app.globalData.is_login == null) {
       wx.showToast({
         title: '您还没有登录',
@@ -231,24 +232,48 @@ Page({
             dfh: data.order_list.dfh,
             dsh: data.order_list.dsh,
             dpj: data.order_list.dpj,
-            username:app.globalData.is_login
+            username: app.globalData.is_login,
+            user_tel: data.user_info.user_tel
           });
-          
+          console.log(data.user_info.user_tel)
         }
       });
     }
   },
   // 申请店铺
-  houston(){
-    if(app.globalData.is_login==null){
+  houston() {
+    var that = this;
+    console.log(that.data.user_tel)
+    if (app.globalData.is_login == null) {
       wx.showToast({
         title: '您还没有登录',
         icon: 'none'
       })
-    }else{
-      wx.navigateTo({
-        url: '/pages/personal/houston/houston',
+    } else {
+      wx.request({
+        url: imgurl + 'api/shop/scanShop',
+        data: {
+          token: app.globalData.is_login
+        },
+        success(res) {
+          if (res.data.code == 200) {
+            if (res.data.data.length == 0) {
+              wx.navigateTo({
+                url: '/pages/personal/houston/houston?int=1&tel='+that.data.user_tel,//int=1申请开店
+              })
+            } else if (res.data.message == 'ok') {
+              wx.navigateTo({
+                url: '/pages/personal/houston/houston?int=2',//int=2 绑定手机
+              })
+            } else {
+              wx.navigateTo({
+                url: '/pages/personal/houston/houston?int=3',//int=3 审核状态
+              })
+            }
+          }
+        }
       })
+
     }
   }
 })
