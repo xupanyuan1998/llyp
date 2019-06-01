@@ -97,7 +97,7 @@ Page({
     var that = this;
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/personal/newaddress/newaddress?id='+id,
+      url: '/pages/personal/newaddress/newaddress?id='+id+'&bianji=true',
     })
   }
 })

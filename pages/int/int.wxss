@@ -410,16 +410,36 @@ video {
   width: 635rpx;
   height: 113rpx;
   background: #fff;
+  position: absolute;
+  bottom: 0;
 }
 
-.cont view {
+.cont view.friend {
   width: 114rpx;
   height: 113rpx;
   float: left;
   margin-right: 147rpx;
+  position: relative;
 }
-
-.cont view:last-child {
+.cont view.friend view{
+  position: absolute;width: 114rpx;
+  height: 113rpx;
+  top: 0;
+  z-index: 1;
+}
+.cont view.friend button{
+  display: block;
+  width: 114rpx;
+  height: 113rpx;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  z-index: 2;
+}
+buton::after{
+  border: none;
+}
+.cont view.friend:last-child {
   margin-right: 0;
 }
 
@@ -438,8 +458,12 @@ video {
   text-align: center;
   font-size: 28rpx;
   color: #303030;
+  background: #fff;
+  padding: 0;
 }
-
+.cont view button::after{
+  border: none;
+}
 .share_c {
   width: 100%;
   height: 100%;
@@ -454,9 +478,10 @@ video {
   width: 710rpx;
   height: 907rpx;
   background: #fff;
-  margin: 0 auto;
-  margin-top: 127rpx;
-  position: relative;
+  position: absolute;
+  bottom: 113rpx;
+  left: 50%;
+  margin-left: -355rpx;
 }
 
 .share_top .close {

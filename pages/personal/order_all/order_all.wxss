@@ -5,6 +5,15 @@ scroll-view{
   padding: 0 20rpx;
  white-space: nowrap;
 }
+::-webkit-scrollbar{
+
+width: 0;
+
+height: 0;
+
+color: transparent;
+
+}
 scroll-view text{
   width: 101rpx;
   height: 87rpx;

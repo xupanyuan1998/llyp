@@ -8,19 +8,6 @@ Page({
     share_msg:"",
     saoma:'',
     imgurl: 'http://www.lianlianyp.com/',
-    share: [{
-        src: '/images/wechart.png',
-        text: '微信好友'
-      },
-      {
-        src: '/images/firend.png',
-        text: '朋友圈'
-      },
-      {
-        src: '/images/apply.png',
-        text: '保存图片'
-      }
-    ],
     show: 'none',
     active: 0,
     comments: [{
@@ -504,5 +491,15 @@ Page({
   swi(){
     this.videoContext = wx.createVideoContext('myVideo');
     this.videoContext.pause();
+  },
+  // 分享给微信好友
+  onShareAppMessage(){
+    return {
+      title: this.data.data_int.goods_detail.goods_name,
+      path:'/pages/int/int?int='+this.data.goods_id,
+      success:function(res){
+        console.log(res)
+      }
+    }
   }
 })

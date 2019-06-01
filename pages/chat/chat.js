@@ -16,6 +16,9 @@ Page({
     chat_expect: '',
     // 用户id
     another_id: "",
+    scrollhei:'',
+    shopHeith:'',
+    footerHeith:''
   },
   //删除
   del() {
@@ -89,6 +92,24 @@ Page({
         }
       }
     })
+     //动态计算scroll的高度
+    let query = wx.createSelectorQuery();//创建元素节点；
+    query.select("#shop").boundingClientRect(function (rect){
+    });//获取#shop的高度
+    query.select("#footer").boundingClientRect();//获取#shop的高度
+    query.exec(function (req) {
+      that.setData({
+        shopHeight: req[0].height,
+        footerHeith: req[1].height
+      })
+    });
+    wx.getSystemInfo({//获取当前设备的高度
+      success(res){
+        that.setData({
+          windowHeight: res.windowHeight
+        })
+      }
+    });
   },
   // 获取聊天框的内容
   content(e) {
@@ -128,7 +149,8 @@ Page({
           success(req) {
             that.setData({
               chat_expect: req.data.data.chat,
-              another_id: req.data.data.another_id
+              another_id: req.data.data.another_id,
+              scrollBottom: 'scrollBottom'
             })
           }
         })

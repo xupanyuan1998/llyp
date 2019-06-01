@@ -8,7 +8,7 @@ Page({
   data: {
     username:'风起云涌',
     changeimg:'none',
-    imgurles:'/images/user_image.jpeg',
+    imgurles:'',
     change_sex:'none',
     sex:'女',
     sex_choose:['男','女'],
@@ -121,20 +121,6 @@ Page({
       url: '/pages/personal/add_man/add_man',
     })
   },
-  //调用相机
-  // takephoto(){
-  //   var _this=this;
-  //   this.ctx = wx.createCameraContext();
-  //   this.ctx.takePhoto({
-  //     quality: 'high',
-  //     success: (res) => {
-  //       _this.setData({
-  //         changeimg: 'none',
-  //         imgurl: res.tempFilePaths
-  //       })
-  //     }
-  //   })
-  // },
   // nicheng
   nicheng(){
    wx.navigateTo({

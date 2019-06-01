@@ -1,5 +1,5 @@
 <!--pages/catas/catas.wxml-->
-<view class='nav'>
+<view class='nav' id="nav">
   <view class='left'>
     <image src='/images/search1.png'></image>
     <input placeholder='请输入您搜索商品的名称' bindtap='search'></input>
@@ -11,8 +11,8 @@
     </view>
   </view>
 </view>
-<view class='content'>
-  <scroll-view class='c_l' scroll-y="true">
+<view class='content' style="height:{{windowHeight-navHeight}}px">
+  <scroll-view class='c_l' scroll-y="true" style="height:{{windowHeight-navHeight}}px">
   <view class="{{active==0?'active':''}}"  data-id="0" bindtap='active'>推荐商品</view>
     <view class="{{active==idx+1?'active':''}}" wx:for="{{cata}}" wx:key="item" wx:for-index='idx' data-id="{{idx+1}}" bindtap='active'>{{item.category_name}}</view>
   </scroll-view>

@@ -129,7 +129,7 @@
     <image src='/images/yan_1.png'></image>
     <text >默认发送到注册手机号，请输入验证码</text>
     <view class='pass' bindtap='jujiao'>
-      <view wx:for="{{codes}}" we:key="item">{{item}}</view>
+      <view wx:for="{{codes}}" wx:key="item">{{item}}</view>
     </view> 
     <button>确认</button>
   </view>

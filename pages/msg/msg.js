@@ -52,6 +52,7 @@ onShow(){
            token: app.globalData.is_login
          },
          success(req) {
+           console.log(req.data.data)
            // 将返回的数据设置给未读的消息；
            that.setData({
              unreadNum: req.data.data

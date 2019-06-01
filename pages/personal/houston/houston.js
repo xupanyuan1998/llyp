@@ -237,7 +237,7 @@ Page({
           'content-type': 'application/text'
         },
         success(res) {
-          console.log(res.data.data)
+          var obj1=JSON.parse(res.data);
           if (res.statusCode== 200) {
             wx.request({
               url: imgurl + 'api/shop/applyShop',
@@ -246,7 +246,7 @@ Page({
                 "Content-Type": "application/x-www-form-urlencoded"
               },
               data:{
-                card_licences: that.data.zhizhao,
+                card_licences: obj1.data,
                 user_name: head,
                 shop_phone: call,
                 selProvinces: that.data.pro_id,

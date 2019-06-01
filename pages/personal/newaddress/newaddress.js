@@ -20,7 +20,9 @@ Page({
     qu: '',
     qus: '请选择区',
     qu_id: '',
-    qu_ac: ''
+    qu_ac: '',
+    bianji: false,
+    dress_id: ''
   },
   // 获取省份
   sheng() {
@@ -175,125 +177,164 @@ Page({
         icon: "none"
       })
     } else {
+      if (that.data.bianji == 'true') {
+        wx.request({
+          url: imgurl + 'api/member/updateMemberAddress',
+          method: "POST",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          data: {
+            id: that.data.dress_id,
+            consigner: shou_name,
+            mobile: phone,
+            province: that.data.pro_id,
+            city: that.data.city_id,
+            district: that.data.qu_id,
+            address: int,
+            token: app.globalData.is_login
+          },
+          success(res) {
+            if (res.data.code == 200) {
+              wx.showToast({
+                title: '修改成功',
+              });
+              //添加成功后页面条转；
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: '/pages/personal/address/address',
+                })
+              }, 1500)
+            }
+          }
+        })
+      } else {
+        wx.request({
+          url: imgurl + 'api/member/addmemberaddress',
+          method: "post",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          data: {
+            consigner: shou_name,
+            mobile: phone,
+            province: that.data.pro_id,
+            city: that.data.city_id,
+            district: that.data.qu_id,
+            address: int,
+            token: app.globalData.is_login
+          },
+          success(res) {
+            if (res.data.code == 200) {
+              wx.showToast({
+                title: '添加成功',
+              });
+              //添加成功后页面条转；
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: '/pages/personal/address/address',
+                })
+              }, 1500)
+            }
+          }
+        })
+      }
+    }
+  },
+  onLoad(datas) {
+    var that = this;
+    var id = datas.id;
+    if (id) {
+      that.setData({
+        bianji: datas.bianji,
+        dress_id: id
+      })
       wx.request({
-        url: imgurl + 'api/member/addmemberaddress',
-        method: "post",
+        url: imgurl + 'api/member/getMemberAddressDetail',
+        method: "POST",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         data: {
-          consigner: shou_name,
-          mobile: phone,
-          province: that.data.pro_id,
-          city: that.data.city_id,
-          district: that.data.qu_id,
-          address: int,
+          id: id,
           token: app.globalData.is_login
         },
         success(res) {
-          if (res.data.code == 200) {
-            wx.showToast({
-              title: '添加成功',
-            });
-            //添加成功后页面条转；
-            setTimeout(function () {
-              wx.navigateTo({
-                url: '/pages/personal/address/address',
+          //获取返回的数据
+          var data = res.data.data;
+          var pro_id = data.province,
+            city_id = data.city,
+            qu_id = data.district,
+            shou_name = data.consigner,
+            phone = data.mobile,
+            int = data.address;
+          that.setData({
+            shou_name: shou_name,
+            phone: phone,
+            int: int
+          })
+          wx.request({
+            url: imgurl + 'api/base_controller/getProvince',
+            success(res) {
+              var arr = res.data.data;//获取所有的省份信息
+              var len = arr.lenght;
+              var obj1 = {};
+              for (var i in arr) {
+                if (arr[i].province_id == pro_id) {
+                  that.setData({
+                    pro: arr[i].province_name,
+                    pro_id: arr[i].province_id
+                  })
+                }
+              }
+              //获取城市
+              wx.request({
+                url: imgurl + 'api/base_controller/getCity',
+                method: "POST",
+                header: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
+                data: {
+                  province_id: that.data.pro_id,
+                },
+                success(res) {
+                  var arr1 = res.data.data;
+                  for (var b in arr1) {
+                    if (arr1[b].city_id == city_id) {
+                      that.setData({
+                        cit: arr1[b].city_name,
+                        city_id: arr1[b].city_id
+                      })
+                    }
+                  };
+                  //  获取县
+                  wx.request({
+                    url: imgurl + 'api/base_controller/getDistrict',
+                    method: "POST",
+                    header: {
+                      "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    data: {
+                      city_id: that.data.city_id,
+                    },
+                    success(res) {
+                      var arr2 = res.data.data;
+                      for (var c in arr2) {
+                        if (arr2[c].district_id == qu_id) {
+                          that.setData({
+                            qus: arr2[c].district_name,
+                            qu_id: arr2[c].district_id,
+                          })
+                        }
+                      };
+                    }
+                  })
+                }
               })
-            }, 1500)
-          }
+            }
+          })
         }
       })
     }
-  },
-  onLoad(datas) {
-    var that=this;
-    var id = datas.id;
-    wx.request({
-      url: imgurl + 'api/member/getMemberAddressDetail',
-      method: "POST",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: {
-        id: id,
-        token: app.globalData.is_login
-      },
-      success(res) {
-        //获取返回的数据
-        var data = res.data.data;
-        var pro_id = data.province,
-          city_id = data.city,
-          qu_id = data.district,
-          shou_name = data.consigner,
-          phone = data.mobile,
-          int = data.address;
-          that.setData({
-            shou_name:shou_name,
-            phone:phone,
-            int:int
-          })
-        wx.request({
-          url: imgurl + 'api/base_controller/getProvince',
-          success(res) {
-            var arr = res.data.data;//获取所有的省份信息
-            var len = arr.lenght;
-            var obj1 = {};
-           for( var i in arr){
-             if (arr[i].province_id== pro_id){
-               that.setData({
-                 pro: arr[i].province_name,
-                 pro_id:arr[i].province_id
-               })
-             }
-           }
-           //获取城市
-            wx.request({
-              url: imgurl + 'api/base_controller/getCity',
-              method: "POST",
-              header: {
-                "Content-Type": "application/x-www-form-urlencoded"
-              },
-              data: {
-                province_id: that.data.pro_id,
-              },
-              success(res) {
-               var arr1=res.data.data;
-               for( var b in arr1){
-                 if (arr1[b].city_id==city_id){
-                   that.setData({
-                     cit: arr1[b].city_name,
-                     city_id:arr1[b].city_id
-                   })
-                 }
-               };
-              //  获取县
-                wx.request({
-                  url: imgurl + 'api/base_controller/getDistrict',
-                  method: "POST",
-                  header: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                  },
-                  data: {
-                    city_id: that.data.city_id,
-                  },
-                  success(res) {
-                    var arr2=res.data.data;
-                    for (var c in arr2) {
-                      if (arr2[c].district_id == qu_id) {
-                        that.setData({
-                          qus: arr2[c].district_name,
-                          qu_id: arr2[c].district_id,
-                        })
-                      }
-                    };
-                  }
-                })
-              }
-            })
-          }
-        })
-      }
-    })
   }
 });

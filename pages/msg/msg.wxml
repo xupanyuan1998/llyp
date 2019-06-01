@@ -23,7 +23,7 @@
   <view class='message' wx:for="{{abc}}" wx:key="item" bindtap='chat' data-name="{{item.name}}" data-id="{{item.id}}" bindlongtap='dels'>
     <view class='icon'>
       <image src="{{item.avator}}"></image>
-      <text></text>
+      <text wx:if="{{unreadNum!=0}}">{{unreadNum}}</text>
     </view>
     <view class='size'>
       <view>

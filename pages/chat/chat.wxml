@@ -1,12 +1,12 @@
 <!--pages/chat/chat.wxml-->
-<view class='shop'>
+<view class='shop' id="shop">
   <text>{{shop_name}}</text>
   <view class='shop_s' wx:if="{{del==0}}">店铺</view>
   <image wx:if="{{del==0}}" src='/images/edit.png' bindtap='del_all'></image>
   <view wx:if="{{del==1}}" class='del_all'>删除记录</view>
   <image wx:if="{{del==1}}" class='del_s' src='/images/sel_s.png'></image>
 </view>
-  <scroll-view scroll-y="true" class='warp'>
+  <scroll-view scroll-y="true" class='warp' scroll-into-view="{{scrollBottom}}" style="height:{{windowHeight-shopHeight-footerHeith}}px">
     <view class='date'> 昨天 09：22</view>
     <view class="dianzhu {{another_id==item.user_id?'':'user'}}" wx:for="{{chat_expect}}" wx:key="item" bindtap='del'>
       <image src='{{item.avator}}'></image>
@@ -15,12 +15,13 @@
         <view class='dian'></view>
       </view>
     </view>
+    <view id="scrollBottom"></view>
   </scroll-view>
 <!-- 发送消息 -->
-<view class='footer'>
+<view class='footer' id="footer">
   <image class='yuyin' src='/images/yuyin.jpg'></image>
   <view>
-    <input value='{{chat_content}}' bindinput='content'></input>
+    <input value='{{chat_content}}' bindinput='content' cursor-spacing="10"></input>
     <image class='biaoqing' src='/images/biaoqing.jpg'></image>
   </view>
   <text bindtap='send'>发送</text>

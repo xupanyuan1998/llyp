@@ -11,7 +11,7 @@
   <image class='back' src='/images/back1.png'></image>
   <text class="{{b_ac==idx?'t_actives':''}}" wx:for="{{jies}}" wx:key="item" wx:for-index="idx" data-id="{{idx}}" data-cata="{{'boby'+idx}}" bindtap='b_ac'>{{item}}</text>
   <view>
-    <image src='/images/share11.png'></image>
+    <image src='/images/share11.png' bindtap='share_c'></image>
     <image src='/images/msg1.png'></image>
   </view>
 </view>
@@ -143,31 +143,50 @@
 </view>
 <!-- 商品分享页面 -->
 <view class='share_c' style='display:{{show}}'>
-  <view class='share_top'>
-    <image class='big_image' src="{{share_banner==''?'share_banner':imgurl+image_int[0].pic_cover}}"></image>
-    <view class='share_shops'>
-      <view class='left'>
-        <view class='top'>
-          <text>爆品区</text>
-          <text>2019行游神州旅行金猪卡 六省联动 30多家5A景区200 多家景区免费畅游</text>
+  <view>
+    <view class='share_top'>
+      <image class='big_image' src="{{share_banner==''?imgurl+image_int[0].pic_cover:share_banner}}"></image>
+      <view class='share_shops'>
+        <view class='left'>
+          <view class='top'>
+            <text>爆品区</text>
+            <text>2019行游神州旅行金猪卡 六省联动 30多家5A景区200 多家景区免费畅游</text>
+          </view>
+          <view class='bottom'>
+            <text>原价:￥200</text>
+            <text>现价:￥99</text>
+          </view>
         </view>
-        <view class='bottom'>
-          <text>原价:￥200</text>
-          <text>现价:￥99</text>
+        <view class='right'>
+          <image class='share_con' src='/images/con_share.png'></image>
+          <image class='share_img' src='/images/share_image.png'></image>
+          <text>长按识别二维码</text>
         </view>
       </view>
-      <view class='right'>
-        <image class='share_con' src='/images/con_share.png'></image>
-        <image class='share_img' src='/images/share_image.png'></image>
-        <text>长按识别二维码</text>
-      </view>
+      <image class='close' bindtap='close' src='/images/X.png'></image>
     </view>
-    <image class='close' bindtap='close' src='/images/X.png'></image>
-  </view>
-  <view class='cont'>
-    <view wx:for="{{share}}" wx:key='item'>
-      <image src='{{item.src}}'></image>
-      <text>{{item.text}}</text>
+    <view class='cont'>
+      <view class='friend'>
+        <view>
+          <image src='/images/wechart.png'></image>
+          <text>微信好友</text>
+        </view>
+        <button open-type='share'></button>
+      </view>
+      <view class='friend'>
+        <view>
+          <image src='/images/firend.png'></image>
+          <text>朋友圈</text>
+        </view>
+        <button open-type='share'></button>
+      </view>
+      <view class='friend'>
+        <view>
+          <image src='/images/apply.png'></image>
+          <text>保存图片</text>
+        </view>
+        <button open-type='share'></button>
+      </view>
     </view>
   </view>
 </view>

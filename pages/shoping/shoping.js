@@ -12,7 +12,10 @@ Page({
     goods: [],
     imageurls: "http://www.lianlianyp.com/",
     heaHei:0,
-    pay:0
+    pay:0,
+    windowHeght:'',
+    payHeight:'',
+    header:''
   },
   //管理订单
   switch () {
@@ -299,6 +302,28 @@ Page({
     wx.navigateTo({
       url: '/pages/int/int?int='+e.currentTarget.dataset.goods,
     })
+  },
+  onLoad(){
+    var _this=this;
+    //获取购物车头部的高度
+    wx.createSelectorQuery().select('.header').boundingClientRect(function (res) {
+      _this.setData({
+        header:res.height
+      });
+    }).exec();
+    wx.createSelectorQuery().select('#pay').boundingClientRect(function (res) {
+      console.log(res.height)
+      _this.setData({
+        payHeight: res.height
+      });
+    }).exec();
+    wx.getSystemInfo({
+      success: function (suc) {
+        _this.setData({
+          windowHeight: suc.windowHeight
+        })
+      },
+    });
   }
 })
 //全部点击商品全选状态

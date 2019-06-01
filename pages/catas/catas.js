@@ -10,7 +10,9 @@ Page({
     cata: [],
     active:0,
     imgurls:'http://www.lianlianyp.com/',
-    twoCata:''
+    twoCata:'',
+    navHeight:'',
+    windowHeight:''
   },
   // 搜索页面
   search() {
@@ -42,6 +44,21 @@ list(e){
       success(res){
         that.setData({
           cata:res.data.data
+        })
+      }
+    });
+    let query = wx.createSelectorQuery();//创建元素节点；
+    query.select("#nav").boundingClientRect();//获取#shop的高度
+    query.exec(function (req) {
+      that.setData({
+        navHeight: req[0].height,
+        
+      })
+    });
+    wx.getSystemInfo({//获取当前设备的高度
+      success(res) {
+        that.setData({
+          windowHeight: res.windowHeight
         })
       }
     })
