@@ -2,8 +2,6 @@
 
 <wxs module="filter" src="../../utils/float.wxs"></wxs>
 <view class='header' id="header">
-  <image src='/images/back_arrow.png'></image>
-  <text class='car'>购物车 </text>
   <text wx:if="{{admin}}" class='gement' bindtap='switch'>管理</text>
   <text wx:else class='gement' bindtap='switch'>完成</text>
 </view>

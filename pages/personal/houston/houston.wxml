@@ -23,7 +23,7 @@
       <text>此密码与登录密码相同</text>
     </view>
   </view>
-  <view class='sheng'bindtap='sheng'>
+  <view class='sheng' bindtap='sheng'>
     <text>选择省：</text>
     <text class='choose'>{{pro}}</text>
     <text></text>
@@ -46,39 +46,41 @@
 </form>
 <!-- 店铺申请状态 -->
 <view class='content' wx:if="{{isShow==3}}">
-  <view class='top'>
-    <text class='date'>2019-05-11</text>
-    <view>
-      <image src='/images/time-1.png'></image>
-      <text>审核中</text>
+  <view wx:for="{{shenhe}}" wx:key="its" wx:for-index="idx">
+    <view class='top'>
+      <text class='date'>{{ creatTime[idx]}}</text>
+      <view wx:if="{{item.shop_state==2}}">
+        <image src='/images/time-1.png'></image>
+        <text>审核中</text>
+      </view>
+      <view class='color' wx:if="{{item.shop_state==1}}">
+        <image src='/images/a.png'></image>
+        <text>成功</text>
+      </view>
     </view>
-    <view class='color'>
-      <image src='/images/a.png'></image>
-      <text>成功</text>
+    <view class='contents'>
+      <image src='/images/group_1.png'></image>
+      <view class='right'>
+        <text>店铺名称：{{item.shop_name}}</text>
+        <text>负责人：{{item.shop_contact}}</text>
+        <text>联系电话：{{item.shop_phone}}</text>
+        <text>所在地区：{{item.address}}</text>
+      </view>
     </view>
-  </view>
-  <view class='contents'>
-    <image src='/images/group_1.png'></image>
-    <view class='right'>
-      <text>店铺名称：景胜</text>
-      <text>负责人：萨公司</text>
-      <text>联系电话：15244486986</text>
-      <text>所在地区：河南省郑州市管城回族区</text>
-    </view>
-  </view>
-  <image class='banner' src='/images/group_1.png'></image>
-  <view class='bottom'>
-    <view class='dress'>
-      <text>商家后台地址：</text>
-      <view>www.baidu.sgjsokgjoishglkrehposiehj.com</view>
-    </view>
-    <view>
-      <text>登录账号:</text>
-      <text class='msg'>25566+6636</text>
-    </view>
-    <view>
-      <text>登录密码:</text>
-      <text class='msg'>此密码与APP登录密码相同</text>
+    <image class='banner' src='/images/group_1.png'></image>
+    <view class='bottom'>
+      <view class='dress'>
+        <text>商家后台地址：</text>
+        <view>{{item.web}}</view>
+      </view>
+      <view>
+        <text>登录账号:</text>
+        <text class='msg'>{{item.shop_contact}}</text>
+      </view>
+      <view>
+        <text>登录密码:</text>
+        <text class='msg'>此密码与APP登录密码相同</text>
+      </view>
     </view>
   </view>
 </view>
@@ -88,67 +90,69 @@
     <image src='/images/!.png'></image>
     <text>只能绑定一个店铺，请慎重选择</text>
   </view>
-  <view class='content bindshop'>
-    <view class='top'>
-      <text class='date'>2019-05-11</text>
-      <view class='color'>
-        <text bindtap='go'>去绑定></text>
+  <view wx:for="{{shenhe}}" wx:key="its" wx:for-index="idx">
+    <view class='content bindshop'>
+      <view class='top'>
+        <text class='date'>{{ creatTime[idx]}}</text>
+        <view class='color'>
+          <text bindtap='go' data-shop_id="{{item.shop_id}}">去绑定></text>
+        </view>
       </view>
-    </view>
-    <view class='contents'>
-      <image src='/images/group_1.png'></image>
-      <view class='right'>
-        <text>店铺名称：景胜</text>
-        <text>负责人：萨公司</text>
-        <text>联系电话：15244486986</text>
-        <text>所在地区：河南省郑州市管城回族区</text>
+      <view class='contents'>
+        <image src='/images/group_1.png'></image>
+        <view class='right'>
+          <text>店铺名称：{{item.shop_name}}</text>
+          <text>负责人：{{item.shop_contact}}</text>
+          <text>联系电话：{{item.shop_phone}}</text>
+          <text>所在地区：{{item.address}}</text>
+        </view>
       </view>
-    </view>
-    <image class='banner' src='/images/group_1.png'></image>
-    <view class='bottom'>
-      <view class='dress'>
-        <text>商家后台地址：</text>
-        <view>www.baidu.sgjsokgjoishglkrehposiehj.com</view>
-      </view>
-      <view>
-        <text>登录账号:</text>
-        <text class='msg'>25566+6636</text>
-      </view>
-      <view>
-        <text>登录密码:</text>
-        <text class='msg'>此密码与APP登录密码相同</text>
+      <image class='banner' src='{{item.card_licences}}'></image>
+      <view class='bottom'>
+        <view class='dress'>
+          <text>商家后台地址：</text>
+          <view>{{item.web}}</view>
+        </view>
+        <view>
+          <text>登录账号:</text>
+          <text class='msg'>{{item.shop_contact}}</text>
+        </view>
+        <view>
+          <text>登录密码:</text>
+          <text class='msg'>此密码与APP登录密码相同</text>
+        </view>
       </view>
     </view>
   </view>
-   <input class="key-input" value='{{inputValue}}' type='number' adjust-position="true" confirm-type="done" focus="{{isFocus}}" bindinput="listenKeyInput" maxlength='4'/>
+  <input class="key-input" value='{{inputValue}}' type='number' adjust-position="true" confirm-type="done" focus="{{isFocus}}" bindinput="listenKeyInput" maxlength='4' style='position: fixed;top:-200rpx' />
 </view>
- 
-<!-- 验证页面 -->
- <view class='back' style="display:{{show}}" bindtap='cancle'>
-  <view class='warp' catchtap='sac'>
-    <image src='/images/yan_1.png'></image>
-    <text >默认发送到注册手机号，请输入验证码</text>
-    <view class='pass' bindtap='jujiao'>
-      <view wx:for="{{codes}}" wx:key="item">{{item}}</view>
-    </view> 
-    <button>确认</button>
-  </view>
-</view> 
+
+
 <!-- 选择城市 -->
 <view class='citys' style="display:{{shows}}" catchtap='cancle'>
   <view wx:if="{{num==1}}">
     <scroll-view scroll-y="true" catchtap='test'>
-     <view class="{{actives==idx?'actives':''}}" wx:for="{{provice}}" wx:key="its" data-pro="{{item.province_name}}" bindtap='pro' data-id="{{item.province_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.province_name}}</view>
+      <view class="{{actives==idx?'actives':''}}" wx:for="{{provice}}" wx:key="its" data-pro="{{item.province_name}}" bindtap='pro' data-id="{{item.province_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.province_name}}</view>
     </scroll-view>
   </view>
   <view wx:if="{{num==2}}">
     <scroll-view scroll-y="true" catchtap='test'>
-     <view class="{{ci_ac==idx?'actives':''}}" wx:for="{{city}}" wx:key="its" data-pro="{{item.city_name}}" bindtap='citys' data-id="{{item.city_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.city_name}}</view>
+      <view class="{{ci_ac==idx?'actives':''}}" wx:for="{{city}}" wx:key="its" data-pro="{{item.city_name}}" bindtap='citys' data-id="{{item.city_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.city_name}}</view>
     </scroll-view>
   </view>
   <view wx:if="{{num==3}}">
     <scroll-view scroll-y="true" catchtap='test'>
-     <view class="{{qu_ac==idx?'actives':''}}" wx:for="{{qu}}" wx:key="its" data-pro="{{item.district_name}}" bindtap='qus' data-id="{{item.district_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.district_name}}</view>
+      <view class="{{qu_ac==idx?'actives':''}}" wx:for="{{qu}}" wx:key="its" data-pro="{{item.district_name}}" bindtap='qus' data-id="{{item.district_id}}" wx:for-index="idx" data-idx="{{idx}}">{{item.district_name}}</view>
     </scroll-view>
+  </view>
+  <!-- 验证页面 -->
+  <view class='warp' catchtap='sac' wx:if="{{num==4}}">
+    <image src='/images/yan_1.png'></image>
+    <text wx:if="{{place=='place'}}">默认发送到注册手机号，请输入验证码</text>
+    <text wx:else>验证码已发送，入未收到请{{place}}s后重试</text>
+    <view class='pass' bindtap='jujiao'>
+      <view wx:for="{{codes}}" wx:key="item">{{item}}</view>
+    </view>
+    <button bindtap='sends'>确认</button>
   </view>
 </view>

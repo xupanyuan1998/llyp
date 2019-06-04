@@ -340,8 +340,7 @@ button{
   margin-right: 0;
 }
 .key-input{
-  position: fixed;
-  top: -200rpx;
+position: fixed
 }
 .warp button{
   width: 560rpx;

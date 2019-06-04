@@ -25,18 +25,61 @@ Page({
     qu_id: '',
     qu_ac: '',
     shows:'none',
-    zhizhao:'/images/group.png'
+    zhizhao:'/images/group.png',
+    shenhe:'',
+    place:'place',
+    times:''
   },
   // 遮罩层
-  go(){
+  go(e){
+    var that=this;
     this.setData({
-      show:'block',
-      isFocus: true,
+      shows:'block',
+      num:4,
+      isFocus: 'true',
+      shop_id:e.currentTarget.dataset.shop_id
+    });
+    wx.request({//获取验证码
+      url: imgurl + '/api/send_Sms/send',
+      method:"post",
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:{
+        phone:that.data.tell,
+        event: 'bindshop',
+        token:app.globalData.is_login
+      },
+      success(res){
+        if(res.data.code==200){
+          wx.showToast({
+            title: '验证码发送成功请注意查收',
+          });
+          clearInterval(timer);
+          var places=60;
+          var timer=setInterval(function(){
+            if(places<=0){
+                clearInterval(timer);
+                that.setData({
+                  place:'place'
+                })
+            }else{
+            places --;
+            that.setData({
+              place: places
+            })
+          }
+          },1000)
+          
+        }
+      }
     })
   },
   cancle(){
+
     this.setData({
-      show: 'none'
+      shows:'none',
+      place: 'place'
     })
   },
   listenKeyInput: function (e) {
@@ -74,13 +117,32 @@ Page({
   },
   onLoad(datas){
     var id=datas.int;
-    console.log(datas)
+    var that=this;
     this.setData({
       isShow:id,
       tell:datas.tel
-    })
+    });
+    if(id==3||id==2){
+      wx.request({
+        url: imgurl + '/api/shop/scanShop',
+        data:{
+          token:app.globalData.is_login
+        },
+        success(res){
+          var arr1=[];
+          var arr=res.data.data;
+          for (var i in arr){
+            var s = formatTimeTwo(arr[i].shop_create_time, 'Y-M-D h:m:s') ; 
+            arr1.push(s)
+          }
+          that.setData({
+            shenhe: res.data.data,
+            creatTime:arr1
+          });
+        }
+      })
+    }
   },
-  //获取省份
   // 获取省份
   sheng() {
     var that = this;
@@ -195,7 +257,6 @@ Page({
   },
   // 申请开通
   send(e){
-    console.log(e.detail.value)
     var that=this;
     var shop_name = e.detail.value.shop_name,
       head = e.detail.value.head,
@@ -258,12 +319,68 @@ Page({
                 token:app.globalData.is_login
               },
               success(res){
-                console.log(res.data)
+               if(res.data.code==200){
+                 wx.showToast({
+                   title: res.data.message,
+                 });
+                 setTimeout(function(){
+                   wx.navigateTo({
+                     url: '/pages/my/my',
+                   })
+                 })
+               }
               }
             })
           }
         }
       })
     }
+  },
+  sends(){
+    var that=this;
+    if(this.data.inputValue!=''){
+      wx.request({
+        url: imgurl + 'api/shop/bindShop',
+        method: "post",
+        header: {
+          'content-type': 'application/text'
+        },
+        data: {
+          shop_id: that.data.shop_id,
+          code: that.data.inputValue,
+          phone: that.data.tell,
+          token:app.globalData.is_login
+        },
+        success(res){
+          console.log(res)
+        }
+      })
+    }
+   
   }
 })
+//时间戳转时间格式
+
+function formatTimeTwo(number, format) {
+
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+
+  var date = new Date(number * 1000);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+  return format;
+}
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}

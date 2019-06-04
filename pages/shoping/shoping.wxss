@@ -1,9 +1,9 @@
 /* pages/shoping/shoping.wxss */
 
 .header {
-  height: 32rpx;
+  height: 60rpx;
   width: 710rpx;
-  padding: 128rpx 20rpx 28rpx 20rpx;
+  padding: 0 20rpx;
   background: #ff9b2c;
 }
 

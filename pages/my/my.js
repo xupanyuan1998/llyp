@@ -235,7 +235,6 @@ Page({
             username: app.globalData.is_login,
             user_tel: data.user_info.user_tel
           });
-          console.log(data.user_info.user_tel)
         }
       });
     }
@@ -263,11 +262,11 @@ Page({
               })
             } else if (res.data.message == 'ok') {
               wx.navigateTo({
-                url: '/pages/personal/houston/houston?int=2',//int=2 绑定手机
+                url: '/pages/personal/houston/houston?int=3&tel=' + that.data.user_tel,//int=2 绑定手机
               })
             } else {
               wx.navigateTo({
-                url: '/pages/personal/houston/houston?int=3',//int=3 审核状态
+                url: '/pages/personal/houston/houston?int=2&tel=' + that.data.user_tel,//int=3 审核状态
               })
             }
           }

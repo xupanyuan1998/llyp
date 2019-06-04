@@ -38,7 +38,7 @@ function getDefaultOpts(simple) {
     },
     parseImgDimensions: {
       defaultValue: false,
-      describe: 'Turn on/off image dimension parsing',
+      describe: 'Turn on/off images dimension parsing',
       type: 'boolean'
     },
     simplifiedAutoLink: {
@@ -1900,7 +1900,7 @@ showdown.subParser('headers', function (text, options, globals) {
 });
 
 /**
- * Turn Markdown image shortcuts into <img> tags.
+ * Turn Markdown images shortcuts into <img> tags.
  */
 showdown.subParser('images', function (text, options, globals) {
   'use strict';
@@ -2281,7 +2281,7 @@ showdown.subParser('spanGamut', function (text, options, globals) {
   text = showdown.subParser('escapeSpecialCharsWithinTagAttributes')(text, options, globals);
   text = showdown.subParser('encodeBackslashEscapes')(text, options, globals);
 
-  // Process anchor and image tags. Images must come first,
+  // Process anchor and images tags. Images must come first,
   // because ![foo][f] looks like an anchor.
   text = showdown.subParser('images')(text, options, globals);
   text = showdown.subParser('anchors')(text, options, globals);
