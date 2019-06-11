@@ -118,6 +118,7 @@ Page({
   onLoad(datas){
     var id=datas.int;
     var that=this;
+    console.log(datas);
     this.setData({
       isShow:id,
       tell:datas.tel
@@ -341,10 +342,7 @@ Page({
     if(this.data.inputValue!=''){
       wx.request({
         url: imgurl + 'api/shop/bindShop',
-        method: "post",
-        header: {
-          'content-type': 'application/text'
-        },
+        method: "GET",
         data: {
           shop_id: that.data.shop_id,
           code: that.data.inputValue,
